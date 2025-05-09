@@ -1,0 +1,477 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>搭建皮肤站并实现外置登录 | 朽丘秋雨</title><meta name="author" content="klcdm"><meta name="copyright" content="klcdm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="皮肤站是什么？其实官网就有皮肤站，在正版用户选择正版的登录后，MC客户端就会到官方皮肤站内下载用户的皮肤。 而外置登录，就是用户在没有正版账号的情况下，使用自己的账号验证，达到用户验证的目的。 本文方案 适用于：  Java版本Minecraft：包括Spigot、官方版本Minecraft、Forge等。  皮肤站 本文使用blessing-skin-server作为皮肤站，是LittleSki">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建皮肤站并实现外置登录">
+<meta property="og:url" content="https://koxiuqiu.cn/2024/03/09/6/index.html">
+<meta property="og:site_name" content="朽丘秋雨">
+<meta property="og:description" content="皮肤站是什么？其实官网就有皮肤站，在正版用户选择正版的登录后，MC客户端就会到官方皮肤站内下载用户的皮肤。 而外置登录，就是用户在没有正版账号的情况下，使用自己的账号验证，达到用户验证的目的。 本文方案 适用于：  Java版本Minecraft：包括Spigot、官方版本Minecraft、Forge等。  皮肤站 本文使用blessing-skin-server作为皮肤站，是LittleSki">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://koimg.cn-sy1.rains3.com/2024/08/28/459238.webp">
+<meta property="article:published_time" content="2024-03-08T20:07:00.000Z">
+<meta property="article:modified_time" content="2024-03-08T20:07:00.000Z">
+<meta property="article:author" content="klcdm">
+<meta property="article:tag" content="网站">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="服务器">
+<meta property="article:tag" content="宝塔">
+<meta property="article:tag" content="雨云">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://koimg.cn-sy1.rains3.com/2024/08/28/459238.webp"><link rel="shortcut icon" href="https://i1.wp.com/koxiuqiu.cn/img/favicon.png"><link rel="canonical" href="https://koxiuqiu.cn/2024/03/09/6/index.html"><link rel="preconnect"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css?v=6.5.1"><link rel="stylesheet" href="/pluginsSrc/node-snackbar/dist/snackbar.min.css?v=0.1.16" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css?v=5.0.33" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"距离编写已经","messageNext":"天,文章的内容可能已经过时,或者是图片失效,及时留言反馈补充"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":500,"languages":{"author":"作者: klcdm","link":"链接: ","source":"来源: 朽丘秋雨","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js?v=4.11.1',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '搭建皮肤站并实现外置登录',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-03-09 04:07:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdmirror.com/gh/willow-god/Sharding-fonts/LXGWWenKai-Regular/result.css"><link rel="stylesheet" href="/css/rightmenu.css"><link rel="stylesheet" href="/css/iconfont.css"><link rel="stylesheet" href="/css/license.css"><link rel="stylesheet" href="/css/fo.css"><link rel="stylesheet" type="text/css" href="/css/heoMainColor.css"><link rel="stylesheet" type="text/css" href="/css/categoryBar.css"><link rel="stylesheet" href="/css/progress_bar.css?1"><link rel="stylesheet" href="/css/flipcountdown.css"><link rel="stylesheet" href="/css/cursors.css"><link rel="stylesheet" href="/css/linav.css"><link rel="stylesheet" href="/css/hometop.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="/css/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/tag_plugins.css" media="defer" onload="this.media='all'"><script src="/js/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="朽丘秋雨" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i1.wp.com/koxiuqiu.cn/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr class="custom-hr"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa-solid fa-folder-open"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/posts/"><i class="fa-fw fas fa-archive"></i><span> 总览</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/categories"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about"><i class="fa-fw fas fa-heart"></i><span> 博主</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fas fa-heart"></i><span> 留言</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fa fa-bullhorn"></i><span> 说说</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-link"></i><span> 友联</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fa fa-comments"></i><span> 鱼塘圈</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/atom.xml"><i class="fa-fw fas fa-rss"></i><span> 订阅</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="朽丘秋雨"><img class="site-icon" src="https://i1.wp.com/koxiuqiu.cn//img/xqlogo.png"><span class="site-name">朽丘秋雨</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa-solid fa-folder-open"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/posts/"><i class="fa-fw fas fa-archive"></i><span> 总览</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/categories"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about"><i class="fa-fw fas fa-heart"></i><span> 博主</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fas fa-heart"></i><span> 留言</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fa fa-bullhorn"></i><span> 说说</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-link"></i><span> 友联</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fa fa-comments"></i><span> 鱼塘圈</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/atom.xml"><i class="fa-fw fas fa-rss"></i><span> 订阅</span></a></li></ul></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">搭建皮肤站并实现外置登录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-08T20:07:00.000Z" title="发表于 2024-03-09 04:07:00">2024-03-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-08T20:07:00.000Z" title="更新于 2024-03-09 04:07:00">2024-03-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/">建站教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="搭建皮肤站并实现外置登录"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2024/03/09/6/#post-comment"><span id="ArtalkCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div><article class="post-content" id="article-container"><p>皮肤站是什么？其实官网就有皮肤站，在正版用户选择正版的登录后，MC客户端就会到官方皮肤站内下载用户的皮肤。 而外置登录，就是用户在没有正版账号的情况下，使用自己的账号验证，达到用户验证的目的。</p>
+<h1>本文方案</h1>
+<p>适用于：</p>
+<ul>
+<li>Java版本Minecraft：包括Spigot、官方版本Minecraft、Forge等。</li>
+</ul>
+<h2 id="皮肤站">皮肤站</h2>
+<p>本文使用<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRodWIuY29tL2JzLWNvbW11bml0eS9ibGVzc2luZy1za2luLXNlcnZlcg==">blessing-skin-server</a>作为皮肤站，是<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9tY3NraW4ubGl0dGxlc2VydmljZS5jbi8=">LittleSkin</a>的开源社区版本。</p>
+<h3 id="实现效果：">实现效果：</h3>
+<h4 id="用户角色管理">用户角色管理</h4>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/52ypr1.png" alt="用户皮肤管理"></p>
+<h4 id="用户皮肤管理">用户皮肤管理</h4>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/519wl7.png" alt="选择皮肤激活"></p>
+<h4 id="选择皮肤激活">选择皮肤激活</h4>
+<p>你还可以安装很多插件，实现：邀请码注册、外置登录等等功能： <img src="https://imgse.koxiuqiu.cn/i/2024/03/09/53fe02.png" alt="丰富的插件"></p>
+<h2 id="最终效果">最终效果</h2>
+<p>最后实现的效果是搭建一个网站，用户可以注册账号，并登录系统进行皮肤的上传、下载以及激活皮肤为角色皮肤。 皮肤站和外置登录配合，就可以达到和正版登录一样的效果：</p>
+<ul>
+<li>允许用户注册账号</li>
+<li>允许用户上传和自定义自己游戏皮肤</li>
+</ul>
+<h1>获取服务器</h1>
+<h2 id="这里以雨云服务器为主">这里以雨云服务器为主</h2>
+<p>前往官网：<a href="/go.html?u=aHR0cHM6Ly93d3cucmFpbnl1bi5jb20lRTQlQkMlOTglRTYlODMlQTAlRTclQTAlODElRUYlQkMlOUF2aXA1cg==" rel="external nofollow noopener noreferrer" target="_blank">https://www.rainyun.com优惠码：vip5r</a> 获取注册福利</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/06/z6o9dg.png" alt="image-20240306212709663"></p>
+<p>进入<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9hcHAucmFpbnl1bi5jb20vZGFzaGJvYXJk">总览 | 雨云 (rainyun.com)</a>后点击<strong>云服务器</strong></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/06/z7qdxc.png" alt="image-20240306212901452"></p>
+<p><strong>然后点击购买云服务器</strong></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/06/z8dtix.png" alt="image-20240306213003480"></p>
+<p>选择合适的服务器配置，可以先进行试用后再决定购买，同时雨云支持<strong>七天无理由退款</strong></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/06/zb5uzl.png" alt="image-20240306213430501"></p>
+<p>选择好配置后可以直接预安装APP，你也可以不预装就单装系统,自行选择好部署方案就行</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/560qi8.png" alt="image-20240309031210280"></p>
+<p>预安装APP的话操控服务器的面板下面会出现这个，访问外网面板地址就可以进入宝塔了，然后下面<strong>username就是账号，密码password</strong></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/57skga.png" alt="image-20240309031501429"></p>
+<blockquote>
+<p>同时！雨云15000人技术交流社区，学习交流，畅所欲言，遇见技术和真知 定期发布活动和白嫖福利</p>
+</blockquote>
+<h1>部署方案</h1>
+<h2 id="准备工具">准备工具</h2>
+<ul>
+<li>LEMP环境：
+<ul>
+<li>Linux服务器：Debian、CentOS都可以。极其不推荐使用Windows Server。</li>
+<li>Nginx/Apache：推荐使用NNginx环境</li>
+<li>MySQL/MariaDB：可以使用Linux服务器自己搭建，也可以直接买现成的。</li>
+<li>PHP：PHP版本推荐7以上，本文使用PHP8（最新皮肤站需要PHP8）</li>
+</ul>
+</li>
+<li>Minecraft服务器端</li>
+</ul>
+<h2 id="宝塔搭建">宝塔搭建</h2>
+<p>宝塔搭建Ngiinx、PHP和MariaDB/MySQL很简单，可视化搭建：</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/5bto9o.png" alt="image-20240309032147519"></p>
+<h3 id="PHP函数">PHP函数</h3>
+<p>宝塔是默认禁用了一些皮肤站需要的函数，我们需要前往软件商城进行开放</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/5e3rys.png" alt="image-20240309032530686"></p>
+<p>需要启用的函数：</p>
+<ul>
+<li>symlink</li>
+<li>readlink</li>
+<li>putenv</li>
+<li>realpath</li>
+</ul>
+<p>并安装扩展：fileinfo扩展</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/5ecq31.png" alt="image-20240309032608421"></p>
+<h3 id="搭建BlessingSkin">搭建BlessingSkin</h3>
+<p>如果不懂怎么创建一个网站可以前往：<a href="/go.html?u=aHR0cHM6Ly9rb3hpdXFpdS5jbi8yMDI0LzAxLzE1LzI=" rel="external nofollow noopener noreferrer" target="_blank">朽丘博 - 支配生命,享受生活 (koxiuqiu.cn)</a></p>
+<p>创建好站点，开始操作，其中：</p>
+<ul>
+<li>域名：有域名解析到服务器，则填域名；否则，就填IP。</li>
+<li>PHP版本：选择PHP7.4、8.x（6.0以上版本Blessing需要使用PHP8.x）</li>
+</ul>
+<p>之后，进入网站根目录，下载并解压最新版本的<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRodWIuY29tL2JzLWNvbW11bml0eS9ibGVzc2luZy1za2luLXNlcnZlci9yZWxlYXNlcw==">BlessingSkin</a>（自己开梯子访问，或者是找人帮你吧）</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/5g53mr.png" alt="image-20240309032909888"></p>
+<p>进入后上传你下载好的压缩包，gz也是压缩包啊喂(#`O′)，然后就是如图这样的</p>
+<p>最后，到网站设置内：</p>
+<ul>
+<li>设置运行目录：<strong>/public</strong></li>
+<li>添加伪静态</li>
+</ul>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/5hz1nx.png" alt="image-20240309033219536"></p>
+<p>伪静态：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location / {</span><br><span class="line">      try_files $uri $uri/ /index.php?$query_string;</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+<p>然后就是这样的：</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/5ibfe2.png" alt="image-20240309033237392"></p>
+<p>之后，就可以访问网站了，直接访问你的域名或者是IP！</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/5j3j0h.png" alt="image-20240309033409008"></p>
+<p>记得创建好数据库！</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/5k1rim.png" alt="image-20240309033527955"></p>
+<h3 id="宝塔常见问题">宝塔常见问题</h3>
+<p>Q：后续初始化时候，在填入数据库信息设置管理员后，出现500错误？</p>
+<blockquote>
+<p>刷新页面。可能是宝塔的原因，实在不行重新安装部署一次</p>
+</blockquote>
+<h2 id="编译搭建">编译搭建</h2>
+<ul>
+<li>[ ]  三个小章节讲解</li>
+</ul>
+<h3 id="Nginx">Nginx</h3>
+<p>编译安装复杂一些，首先我们下载Nginx的源码，这里我们下载1.20.1的源码，下载到Nginx的<code>/usr/local/src</code>内，并解压进入：</p>
+<p>ssh操控进入后执行脚本</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src</span><br><span class="line">wget 'http://nginx.org/download/nginx-1.20.1.tar.gz'</span><br><span class="line">tar -xf nginx-1.20.1.tar.gz</span><br><span class="line">cd nginx-1.20.1</span><br></pre></td></tr></tbody></table></figure>
+<p>什么是sshj？<a href="/go.html?u=aHR0cHM6Ly9rb3hpdXFpdS5jbi8yMDI0LzAxLzE1LzIv" rel="external nofollow noopener noreferrer" target="_blank">♪(^∇^*)论如何快速了解建站 | 朽丘博 (koxiuqiu.cn)</a></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/5mn15v.png" alt="image-20240309034001254"></p>
+<p>输入脚本回车就行</p>
+<h3 id="编译依赖">编译依赖</h3>
+<p>按需求，我们需要SSL、gzip、正则库等依赖，所以这里我们安装一下依赖（#和后面文章不要输入，一条条输入回车就行，这只是注释） Debian/Ubuntu系统：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 安装GCC</span><br><span class="line">sudo apt-get install build-essential</span><br><span class="line"># 安装正则库</span><br><span class="line">sudo apt-get install libpcre3 libpcre3-dev</span><br><span class="line"># 安装gzip lib</span><br><span class="line">sudo apt-get install zlib1g-dev</span><br><span class="line"># 支持OpenSSL</span><br><span class="line">sudo apt-get install openssl libssl-dev</span><br></pre></td></tr></tbody></table></figure>
+<p>CentOS系统：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 安装GCC</span><br><span class="line">sudo yum install gcc</span><br><span class="line"># 安装正则库</span><br><span class="line">sudo yum install pcre pcre-devel</span><br><span class="line"># 支持OpenSSL</span><br><span class="line">sudo yum -y install openssl openssl-devel</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="预编译">预编译</h4>
+<p>首先，我们想要把Nginx以www:www用户运行，所以我这里创建一个www用户，附属于www用户组：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 创建一个www用户</span><br><span class="line">sudo useradd www</span><br><span class="line"># 创建一个www用户组</span><br><span class="line">sudo groupadd www</span><br><span class="line"># www用户归属于www用户组</span><br><span class="line">sudo usermod -a -G www www</span><br><span class="line"></span><br><span class="line">LIVECODESERVER</span><br></pre></td></tr></tbody></table></figure>
+<p>之后，开始预编译：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/usr/local/nginx \</span><br><span class="line">--user=www \</span><br><span class="line">--group=www \</span><br><span class="line">--sbin-path=/usr/local/nginx/sbin/nginx \</span><br><span class="line">--conf-path=/usr/local/nginx/nginx.conf \</span><br><span class="line">--error-log-path=/var/log/nginx/error.log \</span><br><span class="line">--http-log-path=/var/log/nginx/access.log \</span><br><span class="line">--pid-path=/var/run/nginx.pid \</span><br><span class="line">--lock-path=/var/run/nginx.lock \</span><br><span class="line">--http-client-body-temp-path=/var/cache/nginx/client_temp \</span><br><span class="line">--http-proxy-temp-path=/var/cache/nginx/proxy_temp \</span><br><span class="line">--http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \</span><br><span class="line">--http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \</span><br><span class="line">--http-scgi-temp-path=/var/cache/nginx/scgi_temp \</span><br><span class="line">--with-file-aio \</span><br><span class="line">--with-threads \</span><br><span class="line">--with-http_addition_module \</span><br><span class="line">--with-http_auth_request_module \</span><br><span class="line">--with-http_dav_module \</span><br><span class="line">--with-http_flv_module \</span><br><span class="line">--with-http_gunzip_module \</span><br><span class="line">--with-http_gzip_static_module \</span><br><span class="line">--with-http_mp4_module \</span><br><span class="line">--with-http_random_index_module \</span><br><span class="line">--with-http_realip_module \</span><br><span class="line">--with-http_secure_link_module \</span><br><span class="line">--with-http_slice_module \</span><br><span class="line">--with-http_ssl_module \</span><br><span class="line">--with-http_stub_status_module \</span><br><span class="line">--with-http_sub_module \</span><br><span class="line">--with-http_v2_module \</span><br><span class="line">--with-mail \</span><br><span class="line">--with-mail_ssl_module \</span><br><span class="line">--with-stream \</span><br><span class="line">--with-stream_realip_module \</span><br><span class="line">--with-stream_ssl_module \</span><br><span class="line">--with-stream_ssl_preread_module</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="编译和安装">编译和安装</h4>
+<p>之后，我们开始编译和安装：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 我服务器是四核，所以-j4</span><br><span class="line">make -j4</span><br><span class="line"># 编译完成，进行安装</span><br><span class="line">make install</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="注册服务">注册服务</h4>
+<p>如果你是用我的编译参数，那么需要创建一个日志目录：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 创建日志目录</span><br><span class="line">sudo mkdir /var/cache/nginx</span><br></pre></td></tr></tbody></table></figure>
+<p>为了之后更方便启动，我注册为服务：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/nginx.service</span><br></pre></td></tr></tbody></table></figure>
+<p>添加内容：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=nginx</span><br><span class="line">After=network.target</span><br><span class="line">  </span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/nginx/sbin/nginx</span><br><span class="line">ExecReload=/usr/local/nginx/sbin/nginx -s reload</span><br><span class="line">ExecStop=/usr/local/nginx/sbin/nginx -s quit</span><br><span class="line">PrivateTmp=true</span><br><span class="line">  </span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></tbody></table></figure>
+<p>最后进行启动即可</p>
+<h3 id="PHP">PHP</h3>
+<p>PHP会比较麻烦，主要是依赖问题，根据<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9ibGVzc2luZy5uZXRsaWZ5LmFwcC9zZXR1cC5odG1s">Blessing Skin安装指南</a>，我们需要PHP支持：</p>
+<ul>
+<li>OpenSSL</li>
+<li>PDO</li>
+<li>Mbstring</li>
+<li>Tokenizer</li>
+<li>GD</li>
+<li>XML</li>
+<li>Ctype</li>
+<li>JSON</li>
+<li>fileinfo</li>
+<li>zip</li>
+</ul>
+<p>主要是GD模块，需要很多额外参数，尤其是<code>freetype</code>参数，所以这里编译需要注意。</p>
+<h4 id="下载PHP源码">下载PHP源码</h4>
+<p>首先，还是和刚刚一样，我们需要下载PHP7.4的源码到<code>/usr/local/src</code>下：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 当前为root用户</span><br><span class="line">cd /usr/local/src</span><br><span class="line">wget 'https://www.php.net/distributions/php-7.4.22.tar.gz'</span><br><span class="line">tar -xf php-7.4.22.tar.gz</span><br><span class="line">cd php-7.4.22 </span><br></pre></td></tr></tbody></table></figure>
+<h4 id="编译依赖-2">编译依赖</h4>
+<p>我们编译依赖很简单，需要支援Nginx和MariaDB/MySQL，同时支持gd等模块，所以： 如果你是Debian/Ubuntu：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 安装pkg-config</span><br><span class="line">sudo apt-get install pkg-config</span><br><span class="line"># OpenSSL的支持</span><br><span class="line">sudo apt-get install openssl libssl-dev</span><br><span class="line"># SQL支持</span><br><span class="line">sudo apt-get install libsqlite3-dev </span><br><span class="line"># zlib</span><br><span class="line">sudo apt-get install zlib1g-dev</span><br><span class="line"># OpenSSL支持</span><br><span class="line">sudo apt-get install libcurl4-openssl-dev</span><br><span class="line"># GD辅助依赖</span><br><span class="line">sudo apt-get install libpng-dev libjpeg-dev libonig-dev</span><br></pre></td></tr></tbody></table></figure>
+<p>之后，编译安装：<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cDovL3htbHNvZnQub3JnL3NvdXJjZXM=">libxml2</a>、<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cDovL21pcnJvci55b25nYm9rLm5ldC9ub25nbnUvZnJlZXR5cGU=">freetype</a>。 并把freetype编译安装地址下的lib/pkgconfig添加到pkg内，如：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#  Freetype</span><br><span class="line">export PKG_CONFIG_PATH=/usr/local/freetype/lib/pkgconfig/</span><br></pre></td></tr></tbody></table></figure>
+<p>如果你是CentOS： 首先是编译安装<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRodWIuY29tL2trb3Mvb25pZ3VydW1h">oniguruma</a>，并配置到pkg内，如：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#  Freetype</span><br><span class="line">export PKG_CONFIG_PATH=/usr/local/freetype/lib/pkgconfig/</span><br></pre></td></tr></tbody></table></figure>
+<p>之后用软件包管理器安装：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># XML 库</span><br><span class="line">sudo yum install libxml2 libxml2-devel</span><br><span class="line"># 正则库</span><br><span class="line">sudo yum install pcre pcre-devel</span><br><span class="line"># SQL 库</span><br><span class="line">sudo yum install sqlite3-devel</span><br><span class="line"># 一些lib</span><br><span class="line">sudo yum install libcurl-devel libpng-devel libjpeg-devel</span><br><span class="line"># GD 依赖</span><br><span class="line">sudo yum install freetype-devel</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="预编译-2">预编译</h4>
+<p>最后，我们看看预编译PHP：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/usr/local/php7 \</span><br><span class="line">--with-curl \</span><br><span class="line">--with-mysqli \</span><br><span class="line">--with-openssl \</span><br><span class="line">--with-pdo-mysql \</span><br><span class="line">--with-jpeg \</span><br><span class="line">--enable-gd \</span><br><span class="line">--enable-fpm \</span><br><span class="line">--with-fpm-user=www \</span><br><span class="line">--with-fpm-group=www \</span><br><span class="line">--enable-bcmath \</span><br><span class="line">--enable-xml \</span><br><span class="line">--with-zip \</span><br><span class="line">--enable-mbstring \</span><br><span class="line">--enable-sockets  \</span><br><span class="line">--with-zlib   \</span><br><span class="line">--enable-fileinfo \</span><br><span class="line">--enable-exif \</span><br><span class="line">--with-freetype</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="编译和安装-2">编译和安装</h4>
+<p>之后，我们开始编译和安装：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 我服务器是四核，所以-j4</span><br><span class="line">make -j4</span><br><span class="line"># 编译完成，进行安装</span><br><span class="line">make install</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="注册服务-2">注册服务</h4>
+<p>如果你是用我的编译参数，那么需要PHP-FPM配置文件：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 创建配置文件</span><br><span class="line">sudo mv /usr/local/php7/etc/php-fpm.conf.default /usr/local/php7/etc/php-fpm.conf</span><br><span class="line">sudo mv /usr/local/php7/etc/php-fpm.d/www.conf.default /usr/local/php7/etc/php-fpm.d/www.conf  </span><br></pre></td></tr></tbody></table></figure>
+<p>为了之后更方便启动，我注册为服务：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /usr/lib/systemd/system/php-fpm.service</span><br></pre></td></tr></tbody></table></figure>
+<p>添加内容：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=php-fpm</span><br><span class="line">After=network.target</span><br><span class="line">  </span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/php7/sbin/php-fpm</span><br><span class="line">PrivateTmp=true</span><br><span class="line">  </span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></tbody></table></figure>
+<p>最后启动即可！</p>
+<h3 id="MariaDB-MySQL">MariaDB/MySQL</h3>
+<h4 id="搭建BlessingSkin-2">搭建BlessingSkin</h4>
+<p>首先，我们创建一个目录，作为网站目录：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir /www/BlessingSkin -pv</span><br><span class="line">cd /www/BlessingSkin</span><br><span class="line"></span><br><span class="line">AWK</span><br></pre></td></tr></tbody></table></figure>
+<p>之后，下载<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRodWIuY29tL2JzLWNvbW11bml0eS9ibGVzc2luZy1za2luLXNlcnZlci9yZWxlYXNlcw==">BlessingSkin的发行版本</a>，这里选择安装<code>6.0.0-beta.3</code>:</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget 'https://github.com/bs-community/blessing-skin-server/releases/download/6.0.0-beta.3/blessing-skin-server-6.0.0-beta.3.zip'</span><br></pre></td></tr></tbody></table></figure>
+<p>之后解压即可：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip blessing-skin-server-6.0.0-beta.3.zip</span><br></pre></td></tr></tbody></table></figure>
+<p>安装官网要求，需要重命名和初始化：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp .env.example .env</span><br><span class="line">/usr/local/php7/bin/php artisan key:generate</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="配置Nginx">配置Nginx</h4>
+<p>当然，我们还要配置Nginx：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/nginx/nginx.conf</span><br></pre></td></tr></tbody></table></figure>
+<p>查看：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">user  www;</span><br><span class="line">worker_processes  1;</span><br><span class="line">events {</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http {</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line"></span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    gzip  on;</span><br><span class="line"></span><br><span class="line">    server {</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        root /www/BlessingSkin/public;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        location / {</span><br><span class="line">            index  index.php index.html index.htm;</span><br><span class="line">        try_files $uri $uri/ /index.php?$query_string;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        error_page   500 502 503 504  /50x.html;</span><br><span class="line">        location = /50x.html {</span><br><span class="line">            root   html;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # php-fpm配置</span><br><span class="line">        location ~ [^/]\.php(/|$){</span><br><span class="line">            # try_files $uri =404;</span><br><span class="line">            fastcgi_pass  127.0.0.1:9000;</span><br><span class="line">            include fastcgi.conf;</span><br><span class="line">            fastcgi_index  index.php;</span><br><span class="line">            fastcgi_param  SCRIPT_FILENAME  $document_root/$fastcgi_script_name;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="提权-重载配置">提权&amp;重载配置</h4>
+<p>刚刚我们都是用<code>root</code>用户直接修改文件，现在我们把网站目录权限移交给www：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown www:www /www -R</span><br></pre></td></tr></tbody></table></figure>
+<p>最后，我们重载配置：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl reload nginx</span><br></pre></td></tr></tbody></table></figure>
+<p>然后访问站点就可以成功部署</p>
+<h1>外置登录</h1>
+<p>使用外置登录，服务器的配置文件(server.properties)的online-mode记得设置为<code>true</code>，这是服务器的正版验证</p>
+<p>直接下载我已经整合好的插件压缩包，下载：<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMUxmSWU3YkFKU29MRGdJdkJLbk90TVE/cHdkPWRjeHU=">传送门</a></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/5vko5y.png" alt="image-20240309035504746"></p>
+<p>把你下载的压缩包中的文件夹上传在这个目录中就行</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/5w3ma2.png" alt="image-20240309035553142"></p>
+<p>然后可以直接全部勾选，进行下一步</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/5ws2nv.png" alt="image-20240309035707077"></p>
+<p>然后红框内就是我们需要的API链接</p>
+<p>其次，我们需要设置我们的 Java Minecraft服务器的启动命令，先下载最新版本的<code>authlib-injector.jar</code>，下载地址：</p>
+<ul>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9hdXRobGliLWluamVjdG9yLnl1c2hpLm1vZS8=">authlib-injector下载</a></li>
+</ul>
+<p>之后，我们回到我们Minecraft的启动界面，如果你之前的Minecraft服务器启动命令是：（例子）</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar -Xms1024M -Xmx5120M LoliServer-1.12.2server.jar</span><br></pre></td></tr></tbody></table></figure>
+<p>那么，加上<code>authlib-injector</code>验证就是：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar -Xms1024M -Xmx5120M -javaagent:authlib-injector-1.1.39.jar=http://URL LoliServer-1.12.2server.jar</span><br></pre></td></tr></tbody></table></figure>
+<p>其中：</p>
+<ul>
+<li>authlib-injector-1.1.39.jar：这个需要替换为你刚刚下载的<code>authlib-injector</code>版本。</li>
+<li>=http:：为上文YggdrasilAPI地址。</li>
+</ul>
+<p>接下来，我们到客户端上，就可以使用外置登录了，如果是PCL了，直接皮肤站一键添加</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/03/09/6mfqtx.png" alt="image-20240309040013738"></p>
+<p>如果是HMCL，我们到客户单上设置，以HCML为例，我们打开HMCL后，在登录里选择外置登录： <img src="https://imgse.koxiuqiu.cn/i/2024/03/09/6n2uil.png" alt="image-20240309040134135"></p>
+<ul>
+<li>验证服务器：我们的<code>Yggdrasil API</code>地址</li>
+<li>用户名：我们自己皮肤站上注册的用户</li>
+<li>密码：我们自己皮肤站上的账号密码</li>
+</ul>
+<blockquote>
+<p>记得创建好角色</p>
+</blockquote>
+<h1>结尾小言</h1>
+<p>最后，如果你还有什么不懂的地方：</p>
+<ul>
+<li>懂得谦卑的人，不要张口就来</li>
+<li>懂得合理利用搜索引擎</li>
+<li>懂得不要一直伸手要</li>
+</ul>
+<blockquote>
+<p>符合并且荔枝的，可以直接评论我求助！</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://koxiuqiu.cn">klcdm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://koxiuqiu.cn/2024/03/09/6/">https://koxiuqiu.cn/2024/03/09/6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://koxiuqiu.cn" target="_blank">朽丘秋雨</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%AB%99/">网站</a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a><a class="post-meta__tags" href="/tags/%E5%AE%9D%E5%A1%94/">宝塔</a><a class="post-meta__tags" href="/tags/%E9%9B%A8%E4%BA%91/">雨云</a></div><div class="post_share"><div class="social-share" data-image="https://koimg.cn-sy1.rains3.com/2024/08/28/459238.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css?v=1.1.3" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js?v=1.1.3" defer=""></script></div></div><div class="business-center"><div class="business-card"><div class="business-flip"><div class="business-front"><div class="business-strip-bottom"></div><div class="business-strip-top"></div><img class="business-logo" width="80" height="80" src="https://koimg.cn-sy1.rains3.com/2024/08/18/qq.png" alt="cardcode"><div class="business-Invitation">Invitation</div><div class="business-chip"><div class="business-chip-line"></div><div class="business-chip-line"></div><div class="business-chip-line"></div><div class="business-chip-line"></div><div class="business-chip-main"></div></div><svg class="business-wave" viewBox="0 3.71 26.959 38.787" width="26.959" height="38.787" fill="white"><path d="M19.709 3.719c.266.043.5.187.656.406 4.125 5.207 6.594 11.781 6.594 18.938 0 7.156-2.469 13.73-6.594 18.937-.195.336-.57.531-.957.492a.9946.9946 0 0 1-.851-.66c-.129-.367-.035-.777.246-1.051 3.855-4.867 6.156-11.023 6.156-17.718 0-6.696-2.301-12.852-6.156-17.719-.262-.317-.301-.762-.102-1.121.204-.36.602-.559 1.008-.504z"></path><path d="M13.74 7.563c.231.039.442.164.594.343 3.508 4.059 5.625 9.371 5.625 15.157 0 5.785-2.113 11.097-5.625 15.156-.363.422-1 .472-1.422.109-.422-.363-.472-1-.109-1.422 3.211-3.711 5.156-8.551 5.156-13.843 0-5.293-1.949-10.133-5.156-13.844-.27-.309-.324-.75-.141-1.114.188-.367.578-.582.985-.542h.093z"></path><path d="M7.584 11.438c.227.031.438.144.594.312 2.953 2.863 4.781 6.875 4.781 11.313 0 4.433-1.828 8.449-4.781 11.312-.398.387-1.035.383-1.422-.016-.387-.398-.383-1.035.016-1.421 2.582-2.504 4.187-5.993 4.187-9.875 0-3.883-1.605-7.372-4.187-9.875-.321-.282-.426-.739-.266-1.133.164-.395.559-.641.984-.617h.094zM1.178 15.531c.121.02.238.063.344.125 2.633 1.414 4.437 4.215 4.437 7.407 0 3.195-1.797 5.996-4.437 7.406-.492.258-1.102.07-1.36-.422-.257-.492-.07-1.102.422-1.359 2.012-1.075 3.375-3.176 3.375-5.625 0-2.446-1.371-4.551-3.375-5.625-.441-.204-.676-.692-.551-1.165.122-.468.567-.785 1.051-.742h.094z"></path></svg><div class="business-card-number"><div class="business-section">klcdm</div><div class="business-section">215422478</div></div><div class="business-end"><span class="business-end-text">created:</span><span class="business-end-date">2024/04/09</span></div><div class="business-card-holder">Welcome to my blog</div><div class="business-master"><div class="business-circle business-master-red"></div><div class="business-circle business-master-yellow">   </div></div></div><div class="business-back"><div class="business-strip-black"></div><div class="business-ccv"><label>sitelink</label><div><a target="_blank" rel="noopener external nofollow noreferrer" href="https://qm.qq.com/q/Pm5GT41XSE">加入交流群</a></div></div><div class="business-terms"><p>and，QQ scan to the upper right, join our communication group.</p><p>或QQ扫取右上方,加入我们的交流群.</p></div></div></div></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="支付宝"></a><div class="post-qr-code-desc">支付宝</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="微信"></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/02/17/4/" title="春节那些事"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/401803.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">春节那些事</div></div></a></div><div class="next-post pull-right"><a href="/2024/03/26/10/" title="最简单搭建MC服务器"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/526505.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">最简单搭建MC服务器</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/01/15/2/" title="论如何快速了解建站"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/725291.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-15</div><div class="title">论如何快速了解建站</div></div></a></div><div><a href="/2025/1y23d1/" title="站长基本教材,从入门到入土,一站传三代"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2025/01/23/068082.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-23</div><div class="title">站长基本教材,从入门到入土,一站传三代</div></div></a></div><div><a href="/2024/05/27/1716722508619/" title="搭建MineBBS同款"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/749768.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-27</div><div class="title">搭建MineBBS同款</div></div></a></div></div></div><hr class="custom-hr"><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="artalk-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i1.wp.com/koxiuqiu.cn/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">klcdm</div><div class="author-info__description">享受生活，记录日志</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://chat.dusays.com/signup_user_complete/?id=j5dz4dtc8irgtdniajj64dss1a&amp;md=link&amp;sbr=su"><i class="fa-solid fa-terminal"></i><span>点击联系我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lkcdm" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #003153;"></i></a><a class="social-icon" href="mailto:gemiidozenz@hotmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #003153;"></i></a><a class="social-icon" href="https://blog.koxiuqiu.cc/atom.xml" rel="external nofollow noreferrer" target="_blank" title="'#4a7dbe'"><i class="fas fa-rss"></i></a><a class="social-icon" href="/sitemap.xml" target="_blank" title="'#4a7dbe'"><i class="fa fa-sitemap"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这里是KLCDM的博客,欢迎向我留言!你要问我为什么背景一直是万穗爷,因为这是我的第一款GalGame啊!很有纪念价值~<p>页面异常执行 <kbd>Ctrl+F5</kbd></p><p>昼夜模式切换下翻找到<kbd>右下方齿轮</kbd>或<kbd>右键</kbd>[推广信息请自己酌情选择]</p><p>域名<kbd>koxiuqiu.cn</kbd>不开放交互评论区留言,请转至<kbd>koxiuqiu.cc</kbd>.</p></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">本文方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9A%AE%E8%82%A4%E7%AB%99"><span class="toc-text">皮肤站</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%95%88%E6%9E%9C%EF%BC%9A"><span class="toc-text">实现效果：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%A7%92%E8%89%B2%E7%AE%A1%E7%90%86"><span class="toc-text">用户角色管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%9A%AE%E8%82%A4%E7%AE%A1%E7%90%86"><span class="toc-text">用户皮肤管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E7%9A%AE%E8%82%A4%E6%BF%80%E6%B4%BB"><span class="toc-text">选择皮肤激活</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-text">最终效果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">获取服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E9%87%8C%E4%BB%A5%E9%9B%A8%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BA%E4%B8%BB"><span class="toc-text">这里以雨云服务器为主</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">部署方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7"><span class="toc-text">准备工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9D%E5%A1%94%E6%90%AD%E5%BB%BA"><span class="toc-text">宝塔搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E5%87%BD%E6%95%B0"><span class="toc-text">PHP函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BABlessingSkin"><span class="toc-text">搭建BlessingSkin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9D%E5%A1%94%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-text">宝塔常见问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E6%90%AD%E5%BB%BA"><span class="toc-text">编译搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx"><span class="toc-text">Nginx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E4%BE%9D%E8%B5%96"><span class="toc-text">编译依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%84%E7%BC%96%E8%AF%91"><span class="toc-text">预编译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%92%8C%E5%AE%89%E8%A3%85"><span class="toc-text">编译和安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E6%9C%8D%E5%8A%A1"><span class="toc-text">注册服务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP"><span class="toc-text">PHP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDPHP%E6%BA%90%E7%A0%81"><span class="toc-text">下载PHP源码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E4%BE%9D%E8%B5%96-2"><span class="toc-text">编译依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%84%E7%BC%96%E8%AF%91-2"><span class="toc-text">预编译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%92%8C%E5%AE%89%E8%A3%85-2"><span class="toc-text">编译和安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E6%9C%8D%E5%8A%A1-2"><span class="toc-text">注册服务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MariaDB-MySQL"><span class="toc-text">MariaDB/MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%90%AD%E5%BB%BABlessingSkin-2"><span class="toc-text">搭建BlessingSkin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AENginx"><span class="toc-text">配置Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E6%9D%83-%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE"><span class="toc-text">提权&amp;重载配置</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">外置登录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">结尾小言</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/13p/" title="25年4月小结"><img src="https://cn-sy1.rains3.com/koimg/2025/05/20dcae544c1569f625877194db355c98.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="25年4月小结"></a><div class="content"><a class="title" href="/13p/" title="25年4月小结">25年4月小结</a><time datetime="2025-04-29T16:00:00.000Z" title="发表于 2025-04-30 00:00:00">2025-04-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/12p2504261/" title="四月自我笔记"><img src="https://cn-sy1.rains3.com/koimg/2025/05/0145a76e250a2c93d3fec30b7909d087.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="四月自我笔记"></a><div class="content"><a class="title" href="/12p2504261/" title="四月自我笔记">四月自我笔记</a><time datetime="2025-04-25T16:00:00.000Z" title="发表于 2025-04-26 00:00:00">2025-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/10p2504131/" title="关于QiuDunCDN近期状态"><img src="https://cn-sy1.rains3.com/koimg/2025/04/dbe19f91f1c79ce96dd91ea77f83aed9.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于QiuDunCDN近期状态"></a><div class="content"><a class="title" href="/10p2504131/" title="关于QiuDunCDN近期状态">关于QiuDunCDN近期状态</a><time datetime="2025-04-12T16:00:00.000Z" title="发表于 2025-04-13 00:00:00">2025-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/10p2504121/" title="关于HEXO的构建和配置"><img src="https://cn-sy1.rains3.com/koimg/2025/03/f78912d51d2304f9ab28c8635dc3fe95.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于HEXO的构建和配置"></a><div class="content"><a class="title" href="/10p2504121/" title="关于HEXO的构建和配置">关于HEXO的构建和配置</a><time datetime="2025-04-11T16:00:00.000Z" title="发表于 2025-04-12 00:00:00">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/8p2503221/" title="25年3月小结"><img src="https://cn-sy1.rains3.com/koimg/2025/03/f78912d51d2304f9ab28c8635dc3fe95.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="25年3月小结"></a><div class="content"><a class="title" href="/8p2503221/" title="25年3月小结">25年3月小结</a><time datetime="2025-03-21T16:00:00.000Z" title="发表于 2025-03-22 00:00:00">2025-03-22</time></div></div></div></div></div></div></main><footer id="footer" style="background: #00000000"><div id="footer-wrap"><div class="copyright">©2023 - 2025 By klcdm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><span id="runtime"></span> <br> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io/"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/hexo.svg"></a>|<a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/Copyright.svg"></a>|<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/Github.svg">|</a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.qiudcdn.cn/"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/CDN.svg"></a> <br> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.travellings.cn/go-by-clouds.html"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/travellings.gif"></a>| <a target="_blank" rel="noopener external nofollow noreferrer" href="https://icp.gov.moe/?keyword=20242040"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/iconbei.png"></a>|<a target="_blank" rel="noopener external nofollow noreferrer" href="https://blogscn.fun/random.html"><img class="icp-icon" src="https://photo.xiangming.site/img/footer.gif"></a> <br><a href="https://www.foreverblog.cn/" rel="external nofollow noreferrer" target="_blank"> <img src="https://img.foreverblog.cn/logo_en_default.png" alt="" style="width:auto;height:16px;"> <br></a><a href="https://beian.miit.gov.cn" rel="external nofollow noreferrer" target="_blank">陕ICP备2024049234号-4</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js?v=5.0.33"></script><script src="/pluginsSrc/instant.page/instantpage.js?v=5.2.0" type="module"></script><script src="/pluginsSrc/node-snackbar/dist/snackbar.min.js?v=0.1.16"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('/pluginsSrc/pangu/dist/browser/pangu.min.js?v=4.0.7')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  let artalkItem = null
+  const initArtalk = () => {
+    artalkItem = Artalk.init(Object.assign({
+      el: '#artalk-wrap',
+      server: 'https://cn-artalk.koxiuqiu.cc',
+      site: '朽丘秋雨',
+      pageKey: location.pathname,
+      darkMode: document.documentElement.getAttribute('data-theme') === 'dark',
+    },null))
+
+    if (GLOBAL_CONFIG.lightbox === 'null') return
+    artalkItem.on('list-loaded', () => {
+      artalkItem.ctx.get('list').getCommentNodes().forEach(comment => {
+        const $content = comment.getRender().$content
+        btf.loadLightbox($content.querySelectorAll('img:not([atk-emoticon])'))
+      })
+    })
+
+    const destroyArtalk = () => {
+      artalkItem.destroy()
+    }
+
+    btf.addGlobalFn('pjax', destroyArtalk, 'destroyArtalk')
+  }
+
+  const loadArtalk = async () => {
+    if (typeof Artalk === 'object') initArtalk()
+    else {
+      await getCSS('https://artalk.koxiuqiu.cn/dist/Artalk.css')
+      await getScript('https://artalk.koxiuqiu.cn/dist/Artalk.js')
+      initArtalk()
+    }
+  }
+
+  const artalkChangeMode = theme => {
+    const artalkWrap = document.getElementById('artalk-wrap')
+    if (!(artalkWrap && artalkWrap.children.length)) return
+    const isDark = theme === 'dark'
+    artalkItem.setDarkMode(isDark)
+  }
+
+  btf.addGlobalFn('themeChange', artalkChangeMode, 'artalk')
+
+  if ('Artalk' === 'Artalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('artalk-wrap'), loadArtalk)
+    else loadArtalk()
+  } else {
+    window.loadOtherComment = loadArtalk
+  }
+})()</script></div><script type="text/javascript" src="/js/reward.js"></script><script src="/js/sweetalert2.all.min.js"></script><script async="" src="/js/categoryBar.js"></script><script type="text/javascript" src="/js/jquery.min.js"></script><script type="text/javascript" src="/js/rightmenu.js"></script><script src="/js/jquery.min.js"></script><script src="/js/hometop.js"></script><script src="/js/flipcountdown.js"></script><script data-pjax="" src="/js/runtime.js"></script><script src="/js/127.js"></script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();" rel="external nofollow noreferrer"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();" rel="external nofollow noreferrer"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();" rel="external nofollow noreferrer"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-share"></i><span>百度搜索</span></a><a class="rightMenu-item" href="#post-comment" onclick="rmf.yinyong()"><i class="fa-solid fa-message"></i><span>引用文本评论</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>粘贴</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()" rel="external nofollow noreferrer"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()" rel="external nofollow noreferrer"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()" rel="external nofollow noreferrer"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.click()" rel="external nofollow noreferrer"><i class="fa fa-arrows-alt"></i><span>全屏显示</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:toRandomPost()" rel="external nofollow noreferrer"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();" rel="external nofollow noreferrer"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.translate();" rel="external nofollow noreferrer"><i class="fa fa-pen-to-square"></i><span>繁简转换</span></a></div></div><!-- hexo injector body_end start --><script async="" src="/js/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

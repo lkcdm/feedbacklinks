@@ -1,0 +1,152 @@
+/*去掉导航栏项目底下的蓝色长条*/
+#nav *::after {
+    background-color: var(--june-theme) !important;
+}
+
+.menus_item_child li:not(#sidebar-menus li){
+    float: left;
+    border-radius: 6px!important;
+    -webkit-border-radius: 6px!important;
+    -moz-border-radius: 6px!important;
+    -ms-border-radius: 6px!important;
+    -o-border-radius: 6px!important;
+}
+.menus_item_child:not(#sidebar-menus ul){
+    /*
+      left:calc(-150%)!important;这是估算值，为了保持元素居中的，如果不合适可以自己调
+    改为：*/
+    left:50%;
+    translate:-50%;
+}
+
+.menus_item_child:not(#sidebar-menus>.menus_items>.menus_item>.menus_item_child):hover{
+    border: 1px solid var(--june-theme)!important;
+    color: white;
+    /* box-shadow:0 0 3px var(--lyx-theme)!important; */
+}
+
+#nav .menus_items .menus_item .menus_item_child li a:hover {
+    color: white !important;
+}
+
+/*网站标题部分的增强版*/
+#site-name::before {
+    opacity: 0;
+    background-color: var(--june-theme) !important;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    position: absolute;
+    top: 0 !important;
+    right: 0 !important;
+    width: 105%;
+    height: 120%;
+    content: "\f015";
+    box-shadow: 0 0 5px var(--june-theme);
+    font-family: "Font Awesome 6 Free";
+    text-align: center;
+    color: white;
+    line-height: 34px; /*如果有溢出或者垂直不居中的现象微调一下这个参数*/
+    font-size: 18px; /*根据个人喜好*/
+}
+
+#site-name:hover::before {
+    opacity: 1;
+    scale: 1.03;
+}
+
+#site-name {
+    position: relative;
+    font-size: 24px; /*一定要把字体调大点，否则效果惨不忍睹！*/
+}
+
+/*顶栏常驻*/
+.nav-fixed #nav {
+    transform: translateY(58px) !important;
+    -webkit-transform: translateY(58px) !important;
+    -moz-transform: translateY(58px) !important;
+    -ms-transform: translateY(58px) !important;
+    -o-transform: translateY(58px) !important;
+}
+
+#nav {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
+/*显示标题*/
+#page-name::before {
+    font-size: 18px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    color: white !important;
+    top: 0;
+    left: 0;
+    content: '回到顶部';
+    background-color: var(--june-theme);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    opacity: 0;
+    box-shadow: 0 0 3px var(--june-theme);
+    line-height: 45px; /*如果垂直位置不居中可以微调此值，也可以删了*/
+}
+
+#page-name:hover:before {
+    opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+    #page-name, #menus {
+        display: none !important;
+    }
+}
+
+#name-container {
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+#name-container:hover {
+    scale: 1.03
+}
+
+#page-name {
+    position: relative;
+    padding: 10px 30px /*如果文字间隔不合理可以微调修改，第二个是水平方向的padding，第一个是垂直的*/
+}
+
+#nav {
+    padding: 0 20px;
+}
+
+/* 右侧toggleButtons样式 */
+#toggleButtons {
+    display: flex;
+    flex:1 1 auto;
+    justify-content: flex-end;
+    flex-basis: 20px;
+}
+
+#toggleButtons .site-page{
+    margin:3px;
+    padding: 5px 10px;
+    white-space: nowrap;
+}

@@ -1,0 +1,630 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>站长基本教材,从入门到入土,一站传三代 | 朽丘秋雨</title><meta name="author" content="klcdm"><meta name="copyright" content="klcdm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="前言 在一次和王九弦SZ·Ninty博主帮另一位博主何星梦给何同学的各个站点套用CDN加速，从王九弦SZ·Ninty博主口中才知道，何同学居然不会网站相关的基础知识！甚至源IP也不知道是什么，但是就是弄了一个不错的博客以及网站。 然后我就在想，很多萌新入坑的时候很多知识基础都不懂，想要提问别人，时常会被冷脸(丢下一段解析,解析出现这种情况的普遍原因)，毕竟有些知识太基础了，懂的人都懒得去免费帮助别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="站长基本教材,从入门到入土,一站传三代">
+<meta property="og:url" content="https://koxiuqiu.cn/2025/1y23d1/index.html">
+<meta property="og:site_name" content="朽丘秋雨">
+<meta property="og:description" content="前言 在一次和王九弦SZ·Ninty博主帮另一位博主何星梦给何同学的各个站点套用CDN加速，从王九弦SZ·Ninty博主口中才知道，何同学居然不会网站相关的基础知识！甚至源IP也不知道是什么，但是就是弄了一个不错的博客以及网站。 然后我就在想，很多萌新入坑的时候很多知识基础都不懂，想要提问别人，时常会被冷脸(丢下一段解析,解析出现这种情况的普遍原因)，毕竟有些知识太基础了，懂的人都懒得去免费帮助别">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://koimg.cn-sy1.rains3.com/2025/01/23/068082.webp">
+<meta property="article:published_time" content="2025-01-22T17:00:00.000Z">
+<meta property="article:modified_time" content="2025-01-22T17:00:00.000Z">
+<meta property="article:author" content="klcdm">
+<meta property="article:tag" content="网站">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="服务器">
+<meta property="article:tag" content="宝塔">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://koimg.cn-sy1.rains3.com/2025/01/23/068082.webp"><link rel="shortcut icon" href="https://i1.wp.com/koxiuqiu.cn/img/favicon.png"><link rel="canonical" href="https://koxiuqiu.cn/2025/1y23d1/index.html"><link rel="preconnect"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css?v=6.5.1"><link rel="stylesheet" href="/pluginsSrc/node-snackbar/dist/snackbar.min.css?v=0.1.16" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css?v=5.0.33" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"距离编写已经","messageNext":"天,文章的内容可能已经过时,或者是图片失效,及时留言反馈补充"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":500,"languages":{"author":"作者: klcdm","link":"链接: ","source":"来源: 朽丘秋雨","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js?v=4.11.1',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '站长基本教材,从入门到入土,一站传三代',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2025-01-23 01:00:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdmirror.com/gh/willow-god/Sharding-fonts/LXGWWenKai-Regular/result.css"><link rel="stylesheet" href="/css/rightmenu.css"><link rel="stylesheet" href="/css/iconfont.css"><link rel="stylesheet" href="/css/license.css"><link rel="stylesheet" href="/css/fo.css"><link rel="stylesheet" type="text/css" href="/css/heoMainColor.css"><link rel="stylesheet" type="text/css" href="/css/categoryBar.css"><link rel="stylesheet" href="/css/progress_bar.css?1"><link rel="stylesheet" href="/css/flipcountdown.css"><link rel="stylesheet" href="/css/cursors.css"><link rel="stylesheet" href="/css/linav.css"><link rel="stylesheet" href="/css/hometop.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="/css/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/tag_plugins.css" media="defer" onload="this.media='all'"><script src="/js/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="朽丘秋雨" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i1.wp.com/koxiuqiu.cn/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr class="custom-hr"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa-solid fa-folder-open"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/posts/"><i class="fa-fw fas fa-archive"></i><span> 总览</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/categories"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about"><i class="fa-fw fas fa-heart"></i><span> 博主</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fas fa-heart"></i><span> 留言</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fa fa-bullhorn"></i><span> 说说</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-link"></i><span> 友联</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fa fa-comments"></i><span> 鱼塘圈</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/atom.xml"><i class="fa-fw fas fa-rss"></i><span> 订阅</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="朽丘秋雨"><img class="site-icon" src="https://i1.wp.com/koxiuqiu.cn//img/xqlogo.png"><span class="site-name">朽丘秋雨</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa-solid fa-folder-open"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/posts/"><i class="fa-fw fas fa-archive"></i><span> 总览</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/categories"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about"><i class="fa-fw fas fa-heart"></i><span> 博主</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fas fa-heart"></i><span> 留言</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fa fa-bullhorn"></i><span> 说说</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-link"></i><span> 友联</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fa fa-comments"></i><span> 鱼塘圈</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/atom.xml"><i class="fa-fw fas fa-rss"></i><span> 订阅</span></a></li></ul></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">站长基本教材,从入门到入土,一站传三代</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-01-22T17:00:00.000Z" title="发表于 2025-01-23 01:00:00">2025-01-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-22T17:00:00.000Z" title="更新于 2025-01-23 01:00:00">2025-01-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/">建站教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">8.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>25分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="站长基本教材,从入门到入土,一站传三代"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2025/1y23d1/#post-comment"><span id="ArtalkCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div><article class="post-content" id="article-container"><h1>前言</h1>
+<p>在一次和<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9ibG9nLnN0b3JpY2FsLnNwYWNlLw==">王九弦SZ·Ninty</a>博主帮另一位博主<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9ibG9nLmRyZWFtZXJoZS5jbg==">何星梦</a>给何同学的各个站点套用CDN加速，从王九弦SZ·Ninty博主口中才知道，何同学居然不会网站相关的基础知识！甚至源IP也不知道是什么，但是就是弄了一个不错的博客以及网站。</p>
+<p>然后我就在想，很多萌新入坑的时候很多知识基础都不懂，想要提问别人，时常会被冷脸(丢下一段解析,解析出现这种情况的普遍原因)，毕竟有些知识太基础了，懂的人都懒得去免费帮助别人，会让萌新合理使用搜索引擎，不排除某些人，实际上真的有人搜索引擎都用不好，看网上的教程又因为网上的教程普遍都是以自己的视角去解说的，很少是以萌新的角度思考，毕竟有了基础才能理解某些问题，萌新缺的就是基础。</p>
+<p>先说一下上面的冷脸问题，这其实是人的一种很正常常见的心理，<em>排除去一些真的很无语的人群</em>，这种现象叫做”知识陷阱“；在<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93aWtpLm1iYWxpYi5jb20vd2lraS8lRTclOUYlQTUlRTglQUYlODYlRTglQUYlODUlRTUlOTIlOTI=">MBA智库百科</a>中就有详细记录到，一旦我们自己知道某样东西，我们就会发现很难想象不知道它的时候会是什么样子。我们的知识“诅咒”了我们。对于我们自己来说，同别人分享我们的知识变得很困难，因为我们不易重造我们听众的心境。或是其他方面，讲不好听的就是：“狗眼看人低”。先别急着喷我，这只是坏的方面，实际上我们每个人都会不自觉的出现这种情况，我也不例外！也可能是常人所说的整日白嫖别人变成理所当然的现象导致的现在的人不会轻易免费帮助他人，所以就会出现了提问别人，但是别人觉得这个问题太基础了这个人都不愿意去了解一下然后就会被冷脸，但是有时候萌新确实是看不懂网上的解析。</p>
+<p>于是乎，这篇文章就诞生了。</p>
+<blockquote>
+<p>鄙人不才，有问题还请批评指出，我会尽力去完善，本文也会尽量的排版简洁，简单易懂，不用一些没必要的外挂标签，以下都是根据互联网上的解析摘抄，加以解析修改。</p>
+</blockquote>
+<blockquote>
+<p>各大板块依然有很多漏缺的主题，例如基础大版里的基础只是，网络类型是后面补缺上的，还需要什么解析也会后期补上到对应的板块。</p>
+</blockquote>
+<h1>常识</h1>
+<p>首先，我们如果想要建设一个属于自己的网站，就要一步步的去了解每一步的知识点，以及基础解析。下面我会分步解析每一个步骤下，每一个操作的解析，以及解析后这个是什么，有何作用，为什么要弄。</p>
+<h2 id="网络类型">网络类型</h2>
+<p>首先，网络类型分为五种，五种主要的网络类型：局域网（LAN）、城域网（MAN）、广域网（WAN）、个域网（PAN）和无线网络。</p>
+<h3 id="局域网">局域网</h3>
+<h4 id="专业解答：">专业解答：</h4>
+<p>局域网（Local Area Network）是一种覆盖较小地理区域的网络。LAN通常用于连接位于同一建筑物或相对较近位置的设备。</p>
+<h4 id="入土解答：">入土解答：</h4>
+<p>简单来说就是连接范围就是你连接的这个网络，WIFI。只有连接了连接了和你同样的网络环境下才能连通；举个例子：假设，你在家中架设了一台服务器，但是需要另一台主机电脑远程连接这台服务器进行操作，如果服务器连接的网线，网络是另一个网络，而你的电脑是与之不同的网络，则他们无法连接，只有同样的网络环境下才能连接；还有一种情况，主机电脑使用命令控制台创建了一个程序，就需要电脑的另一个程序连接电脑中的这个程序，这时候也是局域网连接，毕竟这就是一台机器，能连接才是正常的毕竟一台机器肯定是一样的网络环境。（个域网）</p>
+<h4 id="特点">特点</h4>
+<ul>
+<li><strong>范围有限：</strong> LAN通常覆盖的范围相对较小，如家庭、办公室、学校等。</li>
+<li><strong>高速连接：</strong> LAN提供高速数据传输，通常以千兆位每秒或更高的速度。</li>
+<li><strong>常见拓扑结构：</strong> LAN可以采用星型、总线型或环形拓扑结构。</li>
+</ul>
+<h4 id="应用领域">应用领域</h4>
+<ul>
+<li><strong>办公室网络：</strong> 用于在办公室内连接计算机、打印机和服务器。</li>
+<li><strong>家庭网络：</strong> 用于在家庭中连接多个设备，如智能手机、平板电脑和智能电视。</li>
+<li><strong>学校网络：</strong> 用于学校的教育和管理目的，支持教学和学生的在线学习。</li>
+</ul>
+<h3 id="城域网">城域网</h3>
+<h4 id="专业解答：-2">专业解答：</h4>
+<p>城域网（Metropolitan Area Network）覆盖比LAN更大的地理区域，通常涵盖整个城市或城市区域。</p>
+<h4 id="入土解答：-2">入土解答：</h4>
+<p>还想怎么解答，专业解答就很明显的说明了，就是比局域网范围更大，这个区域的网络都能连接互通。</p>
+<h4 id="特点-2">特点</h4>
+<ul>
+<li><strong>中等范围：</strong> MAN的覆盖范围比LAN大，但仍然比WAN小。</li>
+<li><strong>跨越城市：</strong> 通常用于连接不同城市区域的组织或机构。</li>
+<li><strong>多种连接技术：</strong> MAN可以使用光纤、无线连接等多种技术。</li>
+</ul>
+<h4 id="应用领域-2">应用领域</h4>
+<ul>
+<li><strong>城市政府：</strong> 用于城市政府部门之间的通信和数据共享。</li>
+<li><strong>医疗保健：</strong> 连接不同医疗机构，实现医疗数据共享和远程医疗服务。</li>
+<li><strong>金融机构：</strong> 用于银行和金融公司之间的快速数据传输。</li>
+</ul>
+<h3 id="广域网">广域网</h3>
+<h4 id="专业解答：-3">专业解答：</h4>
+<p>广域网（Wide Area Network）跨越更大的地理区域，通常连接不同城市、国家甚至大洲的设备。</p>
+<h4 id="特点-3">特点</h4>
+<ul>
+<li><strong>广泛范围：</strong> WAN的范围非常广泛，可以连接遥远的地点。</li>
+<li><strong>多种传输媒介：</strong> WAN可以使用电话线、光纤、卫星和无线通信等多种传输媒介。</li>
+<li><strong>互联网的一部分：</strong> 因特网是全球最大的WAN。</li>
+</ul>
+<h4 id="应用领域-3">应用领域</h4>
+<ul>
+<li><strong>企业网络：</strong> 用于连接跨国公司的各个分支机构，实现数据共享和远程办公。</li>
+<li><strong>云计算</strong>**：** 通过WAN访问云服务，如云存储和云应用程序。</li>
+<li><strong>远程教育：</strong> 用于<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9zb2x1dGlvbi9lZHVjYXRpb24/ZnJvbV9jb2x1bW49MjAwNjUmZnJvbT0yMDA2NQ==">在线教育</a>、远程培训和电子学习。</li>
+</ul>
+<h3 id="个域网">个域网</h3>
+<h4 id="专业解析：">专业解析：</h4>
+<p>个域网（Personal Area Network）是最小范围的网络类型，通常仅涵盖个人设备的连接。</p>
+<h4 id="入土解答：-3">入土解答：</h4>
+<p>常见的就是本地的网，即便没有网也是能连接的，毕竟就是自己连接自己，而这种又分为两种：</p>
+<p>1、127.0.0.1是最常见的“本地IP”</p>
+<p>2、localhost是域名，默认是指向127.0.0.1的</p>
+<p>这三个当中有两个是IP地址的数字形式，一个是127.0.0.1一个是本地网卡动态获取的或者手工指定的IP地址！比如192.168.1.100！就这两个来说，表现出来的形式都不同，数字也不同！</p>
+<h2 id="什么是IP">什么是IP</h2>
+<h3 id="内网IP">内网IP</h3>
+<p>内网IP，又称私有地址，他的主要范围包括以下三种</p>
+<ul>
+<li><strong>A类地址</strong>：10.0.0.0 至 10.255.255.255</li>
+<li><strong>B类地址</strong>：172.16.0.0 至 172.31.255.255</li>
+<li><strong>C类地址</strong>：192.168.0.0 至 192.168.255.255</li>
+</ul>
+<p>其中，可能大家最常见的就是192.xxx.x.x了，当然其实都差不多；它们不会被分配给个人或组织用于在互联网上直接通信，但可以在内部网络中自由使用。</p>
+<h4 id="入土解答：-4">入土解答：</h4>
+<p>通俗的讲，就是这些是你这个网络内部的段子，只有链接了你这个网络环境的情况下才能通信(连接)，在另一个网络设备、网络都是没法互通的。简单来说就是，假设你的这台电脑的IP就是192.168.0.0，那么只有连接了这个和你电脑同样的网络环境下才能连接你的这台电脑，电脑连接自己也是如此，例如常见的127.0.0.1</p>
+<h3 id="公网IP">公网IP</h3>
+<h4 id="专业解答：-4">专业解答：</h4>
+<p>公网IP是互联网上设备或服务器的唯一标识符，用于在互联网上进行通信和数据交换。每个公网IP地址在全球范围内都是唯一的，公网IP通常由互联网服务提供商（ISP）分配给用户，用于访问互联网上的资源和服务器。</p>
+<h4 id="入土解答：-5">入土解答：</h4>
+<p>通俗的讲，公网IP就相当于与互联网互通，不再和内外IP一样，局限于本地的局域网，个域网，而是整个世界上独一无二的“名字”，而IP又分为IPv4以及IPv6</p>
+<h5 id="IPv4">IPv4</h5>
+<p>一张图概括：</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/22/347850.webp" alt="什么是IPv4"></p>
+<p>值得注意的是，一般情况下家庭是没有公网IP的，是需要向运营商打电话申请一个，不过最近申请貌似很少能拿到手的？必须说的一点是，IPv4以及是出于“油尽灯枯”的现象，IPv4实际上是有限的，全世界这么多人上网，假设每个人都有一个公网IP，可能几十亿人都没法分到一个IP。</p>
+<h5 id="IPv6">IPv6</h5>
+<p>IPv6（Internet Protocol Version 6）是互联网工程任务组（IETF）设计的用于替代IPv4的下一代IP协议。IPv6地址长度为128位，是IPv4地址长度的4倍，采用十六进制表示。</p>
+<p>理论上来说，IPv6的数量是无限用不完的，但是，IPv6不算普及，不值钱，一般人纯IPv4的网络环境都不会纯IPv6环境。</p>
+<blockquote>
+<p>查漏补缺，还有什么点子，遗漏的，不懂的，需要的，补充的，都可以留言我去更新，编写文章的时候没法一下子回忆起来这么多东西，该要写什么。</p>
+</blockquote>
+<hr>
+<h1>基础</h1>
+<p>介绍完了网络，接下来就是正题了。</p>
+<h2 id="常识">常识</h2>
+<h3 id="区域问题">区域问题</h3>
+<p>对于海外国内，我们这里不在使用网络上一大把的废话文学了，简单的来讲分为两种情况；</p>
+<h4 id="国内">国内</h4>
+<p>对于国内的机器IP，搭建网站服务是需要进行备案的，如果没有备案则访问网站会被国家拦截，无法正常使用，有的IP也都无法访问自己的服务，即便你不用网站常用的端口（80，443）建站，被查到依然被处置。</p>
+<h4 id="海外">海外</h4>
+<p>海外则是不需要备案，可以直接访问使用，缺点就是延迟不如国内，但是也有低延迟的亚太地区，HK，TW等特别行政区。</p>
+<h3 id="备案">备案</h3>
+<p>我为什么要特别讲一下这个备案的点呢？源于我在学校的老师的问题；在网络营销的课程中，就有一个知识单元讲诉了关于备案，域名的事情（域名后面解析讲）。我的老师在解答备案这个知识的时候，她是如何向我们学生传输知识的呢？</p>
+<p>如以下语句：<code>备案，就是为了防止你这个域名被别人盗用的锕，你不搞这个什么备案，就会被盗用信息的......</code></p>
+<p><strong>备案解析</strong>：备案，不是说保护自己的域名，更简单通俗的讲，其实就是他能让你用国内的机器IP，能使用国内的服务，如果不备案，就会和上面的国内解析版块一样，被拦截无法使用，只能使用海外的</p>
+<h2 id="域名">域名</h2>
+<p>想要搭建一个网站，域名是必不可少的，虽然公网IP搭建网站也可以访问，但是无论是IPv4，还是IPv6，都非常难记忆，这时候就是需要一个域名，用于解析自己的地址，来达成访问域名来连接自己的服务，域名的名字，取决于自己，想要什么都行，当然前提是别人没有注册！</p>
+<h3 id="如何注册域名">如何注册域名</h3>
+<p>注册域名最常见的一共有三种渠道，分别是：</p>
+<ul>
+<li>阿里云域名注册</li>
+<li>腾讯云域名注册</li>
+<li>西部数码域名注册</li>
+</ul>
+<p>这三家是比较常见的域名注册的地方，当然也有其他的不过我只列出常见的。海外也有不少但是我并不咋推荐，除非你是要做一些其他业务的玩意，不想自己的信息。</p>
+<blockquote>
+<p>这里以腾讯云为例子，注册的步骤其实都大差不差</p>
+</blockquote>
+<p>现弄一个腾讯云的账户，WX上面其实也有小程序，然后完善自己的信息，实名认证，注意因为后面修改规则的问题，需要满18周岁才能过审核注册域名了。</p>
+<p>然后前往腾讯云的注册域名面板：<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9idXkuY2xvdWQudGVuY2VudC5jb20vZG9tYWlu">域名注册购买_域名注册选购 - 腾讯云</a>，输入自己想要的域名，例如：<a href="/go.html?u=aHR0cDovL2tveGl1cWl1LmNu" rel="external nofollow noopener noreferrer" target="_blank">koxiuqiu.cn</a></p>
+<p>其中，koxiuqiu是你的域名“名字”，<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cDovL3huLS1iZ3QxN3cybW0xaWouY24=">而末尾的.cn</a>，则是域名的后缀，这决定了域名的价格、是否能备案、是否好记的因素.</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/22/680849.webp" alt="域名注册"></p>
+<blockquote>
+<p>注意的是，其他人注册了的域名就无法再次注册了，域名持有唯一性，额当然你也可以找域名的主人购买。</p>
+</blockquote>
+<p>然后后面会要求你添加一共实名模板什么的。你需求事实填写信息，提交上去，过审核之后就可以直接用于注册域名了，接下来他都一步步带你了，缺什么写什么就行，如果有需求我再更新</p>
+<h3 id="域名功能解析">域名功能解析</h3>
+<p>有了域名，接下来就了解一下域名的一些小知识点，以及操作等。</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/22/492164.webp" alt="image-20250122231404585"></p>
+<table>
+<thead>
+<tr>
+<th>记录类型</th>
+<th>使用目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kb2N1bWVudC9wcm9kdWN0LzMwMi8zNDQ5">A 记录</a></td>
+<td>将域名指向一个 IP 地址。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kb2N1bWVudC9wcm9kdWN0LzMwMi8zNDUw">CNAME 记录</a></td>
+<td>将域名指向另一个域名，再由另一个域名提供 IP 地址。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kb2N1bWVudC9wcm9kdWN0LzMwMi8zNDUx">MX 记录</a></td>
+<td>设置邮箱，让邮箱能收到邮件。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kb2N1bWVudC9wcm9kdWN0LzMwMi8xMjY0OA==">TXT 记录</a></td>
+<td>对域名进行标识和说明，绝大多数的 TXT 记录是用来做 SPF 记录（反垃圾邮件）。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kb2N1bWVudC9wcm9kdWN0LzMwMi8zNDUy">NS 记录</a></td>
+<td>将子域名交给其他 DNS 服务商解析。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kb2N1bWVudC9wcm9kdWN0LzMwMi8zNDUz">AAAA 记录</a></td>
+<td>将域名指向一个 IPv6 地址。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kb2N1bWVudC9wcm9kdWN0LzMwMi8xMjY0Nw==">SRV 记录</a></td>
+<td>用来标识某台服务器使用了某个服务，常见于微软系统的目录管理。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kb2N1bWVudC9wcm9kdWN0LzMwMi81NDQ1NA==">CAA 记录</a></td>
+<td>授权指定 CA 机构为域名签发 SSL 证书，以防止 SSL 证书错误签发。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kb2N1bWVudC9wcm9kdWN0LzMwMi8xMDE4NzQ=">SVCB 记录</a></td>
+<td>用来说明服务的 IP 地址，ECH 公钥以及其他建立连接所需的信息，通过一次 DNS 查询来加速通信连接过程。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kb2N1bWVudC9wcm9kdWN0LzMwMi8xMDE4NzU=">HTTPS 记录</a></td>
+<td>HTTPS 记录是一类特殊的 SVCB 记录，说明 HTTPS 建联所需的信息。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kb2N1bWVudC9wcm9kdWN0LzMwMi8xMjY0OQ==">隐、显性 URL 记录</a></td>
+<td>将一个域名指向另外一个已经存在的站点。</td>
+</tr>
+</tbody>
+</table>
+<p>这类统称DNS解析，腾讯云提供的这个面板就是DNS解析服务，同时也可以腾讯注册的域名，去其他厂商的DNS解析服务用，只需要去更换DNS服务器地址即可，在另一家那边添加好域名之后，将现在的域名DNS服务器地址换成另一个厂商给你的DNS地址即可转移</p>
+<p>TTL，即是DNS刷新时间，这玩意越小DNS刷新就快，大就小。</p>
+<h3 id="常见解析">常见解析</h3>
+<p>假设我的服务器IP是127.0.0.1，则是需要A记录到这个IP地址中，这样访问这个域名“<a href="/go.html?u=aHR0cDovL2tveGl1cWl1LmNu" rel="external nofollow noopener noreferrer" target="_blank">koxiuqiu.cn</a>”就会访问到这个IP应该有的页面</p>
+<p>A记录解析的话，会暴露自己的服务器IP，遭受攻击，这时候套CDN的话，CDN一般会给你一个CNAME的解析值，这时候我们只需要类型选择CNAME，记录值填写他给的CNAME记录值即可！</p>
+<h3 id="关于主机名">关于主机名</h3>
+<p>主机名其实很简单，几个例子就可以很好的概况了；</p>
+<p>假设，我的域名：<code>koxiuqiu.cn</code>，我想要直接访问<code>koxiuqiu.cn</code>直接访问到我的服务，则是需要讲主机名填写**@**，或空着(某些注册商)，这时候就可以直接访问<code>koxiuqiu.cn</code>了</p>
+<p>再假设，我需要让我的域名变成<code>blog.koxiuqiu.cn</code>，则是需要将主机名填写成<strong>blog</strong>，这样域名访问就变成了<code>blog.koxiuqiu.cn</code>了，很简单，其实主机名就是相当于域名的前缀，也就是所谓的“二级域名”，当然你也可以“三级域名”的闲着没事干操作，就是主机名<strong><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cDovL2Jsb2cuYm0=">blog.bm</a></strong>，就变成了<code>blog.bm.koxiuqiu.cn</code>（闲的蛋疼）</p>
+<blockquote>
+<p>查漏补缺，还有什么点子，遗漏的，不懂的，需要的，补充的，都可以留言我去更新，编写文章的时候没法一下子回忆起来这么多东西，该要写什么。</p>
+</blockquote>
+<hr>
+<h1>服务器</h1>
+<p>接下来就是了解服务器的一些方面了，由于服务器这部分的知识点十分庞大，很难一次想起来要写什么内容，所以有需要的还请留言给我我去补充什么的，就写主要的建站方面的一些知识了。</p>
+<h2 id="建站基础">建站基础</h2>
+<p>首先，建设网站有很多种方式，但是基本上可以分为两种，一种是纯SSH等命令、手动配置安装等操作，比较考验自己的操作知识储备；一种是基于面板建站，面板建站都比较简单完善，一目了然，常见的面板就是<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cuYnQuY24vbmV3L2luZGV4Lmh0bWw=">宝塔面板 - 简单好用的Linux/Windows服务器运维管理面板</a>以及<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly8xcGFuZWwuY24v">1Panel - 现代化、开源的 Linux 服务器运维管理面板 - 官网</a>。</p>
+<p>这边就以后者来围绕编写，毕竟前者我自己都不怎么会嘞，这边面板，我个人喜欢的是宝塔面板，毕竟资历最深功能最齐全，操作方便多样。</p>
+<h3 id="了解SSH">了解SSH</h3>
+<p>首先，我们获取了服务器之后，就需要连接自己所购买的服务器（当然，家里云、自托服务器也是同样的方法，只不过IP什么的不一样罢了），通常来说服务器都会有一个IP，用户名（一般为root），以及密码，也有服务器不是密码是密匙文件等。</p>
+<p>那么，这是一台已经选购好的服务器：</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/22/696710.webp" alt="服务器操作"></p>
+<p>然后我们去获取SSH连接软件，这边常用推荐的是；<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cuaG9zdGJ1Zi5jb20v">FinalShell官网</a>以及<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cueHRlcm1pbmFsLmNuLw==">Xterminal - 更好用的开发工具，但不止于(SSH/控制台/More)</a>。</p>
+<p>后者相对于萌新而言，比较简洁易懂，UI也很优美（现在有广告和VIP什么的了），而我更喜欢前者，所以这边使用FinalShell软件进行服务器连接。</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/22/219738.webp" alt="SSH添加服务器"></p>
+<p>选择连接方式就行，这是Linux系统，所以就选择第一个SSH连接。</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/22/878142.webp" alt="填写SSH信息"></p>
+<p>填写好上面服务器的信息面板给出的IP、用户名、密码点击确认连接，端口的话Linux类型的系统一般是22默认端口，而Windows是3389，确认保存之后它就会出现在服务器列表之中，双击连接即可。</p>
+<blockquote>
+<p>会弹出一个弹出是否接受密匙之类的，以后都接受保存就行</p>
+</blockquote>
+<h3 id="安装宝塔">安装宝塔</h3>
+<p>前往宝塔面板官网，然后点立即安装往下翻找到Linux面板安装脚本，宝塔最近推出了通用脚本直接用这个脚本一键安装宝塔即可。（当然可以选择对应的系统的脚本，你没法用通用的话）</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/22/723550.webp" alt="安装宝塔脚本"></p>
+<p>复制粘贴脚本，回车执行脚本（这里说一点，这里SSH软件不止是下面的CTRL+V，还可以直接对着SSH命令控制里面按下CTRL+SHIFT+V也同样可以粘贴），然后弹出提示输入Y表示确认安装宝塔面板（必须纯洁系统避免出现意外问题）。</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/117809.webp" alt="安装宝塔"></p>
+<p>等待安装完成，到后面会给出最后的面板信息供你登录，复制外网地址然后访问，然后输入对应的用户名和密码就可以登录了，这些信息也是可以修改的</p>
+<p><strong>以下分别为上用户名下密码；</strong></p>
+<p><code>username: dgqlbo83</code><br>
+<code>password: 2883165e</code></p>
+<blockquote>
+<p>宝塔面板是输入bt 然后根据提示输入相对的数字进行操作</p>
+</blockquote>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/191072.webp" alt="宝塔默认信息"></p>
+<p>然后访问之后会提示不安全，这时候如果有高级按钮就点一下然后继续访问即可，其他的游览器也是类似的操作。</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/570638.webp" alt="不安全页面"></p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/970111.webp" alt="宝塔登录面板"></p>
+<p>然后需要绑定一下宝塔的账号，如果没有宝塔的账号就根据它给的按钮跳转去注册账号再回来绑定即可</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/498573.webp" alt="绑定宝塔账户"></p>
+<p>彻底进入宝塔之后，就会显示一个一键安装环境的面板，这里需要分开说明了。</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/526802.webp" alt="安装环境"></p>
+<h4 id="Nginx">Nginx</h4>
+<p>这里的话根据你的需求来，如果你的网站源码程序有指定就安装指定的，这个相当于驱动你这个网站运作的。</p>
+<h4 id="Apache">Apache</h4>
+<p>这个和Nginx一样的用处，这两个只能装一个。</p>
+<h4 id="MySQL">MySQL</h4>
+<p>这是常见的数据库，低内存就请选择5.6的版本，如果配置还行的服务器可以选择5.7甚至更高的版本，高版本性能肯定是不错的，不过也要看你的网站程序的要求，这玩意也是有要求的，只能升级没有数据降级这样的</p>
+<h4 id="FTP">FTP</h4>
+<p>你可以理解，用于传输文件的玩意</p>
+<h4 id="PHP">PHP</h4>
+<p>《世界上最好的语言》这玩意是驱动你网站的基本，当然如果你知识静态网页就没事，不用也没关系，但是如果是程序，PHP什么的就是需要了，也是根据你的需求来安装所需要的版本</p>
+<blockquote>
+<p>什么是静态网页，静态网页指的是没有任何动态请求的，也就是普通的html单页，配合一些CSS，JS文件的静态页面，那么什么是动态请求，什么是html，什么是CSS和JS呢，后面再讲</p>
+</blockquote>
+<p>然后静待安装即可，这期间也不要闲着，这里就来讲一下宝塔的一些操作！</p>
+<h3 id="了解宝塔">了解宝塔</h3>
+<h4 id="网站">网站</h4>
+<p>用于管理网站的设置、绑定域名、目录等操作，创建网站并加以配置。</p>
+<h4 id="数据库">数据库</h4>
+<p>用于给需要数据库的网站程序来提供数据储存，例如某些账号登录的网站，账号信息什么的都是储存再数据库中，而数据库又分为很多种，至于用什么就是得看程序了。</p>
+<h4 id="Docker">Docker</h4>
+<p>大名鼎鼎的“容器”，也是很多程序的“方便部署神器”，因为Docker支持众多的程序一键安装，只需要用支持Docker的程序给的脚本代码，一键输入回车一键就安装了，配置极其容器。（缺点就是不适合低配服务器，貌似很容易高占用等）。</p>
+<h4 id="监控">监控</h4>
+<p>用来监视服务器的一段时间的状态，没什么好说明的。</p>
+<h4 id="安全">安全</h4>
+<p>这里还挺重要的，这里可以配置你的SSH以后连接的端口，这边推荐把默认的22端口换成其他端口，安全；同时这里可以配置防火墙，端口放行等安全操作。</p>
+<h4 id="WAF">WAF</h4>
+<p>付费玩意，企业授权才能用，无视即可。</p>
+<h4 id="文件">文件</h4>
+<p>用于操作目录文件的，不过宝塔有时候会卡BUG，出现很多个重复文件，刷新一下就行了。</p>
+<h4 id="日志">日志</h4>
+<p>用于记录服务器的操作日志记录，例如什么IP登录了服务器，服务器做了什么，你操作服务器执行了什么任务。</p>
+<h4 id="多用户">多用户</h4>
+<p>无视，付费。</p>
+<h4 id="终端">终端</h4>
+<p>其实就是SSH，这里推荐用上面的SSH软件就行，一般用不到。</p>
+<h4 id="计划任务">计划任务</h4>
+<p>这里还挺重要的，用于配置网站备份，数据库备份等计划任务，有的网站程序也是需要挂任务来维持正常运行，</p>
+<h4 id="软件商店">软件商店</h4>
+<p>用于下载一些软件用的，我们用到的服务器环境，以及各种安全插件，第三方插件，以及宝塔的一键部署功能，让我们全自动部署一个网站。</p>
+<h4 id="面板设置">面板设置</h4>
+<p>这里设置的都是面板的一些配置，例如默认创建站点目录，安全登录，宝塔密码，入口等宝塔面板的设置，记得操作错误不可访问之后可通过SSH恢复/修复面板。</p>
+<hr>
+<h3 id="建站开始">建站开始</h3>
+<p>了解完宝塔的基本构造之后，接下来就可以开始建站了</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/823346.webp" alt="环境安装完成"></p>
+<p>这边随便找了一个程序进行部署了，选择宝塔里的一键安装WordPress博客系统；填写好自己的域名直接确认，一键部署。</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/764510.webp" alt="一键部署"></p>
+<p>然后添加解析，即可访问，IP的话就是A记录，域名是<code>blog.restartsurvive.top</code>，那么主机名就是<code>blog</code>。</p>
+<blockquote>
+<p>这边注意一下，只要你A记录过了你这个IP就是泄露了，如果害怕攻击的可以跳到后面的套CDN的教程，然后再回来添加解析再访问安装程序网站。</p>
+</blockquote>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/980805.webp" alt="添加解析"></p>
+<p>访问之后，就会进入到程序安装步骤，这里会让你填写数据库的信息。</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/796162.webp" alt="填写数据库信息"></p>
+<p>回到数据库列表，填写对应的数据库信息就行，注意填写正确，下面的数据库主机和表前缀就不要动了，这些都是程序需要的，而数据库主机就是数据库的连接IP/域名，这里是指向127.0.0.1，毕竟数据库就在本地你还想指向哪里？</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/235945.webp" alt="数据库信息"></p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/808904.webp" alt="填写数据库"></p>
+<p>然后填写你要的管理员信息就行，这样一个博客网站程序就完成了！恭喜你有了一个自己的网站。</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/806499.webp" alt="完善网站管理员信息"></p>
+<blockquote>
+<p>查漏补缺，还有什么点子，遗漏的，不懂的，需要的，补充的，都可以留言我去更新，编写文章的时候没法一下子回忆起来这么多东西，该要写什么。</p>
+</blockquote>
+<hr>
+<p><strong>接下来讲除了建站的其他知识点内容，以及实现方式方法。</strong></p>
+<h2 id="SSL证书">SSL证书</h2>
+<p>更简单的说法就是，它能让你的网站连接更加安全，变化就是你的URL(网址)前面的<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cDovL3huLS1odHRwcy1ydDJoaTd6OXQzYQ==">http://会变成https</a>://，并且游览器访问也会显示安全不在显示不安全网站.</p>
+<p>那么，如何去获取SSL证书呢？这里举三种例子；</p>
+<h3 id="第一种">第一种</h3>
+<p>通过第三方签署平台签署，这里可用的平台是：<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9vaHR0cHMuY29t">OHTTPS-免费HTTPS证书(SSL证书)、自动化更新、部署、监控</a>，驻车之后进入面板点击证书，创建证书开始签署；</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/913248.webp" alt="创建证书"></p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/807168.webp" alt="创建证书"></p>
+<p>选择免费证书，下面就有三种类型的证书，下面一一解答各类证书：</p>
+<h4 id="泛域名证书">泛域名证书</h4>
+<p>这一类证书，签下的域名一般都是<code>*.域名.后缀</code>，这一类的证书好处就是，兼容全部前缀的域名，例如我需要创建网站：<code>blog.koxiuqiu.cn</code>，也可用用此证书签下的 <code>*.koxiuqiu.cn</code>，<code>www.koxiuqiu.cn</code> 也都全部支持， *这个符号简单来说就是不限任何字符的意思吧！</p>
+<h4 id="单域名证书">单域名证书</h4>
+<p>顾名思义，就是只能签署下一个域名的证书，比如我签下了blog.koxiuqiu.cn的证书，那就只能绑定blog.koxiuqiu.cn这个域名网站。</p>
+<h4 id="多域名证书">多域名证书</h4>
+<p>顾名思义，一个证书含用多个域名的证书，假设就是我需要koxiuqiu.cn的SSL证书，但是又不想去搞另一个域名重新弄一个SSL证书，这时候这里就可用一个证书可用多个域名。</p>
+<h4 id="添加解析签署">添加解析签署</h4>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/953456.webp" alt="添加解析"></p>
+<p>然后回到DNS解析控制台添加CNAME解析就行，然后严重记录值，通过了之后创建证书就行</p>
+<blockquote>
+<p>（DNS解析生效没那么快，验证不通过的话等一下再验证）</p>
+</blockquote>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/563100.webp" alt="添加解析"></p>
+<p>然后等待几分钟就行，很快就签署下来，签署下来之后就是这样的页面；主要的就是第一个和第二个，私匙和证书，轮番复制到对应的框就行；</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/471924.webp" alt="证书信息"></p>
+<p>找到宝塔，点网站的设置，选择SSL，安装对应的配置保存即可！</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/928555.webp" alt="使用证书"></p>
+<h3 id="第二种">第二种</h3>
+<p>这里是直接用宝塔的申请即可，文件解析就是会在对应的目录生成这个东西，然后验证，前提是你得先解析，确保网站是可访问的，然后它会验证访问这个目录中的文件，过了其中的一串东西验证就行，另外一种DNS和上面的第一种鬼斧神工差不多。</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/859650.webp" alt="签署证书"></p>
+<h3 id="第三种">第三种</h3>
+<p>第三种的话就是通过CDN的系统来一键申请了，好处就是可自动续订更新，坏处就是站点多的话要签下很多证书，这里的前提也是需要先解析，不过不需要保证网站是否能访问，只需要解析了CDN给你的CNAME解析值就能成功签署。</p>
+<blockquote>
+<p>图中的API可不选择，这只是自动添加解析而已，自己解析也是一样的效果，等待证书签下来就行了，直接可用</p>
+</blockquote>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/441118.webp" alt="添加站点"></p>
+<blockquote>
+<p>查漏补缺，还有什么点子，遗漏的，不懂的，需要的，补充的，都可以留言我去更新，编写文章的时候没法一下子回忆起来这么多东西，该要写什么。</p>
+</blockquote>
+<hr>
+<h2 id="防护加速网站">防护加速网站</h2>
+<p>说到加速防护，避免不了的就是使用CDN（内容分发网络），分为加速和加速防御，这里就有人说了：</p>
+<p>主播主播，为什么不直接用众所周知的雷池和宝塔WAF程序来防护呀？</p>
+<p>回复：这防入侵，脚本注入什么的安全方面是可用，但是用于防CC攻击，DDoS攻击还是太脆了，相信这里就有很多人怼我了，我选择无视。</p>
+<p>放个小图，这是很多人的误点，先看看网上有没有关于攻击这些的知识吧；</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/172676.webp" alt="错误发言"></p>
+<p>这里以云驰互联里的CDN做个小演示；</p>
+<h3 id="购入套餐">购入套餐</h3>
+<p>选一个自己够用的就行，这里说明一下主域名数量的问题，这里说的主域名数量是只，只能绑定一个域名，但是这个域名的子域名无限，<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cDovL3huLS1rb3hpdXFpdS1nMDBtNzAyZ3FkZmd5MGR0dXpjZ3B5Yi5jbg==">比如说绑定了koxiuqiu.cn</a>，那就是无论前面是什么，只要.koxiuqiu.cn这个域名，就是无限绑定。</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/579943.webp" alt="选择"></p>
+<h3 id="创建站点">创建站点</h3>
+<p>填写自己需要绑定的域名，以及自己的源IP</p>
+<blockquote>
+<p>源IP就是你的服务器IP，如果你不是服务器，是托管到某处地方的，那就拿你拿托管那边要求解析的东西，反正能正常回源的域名/IP填写进去就行，例如常见的<code>cname.vercel-dns.com</code>，广为人知的vercel托管静态站点的平台。</p>
+</blockquote>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/199009.webp" alt="添加"></p>
+<p>配置差不多和图中这样就行，证书前面弄好了添加了就行，然后选择需要的证书就行，如果需要开HTTP/3可工单\联系管理员就行，这面板不太全面的希望更新吧。</p>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/002578.webp" alt="设置"></p>
+<h4 id="详细解析：">详细解析：</h4>
+<p>HSTS：让你的全部HTTP请求都转去HTTPS；</p>
+<p>HTTP2：概括就是让你加载变快；</p>
+<p>强制HTTPS：顾名思义，强制HTTPS，访问HTTP或者其他端口就自动跳转443，也可其他端口；</p>
+<p>OCSP stapling：当客户端访问OCSP服务器延时较高时，打开链接的速度相对较慢又会让访客流失。这玩意在很大程度上解决网站设置HTTPS后访问速度变慢的问题；</p>
+<p>SSL配置：直接兼容大部分就行，如果其他需求你也可自定义。</p>
+<h3 id="CC策略">CC策略</h3>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/448803.webp" alt="设置"></p>
+<p>如图，根据自己需求来配置就行，如果自己的站点是图床，API等这种需要外站调用数据的默认的就不要开这些五秒盾直接开始验证了，这第一次就要求验证，这些请求都会被拦截的，默认宽松就行。，然后设置自定义防护等级，50QPS差不多就行然后再开启防护策略就行；</p>
+<p>当然也可用找管理员或者工单让人家帮你定制弄也是可以的，但是肯定是要说明清楚要求的。</p>
+<blockquote>
+<p>查漏补缺，还有什么点子，遗漏的，不懂的，需要的，补充的，都可以留言我去更新，编写文章的时候没法一下子回忆起来这么多东西，该要写什么。</p>
+</blockquote>
+<hr>
+<h1>持续更新ing</h1>
+<blockquote>
+<p>后续文章会持续更新，并且置顶再推荐页面上，移动端则是直接可以看到置顶的文章</p>
+</blockquote>
+<blockquote>
+<p>如果有什么漏缺的可以提出，当然博主在日常生活中和其他IT站长闲聊发现了一些萌新的问题，或者是想要说明的关于网站的知识也会过来更新文章。</p>
+</blockquote>
+<blockquote>
+<p>关于HTML，JS，CSS等这些东西想要详细讲起来篇幅十分巨大，没法在这一次性写完，后面或许出一个专栏再写吧，取决于博主是否能有这么的勤奋！</p>
+</blockquote>
+<p><img src="https://koimg.cn-sy1.rains3.com/2025/01/23/295820.webp" alt="推荐指示"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://koxiuqiu.cn">klcdm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://koxiuqiu.cn/2025/1y23d1/">https://koxiuqiu.cn/2025/1y23d1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://koxiuqiu.cn" target="_blank">朽丘秋雨</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%AB%99/">网站</a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a><a class="post-meta__tags" href="/tags/%E5%AE%9D%E5%A1%94/">宝塔</a></div><div class="post_share"><div class="social-share" data-image="https://koimg.cn-sy1.rains3.com/2025/01/23/068082.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css?v=1.1.3" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js?v=1.1.3" defer=""></script></div></div><div class="business-center"><div class="business-card"><div class="business-flip"><div class="business-front"><div class="business-strip-bottom"></div><div class="business-strip-top"></div><img class="business-logo" width="80" height="80" src="https://koimg.cn-sy1.rains3.com/2024/08/18/qq.png" alt="cardcode"><div class="business-Invitation">Invitation</div><div class="business-chip"><div class="business-chip-line"></div><div class="business-chip-line"></div><div class="business-chip-line"></div><div class="business-chip-line"></div><div class="business-chip-main"></div></div><svg class="business-wave" viewBox="0 3.71 26.959 38.787" width="26.959" height="38.787" fill="white"><path d="M19.709 3.719c.266.043.5.187.656.406 4.125 5.207 6.594 11.781 6.594 18.938 0 7.156-2.469 13.73-6.594 18.937-.195.336-.57.531-.957.492a.9946.9946 0 0 1-.851-.66c-.129-.367-.035-.777.246-1.051 3.855-4.867 6.156-11.023 6.156-17.718 0-6.696-2.301-12.852-6.156-17.719-.262-.317-.301-.762-.102-1.121.204-.36.602-.559 1.008-.504z"></path><path d="M13.74 7.563c.231.039.442.164.594.343 3.508 4.059 5.625 9.371 5.625 15.157 0 5.785-2.113 11.097-5.625 15.156-.363.422-1 .472-1.422.109-.422-.363-.472-1-.109-1.422 3.211-3.711 5.156-8.551 5.156-13.843 0-5.293-1.949-10.133-5.156-13.844-.27-.309-.324-.75-.141-1.114.188-.367.578-.582.985-.542h.093z"></path><path d="M7.584 11.438c.227.031.438.144.594.312 2.953 2.863 4.781 6.875 4.781 11.313 0 4.433-1.828 8.449-4.781 11.312-.398.387-1.035.383-1.422-.016-.387-.398-.383-1.035.016-1.421 2.582-2.504 4.187-5.993 4.187-9.875 0-3.883-1.605-7.372-4.187-9.875-.321-.282-.426-.739-.266-1.133.164-.395.559-.641.984-.617h.094zM1.178 15.531c.121.02.238.063.344.125 2.633 1.414 4.437 4.215 4.437 7.407 0 3.195-1.797 5.996-4.437 7.406-.492.258-1.102.07-1.36-.422-.257-.492-.07-1.102.422-1.359 2.012-1.075 3.375-3.176 3.375-5.625 0-2.446-1.371-4.551-3.375-5.625-.441-.204-.676-.692-.551-1.165.122-.468.567-.785 1.051-.742h.094z"></path></svg><div class="business-card-number"><div class="business-section">klcdm</div><div class="business-section">215422478</div></div><div class="business-end"><span class="business-end-text">created:</span><span class="business-end-date">2024/04/09</span></div><div class="business-card-holder">Welcome to my blog</div><div class="business-master"><div class="business-circle business-master-red"></div><div class="business-circle business-master-yellow">   </div></div></div><div class="business-back"><div class="business-strip-black"></div><div class="business-ccv"><label>sitelink</label><div><a target="_blank" rel="noopener external nofollow noreferrer" href="https://qm.qq.com/q/Pm5GT41XSE">加入交流群</a></div></div><div class="business-terms"><p>and，QQ scan to the upper right, join our communication group.</p><p>或QQ扫取右上方,加入我们的交流群.</p></div></div></div></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="支付宝"></a><div class="post-qr-code-desc">支付宝</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="微信"></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/01y15d1/" title="社会变迁与个人成长：一种代际观察"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2025/01/15/225289.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">社会变迁与个人成长：一种代际观察</div></div></a></div><div class="next-post pull-right"><a href="/2025/1y23d2/" title="漂泊异乡终归巢：游子踏上归途，重逢温馨家园"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2025/01/23/196027.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">漂泊异乡终归巢：游子踏上归途，重逢温馨家园</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/01/15/2/" title="论如何快速了解建站"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/725291.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-15</div><div class="title">论如何快速了解建站</div></div></a></div><div><a href="/2024/03/09/6/" title="搭建皮肤站并实现外置登录"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/459238.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-09</div><div class="title">搭建皮肤站并实现外置登录</div></div></a></div><div><a href="/2024/05/12/1715500241877/" title="使用CDN后如何保护源站不泄露"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/171969.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-12</div><div class="title">使用CDN后如何保护源站不泄露</div></div></a></div></div></div><hr class="custom-hr"><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="artalk-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i1.wp.com/koxiuqiu.cn/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">klcdm</div><div class="author-info__description">享受生活，记录日志</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://chat.dusays.com/signup_user_complete/?id=j5dz4dtc8irgtdniajj64dss1a&amp;md=link&amp;sbr=su"><i class="fa-solid fa-terminal"></i><span>点击联系我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lkcdm" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #003153;"></i></a><a class="social-icon" href="mailto:gemiidozenz@hotmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #003153;"></i></a><a class="social-icon" href="https://blog.koxiuqiu.cc/atom.xml" rel="external nofollow noreferrer" target="_blank" title="'#4a7dbe'"><i class="fas fa-rss"></i></a><a class="social-icon" href="/sitemap.xml" target="_blank" title="'#4a7dbe'"><i class="fa fa-sitemap"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这里是KLCDM的博客,欢迎向我留言!你要问我为什么背景一直是万穗爷,因为这是我的第一款GalGame啊!很有纪念价值~<p>页面异常执行 <kbd>Ctrl+F5</kbd></p><p>昼夜模式切换下翻找到<kbd>右下方齿轮</kbd>或<kbd>右键</kbd>[推广信息请自己酌情选择]</p><p>域名<kbd>koxiuqiu.cn</kbd>不开放交互评论区留言,请转至<kbd>koxiuqiu.cc</kbd>.</p></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">常识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%B1%BB%E5%9E%8B"><span class="toc-text">网络类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="toc-text">局域网</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%93%E4%B8%9A%E8%A7%A3%E7%AD%94%EF%BC%9A"><span class="toc-text">专业解答：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A5%E5%9C%9F%E8%A7%A3%E7%AD%94%EF%BC%9A"><span class="toc-text">入土解答：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="toc-text">应用领域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%8E%E5%9F%9F%E7%BD%91"><span class="toc-text">城域网</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%93%E4%B8%9A%E8%A7%A3%E7%AD%94%EF%BC%9A-2"><span class="toc-text">专业解答：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A5%E5%9C%9F%E8%A7%A3%E7%AD%94%EF%BC%9A-2"><span class="toc-text">入土解答：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9-2"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F-2"><span class="toc-text">应用领域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E5%9F%9F%E7%BD%91"><span class="toc-text">广域网</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%93%E4%B8%9A%E8%A7%A3%E7%AD%94%EF%BC%9A-3"><span class="toc-text">专业解答：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9-3"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F-3"><span class="toc-text">应用领域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AA%E5%9F%9F%E7%BD%91"><span class="toc-text">个域网</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%93%E4%B8%9A%E8%A7%A3%E6%9E%90%EF%BC%9A"><span class="toc-text">专业解析：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A5%E5%9C%9F%E8%A7%A3%E7%AD%94%EF%BC%9A-3"><span class="toc-text">入土解答：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFIP"><span class="toc-text">什么是IP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%91IP"><span class="toc-text">内网IP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A5%E5%9C%9F%E8%A7%A3%E7%AD%94%EF%BC%9A-4"><span class="toc-text">入土解答：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E7%BD%91IP"><span class="toc-text">公网IP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%93%E4%B8%9A%E8%A7%A3%E7%AD%94%EF%BC%9A-4"><span class="toc-text">专业解答：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A5%E5%9C%9F%E8%A7%A3%E7%AD%94%EF%BC%9A-5"><span class="toc-text">入土解答：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#IPv4"><span class="toc-text">IPv4</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#IPv6"><span class="toc-text">IPv6</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%AF%86"><span class="toc-text">常识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="toc-text">区域问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BD%E5%86%85"><span class="toc-text">国内</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%B7%E5%A4%96"><span class="toc-text">海外</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%87%E6%A1%88"><span class="toc-text">备案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D"><span class="toc-text">域名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%B3%A8%E5%86%8C%E5%9F%9F%E5%90%8D"><span class="toc-text">如何注册域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D%E5%8A%9F%E8%83%BD%E8%A7%A3%E6%9E%90"><span class="toc-text">域名功能解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E8%A7%A3%E6%9E%90"><span class="toc-text">常见解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-text">关于主机名</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E7%AB%99%E5%9F%BA%E7%A1%80"><span class="toc-text">建站基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%86%E8%A7%A3SSH"><span class="toc-text">了解SSH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94"><span class="toc-text">安装宝塔</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Nginx"><span class="toc-text">Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Apache"><span class="toc-text">Apache</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL"><span class="toc-text">MySQL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FTP"><span class="toc-text">FTP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP"><span class="toc-text">PHP</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%86%E8%A7%A3%E5%AE%9D%E5%A1%94"><span class="toc-text">了解宝塔</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%AB%99"><span class="toc-text">网站</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker"><span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%91%E6%8E%A7"><span class="toc-text">监控</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8"><span class="toc-text">安全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WAF"><span class="toc-text">WAF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6"><span class="toc-text">文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E5%BF%97"><span class="toc-text">日志</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%94%A8%E6%88%B7"><span class="toc-text">多用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF"><span class="toc-text">终端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1"><span class="toc-text">计划任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%95%86%E5%BA%97"><span class="toc-text">软件商店</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E6%9D%BF%E8%AE%BE%E7%BD%AE"><span class="toc-text">面板设置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E7%AB%99%E5%BC%80%E5%A7%8B"><span class="toc-text">建站开始</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSL%E8%AF%81%E4%B9%A6"><span class="toc-text">SSL证书</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D"><span class="toc-text">第一种</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%9B%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6"><span class="toc-text">泛域名证书</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6"><span class="toc-text">单域名证书</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6"><span class="toc-text">多域名证书</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%A7%A3%E6%9E%90%E7%AD%BE%E7%BD%B2"><span class="toc-text">添加解析签署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D"><span class="toc-text">第二种</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%A7%8D"><span class="toc-text">第三种</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E6%8A%A4%E5%8A%A0%E9%80%9F%E7%BD%91%E7%AB%99"><span class="toc-text">防护加速网站</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%AD%E5%85%A5%E5%A5%97%E9%A4%90"><span class="toc-text">购入套餐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AB%99%E7%82%B9"><span class="toc-text">创建站点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90%EF%BC%9A"><span class="toc-text">详细解析：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CC%E7%AD%96%E7%95%A5"><span class="toc-text">CC策略</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">持续更新ing</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/13p/" title="25年4月小结"><img src="https://cn-sy1.rains3.com/koimg/2025/05/20dcae544c1569f625877194db355c98.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="25年4月小结"></a><div class="content"><a class="title" href="/13p/" title="25年4月小结">25年4月小结</a><time datetime="2025-04-29T16:00:00.000Z" title="发表于 2025-04-30 00:00:00">2025-04-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/12p2504261/" title="四月自我笔记"><img src="https://cn-sy1.rains3.com/koimg/2025/05/0145a76e250a2c93d3fec30b7909d087.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="四月自我笔记"></a><div class="content"><a class="title" href="/12p2504261/" title="四月自我笔记">四月自我笔记</a><time datetime="2025-04-25T16:00:00.000Z" title="发表于 2025-04-26 00:00:00">2025-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/10p2504131/" title="关于QiuDunCDN近期状态"><img src="https://cn-sy1.rains3.com/koimg/2025/04/dbe19f91f1c79ce96dd91ea77f83aed9.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于QiuDunCDN近期状态"></a><div class="content"><a class="title" href="/10p2504131/" title="关于QiuDunCDN近期状态">关于QiuDunCDN近期状态</a><time datetime="2025-04-12T16:00:00.000Z" title="发表于 2025-04-13 00:00:00">2025-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/10p2504121/" title="关于HEXO的构建和配置"><img src="https://cn-sy1.rains3.com/koimg/2025/03/f78912d51d2304f9ab28c8635dc3fe95.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于HEXO的构建和配置"></a><div class="content"><a class="title" href="/10p2504121/" title="关于HEXO的构建和配置">关于HEXO的构建和配置</a><time datetime="2025-04-11T16:00:00.000Z" title="发表于 2025-04-12 00:00:00">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/8p2503221/" title="25年3月小结"><img src="https://cn-sy1.rains3.com/koimg/2025/03/f78912d51d2304f9ab28c8635dc3fe95.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="25年3月小结"></a><div class="content"><a class="title" href="/8p2503221/" title="25年3月小结">25年3月小结</a><time datetime="2025-03-21T16:00:00.000Z" title="发表于 2025-03-22 00:00:00">2025-03-22</time></div></div></div></div></div></div></main><footer id="footer" style="background: #00000000"><div id="footer-wrap"><div class="copyright">©2023 - 2025 By klcdm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><span id="runtime"></span> <br> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io/"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/hexo.svg"></a>|<a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/Copyright.svg"></a>|<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/Github.svg">|</a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.qiudcdn.cn/"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/CDN.svg"></a> <br> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.travellings.cn/go-by-clouds.html"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/travellings.gif"></a>| <a target="_blank" rel="noopener external nofollow noreferrer" href="https://icp.gov.moe/?keyword=20242040"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/iconbei.png"></a>|<a target="_blank" rel="noopener external nofollow noreferrer" href="https://blogscn.fun/random.html"><img class="icp-icon" src="https://photo.xiangming.site/img/footer.gif"></a> <br><a href="https://www.foreverblog.cn/" rel="external nofollow noreferrer" target="_blank"> <img src="https://img.foreverblog.cn/logo_en_default.png" alt="" style="width:auto;height:16px;"> <br></a><a href="https://beian.miit.gov.cn" rel="external nofollow noreferrer" target="_blank">陕ICP备2024049234号-4</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js?v=5.0.33"></script><script src="/pluginsSrc/instant.page/instantpage.js?v=5.2.0" type="module"></script><script src="/pluginsSrc/node-snackbar/dist/snackbar.min.js?v=0.1.16"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('/pluginsSrc/pangu/dist/browser/pangu.min.js?v=4.0.7')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  let artalkItem = null
+  const initArtalk = () => {
+    artalkItem = Artalk.init(Object.assign({
+      el: '#artalk-wrap',
+      server: 'https://cn-artalk.koxiuqiu.cc',
+      site: '朽丘秋雨',
+      pageKey: location.pathname,
+      darkMode: document.documentElement.getAttribute('data-theme') === 'dark',
+    },null))
+
+    if (GLOBAL_CONFIG.lightbox === 'null') return
+    artalkItem.on('list-loaded', () => {
+      artalkItem.ctx.get('list').getCommentNodes().forEach(comment => {
+        const $content = comment.getRender().$content
+        btf.loadLightbox($content.querySelectorAll('img:not([atk-emoticon])'))
+      })
+    })
+
+    const destroyArtalk = () => {
+      artalkItem.destroy()
+    }
+
+    btf.addGlobalFn('pjax', destroyArtalk, 'destroyArtalk')
+  }
+
+  const loadArtalk = async () => {
+    if (typeof Artalk === 'object') initArtalk()
+    else {
+      await getCSS('https://artalk.koxiuqiu.cn/dist/Artalk.css')
+      await getScript('https://artalk.koxiuqiu.cn/dist/Artalk.js')
+      initArtalk()
+    }
+  }
+
+  const artalkChangeMode = theme => {
+    const artalkWrap = document.getElementById('artalk-wrap')
+    if (!(artalkWrap && artalkWrap.children.length)) return
+    const isDark = theme === 'dark'
+    artalkItem.setDarkMode(isDark)
+  }
+
+  btf.addGlobalFn('themeChange', artalkChangeMode, 'artalk')
+
+  if ('Artalk' === 'Artalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('artalk-wrap'), loadArtalk)
+    else loadArtalk()
+  } else {
+    window.loadOtherComment = loadArtalk
+  }
+})()</script></div><script type="text/javascript" src="/js/reward.js"></script><script src="/js/sweetalert2.all.min.js"></script><script async="" src="/js/categoryBar.js"></script><script type="text/javascript" src="/js/jquery.min.js"></script><script type="text/javascript" src="/js/rightmenu.js"></script><script src="/js/jquery.min.js"></script><script src="/js/hometop.js"></script><script src="/js/flipcountdown.js"></script><script data-pjax="" src="/js/runtime.js"></script><script src="/js/127.js"></script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();" rel="external nofollow noreferrer"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();" rel="external nofollow noreferrer"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();" rel="external nofollow noreferrer"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-share"></i><span>百度搜索</span></a><a class="rightMenu-item" href="#post-comment" onclick="rmf.yinyong()"><i class="fa-solid fa-message"></i><span>引用文本评论</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>粘贴</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()" rel="external nofollow noreferrer"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()" rel="external nofollow noreferrer"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()" rel="external nofollow noreferrer"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.click()" rel="external nofollow noreferrer"><i class="fa fa-arrows-alt"></i><span>全屏显示</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:toRandomPost()" rel="external nofollow noreferrer"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();" rel="external nofollow noreferrer"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.translate();" rel="external nofollow noreferrer"><i class="fa fa-pen-to-square"></i><span>繁简转换</span></a></div></div><!-- hexo injector body_end start --><script async="" src="/js/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

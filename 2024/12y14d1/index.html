@@ -1,0 +1,842 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>让IPv4与IPv6进行互相连接互通,V6小鸡拯救者 | 朽丘秋雨</title><meta name="author" content="klcdm"><meta name="copyright" content="klcdm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="IPv4 和 IPv6 是两种不同的互联网协议版本，它们之间不直接兼容。因此，一个使用 IPv4 的设备无法直接访问仅支持 IPv6的站点，同理，一个使用 IPv6 的设备无法直接访问仅支持 IPv4的站点。而当我们想将请求从IPv4地址发送到IPv6地址时，由于IPv4和IPv6过渡不兼容而无法实现。为了解决此问题，需要通过一些技术才能实现IPv4和IPv6互通。这些技术包括：双栈技术、隧道和转">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让IPv4与IPv6进行互相连接互通,V6小鸡拯救者">
+<meta property="og:url" content="https://koxiuqiu.cn/2024/12y14d1/index.html">
+<meta property="og:site_name" content="朽丘秋雨">
+<meta property="og:description" content="IPv4 和 IPv6 是两种不同的互联网协议版本，它们之间不直接兼容。因此，一个使用 IPv4 的设备无法直接访问仅支持 IPv6的站点，同理，一个使用 IPv6 的设备无法直接访问仅支持 IPv4的站点。而当我们想将请求从IPv4地址发送到IPv6地址时，由于IPv4和IPv6过渡不兼容而无法实现。为了解决此问题，需要通过一些技术才能实现IPv4和IPv6互通。这些技术包括：双栈技术、隧道和转">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://koimg.cn-sy1.rains3.com/2024/12/14/867680.webp">
+<meta property="article:published_time" content="2024-12-14T04:00:00.000Z">
+<meta property="article:modified_time" content="2024-12-14T04:00:00.000Z">
+<meta property="article:author" content="klcdm">
+<meta property="article:tag" content="记录">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="服务器">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="IPv6">
+<meta property="article:tag" content="IPv4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://koimg.cn-sy1.rains3.com/2024/12/14/867680.webp"><link rel="shortcut icon" href="https://i1.wp.com/koxiuqiu.cn/img/favicon.png"><link rel="canonical" href="https://koxiuqiu.cn/2024/12y14d1/index.html"><link rel="preconnect"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css?v=6.5.1"><link rel="stylesheet" href="/pluginsSrc/node-snackbar/dist/snackbar.min.css?v=0.1.16" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css?v=5.0.33" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"距离编写已经","messageNext":"天,文章的内容可能已经过时,或者是图片失效,及时留言反馈补充"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":500,"languages":{"author":"作者: klcdm","link":"链接: ","source":"来源: 朽丘秋雨","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js?v=4.11.1',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '让IPv4与IPv6进行互相连接互通,V6小鸡拯救者',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-12-14 12:00:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdmirror.com/gh/willow-god/Sharding-fonts/LXGWWenKai-Regular/result.css"><link rel="stylesheet" href="/css/rightmenu.css"><link rel="stylesheet" href="/css/iconfont.css"><link rel="stylesheet" href="/css/license.css"><link rel="stylesheet" href="/css/fo.css"><link rel="stylesheet" type="text/css" href="/css/heoMainColor.css"><link rel="stylesheet" type="text/css" href="/css/categoryBar.css"><link rel="stylesheet" href="/css/progress_bar.css?1"><link rel="stylesheet" href="/css/flipcountdown.css"><link rel="stylesheet" href="/css/cursors.css"><link rel="stylesheet" href="/css/linav.css"><link rel="stylesheet" href="/css/hometop.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="/css/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/tag_plugins.css" media="defer" onload="this.media='all'"><script src="/js/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="朽丘秋雨" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i1.wp.com/koxiuqiu.cn/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr class="custom-hr"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa-solid fa-folder-open"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/posts/"><i class="fa-fw fas fa-archive"></i><span> 总览</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/categories"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about"><i class="fa-fw fas fa-heart"></i><span> 博主</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fas fa-heart"></i><span> 留言</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fa fa-bullhorn"></i><span> 说说</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-link"></i><span> 友联</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fa fa-comments"></i><span> 鱼塘圈</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/atom.xml"><i class="fa-fw fas fa-rss"></i><span> 订阅</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="朽丘秋雨"><img class="site-icon" src="https://i1.wp.com/koxiuqiu.cn//img/xqlogo.png"><span class="site-name">朽丘秋雨</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa-solid fa-folder-open"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/posts/"><i class="fa-fw fas fa-archive"></i><span> 总览</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/categories"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about"><i class="fa-fw fas fa-heart"></i><span> 博主</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fas fa-heart"></i><span> 留言</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fa fa-bullhorn"></i><span> 说说</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-link"></i><span> 友联</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fa fa-comments"></i><span> 鱼塘圈</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/atom.xml"><i class="fa-fw fas fa-rss"></i><span> 订阅</span></a></li></ul></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">让IPv4与IPv6进行互相连接互通,V6小鸡拯救者</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-14T04:00:00.000Z" title="发表于 2024-12-14 12:00:00">2024-12-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-14T04:00:00.000Z" title="更新于 2024-12-14 12:00:00">2024-12-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="让IPv4与IPv6进行互相连接互通,V6小鸡拯救者"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2024/12y14d1/#post-comment"><span id="ArtalkCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div><article class="post-content" id="article-container"><p>IPv4 和 IPv6 是两种不同的互联网协议版本，它们之间不直接兼容。因此，一个使用 IPv4 的设备无法直接访问仅支持 IPv6的站点，同理，一个使用 IPv6 的设备无法直接访问仅支持 IPv4的站点。而当我们想将请求从IPv4地址发送到IPv6地址时，由于IPv4和IPv6过渡不兼容而无法实现。为了解决此问题，需要通过一些技术才能实现IPv4和IPv6互通。这些技术包括：双栈技术、隧道和转换三种技术。</p>
+<p><strong>以下列出可行方案</strong></p>
+<h1>WARP好处</h1>
+<blockquote>
+<p>记录：让纯v6/v4的小鸡互通支持</p>
+</blockquote>
+<ul>
+<li>支持 chatGPT，解锁奈飞流媒体</li>
+<li>避免 Google 验证码或是使用 Google 学术搜索</li>
+<li>可调用 IPv4 接口，使青龙和V2P等项目能正常运行</li>
+<li>由于可以双向转输数据，能做对方VPS的跳板和探针，替代 HE tunnelbroker</li>
+<li>能让 IPv6 only VPS 上做的节点支持 Telegram</li>
+<li>IPv6 建的节点能在只支持 IPv4 的 PassWall、ShadowSocksR Plus+ 上使用</li>
+</ul>
+<h2 id="warp-运行脚本">warp 运行脚本</h2>
+<p>首次运行</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &amp;&amp; bash menu.sh [option] [lisence/url/token]</span><br></pre></td></tr></tbody></table></figure>
+<p>再次运行</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp [option] [lisence]</span><br></pre></td></tr></tbody></table></figure>
+<table>
+<thead>
+<tr>
+<th>[option] 变量1 变量2</th>
+<th>具体动作说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h</td>
+<td>帮助</td>
+</tr>
+<tr>
+<td>4</td>
+<td>原无论任何状态 -&gt; WARP IPv4</td>
+</tr>
+<tr>
+<td>4 lisence name</td>
+<td>把 WARP+ Lisence 和设备名添加进去，如 <code>bash menu.sh 4 N5670ljg-sS9jD334-6o6g4M9F Goodluck</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>原无论任何状态 -&gt; WARP IPv6</td>
+</tr>
+<tr>
+<td>d</td>
+<td>原无论任何状态 -&gt; WARP 双栈</td>
+</tr>
+<tr>
+<td>o</td>
+<td>WARP 开关，脚本主动判断当前状态，自动开或关</td>
+</tr>
+<tr>
+<td>u</td>
+<td>卸载 WARP</td>
+</tr>
+<tr>
+<td>n</td>
+<td>断网时，用于刷WARP网络 (WARP bug)</td>
+</tr>
+<tr>
+<td>b</td>
+<td>升级内核、开启BBR及DD</td>
+</tr>
+<tr>
+<td>a</td>
+<td>免费 WARP 账户升级 WARP+</td>
+</tr>
+<tr>
+<td>a lisence</td>
+<td>在上面基础上把 WARP+ Lisence 添加进去，如 <code>bash menu.sh a N5670ljg-sS9jD334-6o6g4M9F</code></td>
+</tr>
+<tr>
+<td>p</td>
+<td>刷 Warp+ 流量</td>
+</tr>
+<tr>
+<td>c</td>
+<td>安装 WARP Linux Client，开启 Socks5 代理模式</td>
+</tr>
+<tr>
+<td>l</td>
+<td>安装 WARP Linux Client，开启 WARP 模式</td>
+</tr>
+<tr>
+<td>c lisence</td>
+<td>在上面基础上把 WARP+ Lisence 添加进去，如 <code>bash menu.sh c N5670ljg-sS9jD334-6o6g4M9F</code></td>
+</tr>
+<tr>
+<td>r</td>
+<td>WARP Linux Client 开关</td>
+</tr>
+<tr>
+<td>v</td>
+<td>同步脚本至最新版本</td>
+</tr>
+<tr>
+<td>i</td>
+<td>更换 WARP IP</td>
+</tr>
+<tr>
+<td>e</td>
+<td>安装 iptables + dnsmasq + ipset 分流流媒体方案</td>
+</tr>
+<tr>
+<td>w</td>
+<td>安装 WireProxy 解决方案</td>
+</tr>
+<tr>
+<td>y</td>
+<td>WireProxy 开关</td>
+</tr>
+<tr>
+<td>k</td>
+<td>切换 wireguard 内核 / wireguard-go-reserved</td>
+</tr>
+<tr>
+<td>g</td>
+<td>切换 warp 全局 / 非全局 或首次以 非全局 模式安装</td>
+</tr>
+<tr>
+<td>s</td>
+<td>s 4/6/d，切换优先级 warp IPv4 / IPv6 / 默认</td>
+</tr>
+<tr>
+<td>其他或空值</td>
+<td>菜单界面</td>
+</tr>
+</tbody>
+</table>
+<p>举例：想为 IPv4 的甲骨文添加 Warp 双栈，首次运行</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &amp;&amp; bash menu.sh d</span><br></pre></td></tr></tbody></table></figure>
+<p>刷日本 Netflix  运行</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp i jp</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="warp-go-运行脚本">warp-go 运行脚本</h2>
+<p>首次运行</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh &amp;&amp; bash warp-go.sh [option] [lisence]</span><br></pre></td></tr></tbody></table></figure>
+<p>再次运行</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-go [option] [lisence]</span><br></pre></td></tr></tbody></table></figure>
+<table>
+<thead>
+<tr>
+<th>[option] 变量1 变量2</th>
+<th>具体动作说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h</td>
+<td>帮助</td>
+</tr>
+<tr>
+<td>4</td>
+<td>原无论任何状态 -&gt; WARP IPv4</td>
+</tr>
+<tr>
+<td>4 lisence name</td>
+<td>把 WARP+ Lisence 和设备名添加进去，如 <code>bash wire-go 4 N5670ljg-sS9jD334-6o6g4M9F Goodluck</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>原无论任何状态 -&gt; WARP IPv6</td>
+</tr>
+<tr>
+<td>d</td>
+<td>原无论任何状态 -&gt; WARP 双栈</td>
+</tr>
+<tr>
+<td>o</td>
+<td>warp-go 开关，脚本主动判断当前状态，自动开或关</td>
+</tr>
+<tr>
+<td>u</td>
+<td>卸载 warp-go</td>
+</tr>
+<tr>
+<td>a</td>
+<td>免费 WARP 账户升级 WARP+</td>
+</tr>
+<tr>
+<td>a lisence name</td>
+<td>在上面基础上把 WARP+ Lisence 和设备名添加进去，如 <code>bash menu.sh a N5670ljg-sS9jD334-6o6g4M9F Goodluck</code></td>
+</tr>
+<tr>
+<td>v</td>
+<td>同步脚本至最新版本</td>
+</tr>
+<tr>
+<td>其他或空值</td>
+<td>菜单界面</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Cloudflare-api">Cloudflare api</h2>
+<p>Cli-API 使用指南，浏览器带参数访问，或者使用 <code>curl</code> 命令可以执行 Warp API 请求，</p>
+<table>
+<thead>
+<tr>
+<th>run 参数</th>
+<th>作用描述</th>
+<th>参数</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>使用指南</td>
+<td></td>
+<td><code>https://www.warpapi.us.kg/</code></td>
+</tr>
+<tr>
+<td><code>register</code></td>
+<td>注册新设备</td>
+<td><code>team_token（可选）</code>, <code>format（可选）</code></td>
+<td>`<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cud2FycGFwaS51cy5rZy8/cnVuPXJlZ2lzdGVyJnRlYW1fdG9rZW49">https://www.warpapi.us.kg/?run=register&amp;team_token=</a><your-team-token>&amp;format=&lt;json</your-team-token></td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>获取特定设备的详细信息</td>
+<td><code>device_id</code>, <code>token</code></td>
+<td><code>https://www.warpapi.us.kg/?run=device&amp;device_id=&lt;Your-Device-ID&gt;&amp;token=&lt;Your-Token&gt;</code></td>
+</tr>
+<tr>
+<td><code>app</code></td>
+<td>获取客户端配置</td>
+<td><code>token</code></td>
+<td><code>https://www.warpapi.us.kg/?run=app&amp;token=&lt;Your-Token&gt;</code></td>
+</tr>
+<tr>
+<td><code>bind</code></td>
+<td>将设备绑定到帐户</td>
+<td><code>device_id</code>, <code>token</code></td>
+<td><code>https://www.warpapi.us.kg/?run=bind&amp;device_id=&lt;Your-Device-ID&gt;&amp;token=&lt;Your-Token&gt;</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>设置设备名称</td>
+<td><code>device_id</code>, <code>token</code>, <code>device_name</code></td>
+<td><code>https://www.warpapi.us.kg/?run=name&amp;device_id=&lt;Your-Device-ID&gt;&amp;token=&lt;Your-Token&gt;&amp;device_name=&lt;Your-Device-Name&gt;</code></td>
+</tr>
+<tr>
+<td><code>license</code></td>
+<td>设置设备许可证</td>
+<td><code>device_id</code>, <code>token</code>, <code>license</code></td>
+<td><code>https://www.warpapi.us.kg/?run=license&amp;device_id=&lt;Your-Device-ID&gt;&amp;token=&lt;Your-Token&gt;&amp;license=&lt;Your-License&gt;</code></td>
+</tr>
+<tr>
+<td><code>unbind</code></td>
+<td>从帐户中取消绑定设备</td>
+<td><code>device_id</code>, <code>token</code></td>
+<td><code>https://www.warpapi.us.kg/?run=unbind&amp;device_id=&lt;Your-Device-ID&gt;&amp;token=&lt;Your-Token&gt;</code></td>
+</tr>
+<tr>
+<td><code>cancel</code></td>
+<td>取消设备注册</td>
+<td><code>device_id</code>, <code>token</code></td>
+<td><code>https://www.warpapi.us.kg/?run=cancel&amp;device_id=&lt;Your-Device-ID&gt;&amp;token=&lt;Your-Token&gt;</code></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>Client ID 与 Reserved 转换</td>
+<td><code>convert</code></td>
+<td>`<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cud2FycGFwaS51cy5rZy8/cnVuPWlkJmNvbnZlcnQ9">https://www.warpapi.us.kg/?run=id&amp;convert=</a>&lt;4-char-string</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td>获取 Zero Trust token</td>
+<td><code>organization</code>, <code>email</code>, <code>code</code></td>
+<td>step1: <code>https://www.warpapi.us.kg/?organization=&lt;Your-Organization&gt;&amp;email=&lt;Your-Email&gt;</code>  step2: <code>https://www.warpapi.us.kg/?organization=&lt;Your-Organization&gt;&amp;A=&lt;A-Value&gt;&amp;S=&lt;S-Value&gt;&amp;N=&lt;N-Value&gt;&amp;code=&lt;Your-Code&gt;</code></td>
+</tr>
+<tr>
+<td><code>pluskey</code></td>
+<td>生成指定数量的 1923PB Warp+ license</td>
+<td><code>num（可选，默认:1，最大:6）</code>, <code>maxretry（可选，默认:3）</code></td>
+<td><code>https://www.warpapi.us.kg/?run=pluskey&amp;num=2&amp;maxretry=5</code></td>
+</tr>
+<tr>
+<td><code>key</code></td>
+<td>生成一对 WireGuard 公私钥</td>
+<td><code>format（可选）</code></td>
+<td>`<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cud2FycGFwaS51cy5rZy8/cnVuPWtleSZmb3JtYXQ9">https://www.warpapi.us.kg/?run=key&amp;format=</a>&lt;json</td>
+</tr>
+<tr>
+<td><code>sum</code></td>
+<td>获取总计和 24 小时运行计数</td>
+<td></td>
+<td><code>https://www.warpapi.us.kg/?run=sum</code></td>
+</tr>
+</tbody>
+</table>
+<p>Shell-API 运行脚本</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N https://gitlab.com/fscarmen/warp/-/raw/main/api.sh &amp;&amp; bash api.sh [option]</span><br></pre></td></tr></tbody></table></figure>
+<table>
+<thead>
+<tr>
+<th>[option] 变量</th>
+<th>具体动作说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-h/–help</td>
+<td>帮助</td>
+</tr>
+<tr>
+<td>-f/–file</td>
+<td>保存账户注册信息的文件，支持官方api，client，wgcf 和 warp-go ，不填则手动输入 device id 和 api token</td>
+</tr>
+<tr>
+<td>-r/–register</td>
+<td>注册账户</td>
+</tr>
+<tr>
+<td>-t/–token</td>
+<td>-r 注册时，使用 team token 注册，快速获取: <a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93ZWItLXB1YmxpYy0td2FycC10ZWFtLWFwaS0tY29pYS1tZnM0LmNvZGUucnVu">https://web--public--warp-team-api--coia-mfs4.code.run</a></td>
+</tr>
+<tr>
+<td>-d/–device</td>
+<td>获取账户注册信息，包括 plus 流量等</td>
+</tr>
+<tr>
+<td>-a/–app</td>
+<td>获取 app 信息</td>
+</tr>
+<tr>
+<td>-b/–bind</td>
+<td>获取绑定设备信息，包括子设备</td>
+</tr>
+<tr>
+<td>-n/–name</td>
+<td>修改设备名称</td>
+</tr>
+<tr>
+<td>-l/–license</td>
+<td>修改 license</td>
+</tr>
+<tr>
+<td>-u/–unbind</td>
+<td>解绑设备</td>
+</tr>
+<tr>
+<td>-c/–cancle</td>
+<td>注销账户</td>
+</tr>
+<tr>
+<td>-i/–id</td>
+<td>显示 cliend id 与 reserved</td>
+</tr>
+</tbody>
+</table>
+<h2 id="刷-Netflix-解锁-WARP-IP-的方法">刷 Netflix 解锁 WARP IP 的方法</h2>
+<ul>
+<li>可以用另一个通过 WARP 解锁流媒体的一键脚本: <a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRodWIuY29tL2ZzY2FybWVuL3VubG9ja193YXJw">【刷 WARP IP】 - 为 WARP 解锁流媒体而生</a></li>
+<li>以刷 香港 hk 为例， 运行 <code>warp i</code>。建议在 screen， nohup 下后台运行</li>
+<li>如果长时间仍然未刷出解锁IP，可以查查 CloudFlare 当地是否在维护调路由：<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cuY2xvdWRmbGFyZXN0YXR1cy5jb20v">https://www.cloudflarestatus.com/</a></li>
+</ul>
+<h2 id="WARP-socks5-或-interface-分流模板及解锁-chatGPT-的方法">WARP socks5 或 interface 分流模板及解锁 chatGPT 的方法</h2>
+<details>
+    <summary> 指定网站分流到 socks5 的 xray 配置模板 (适用于 WARP Client Proxy 和 WireProxy)（点击即可展开或收起）</summary>
+<br>
+<p data-sourcepos="388:1-389:146">本地 socks5<a>://127.0.0.1:40000</a>
+并安装 <a rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRodWIuY29tL21hY2stYS92MnJheS1hZ2VudA==" data-sourcepos="389:11-389:73" target="_blank">mack-a 八合一脚本</a> 为例。编辑  <code data-sourcepos="389:95-389:143">/etc/v2ray-agent/xray/conf/10_ipv4_outbounds.json</code></p>
+<div class="gl-relative markdown-code-block js-markdown-code">
+<pre class="code highlight js-syntax-highlight language-plaintext white" data-sourcepos="391:1-452:3" id="code-61"><code><span lang="plaintext" class="line" id="LC1">{</span>
+<span lang="plaintext" class="line" id="LC2">    "outbounds":[</span>
+<span lang="plaintext" class="line" id="LC3">        {</span>
+<span lang="plaintext" class="line" id="LC4">            "protocol":"freedom"</span>
+<span lang="plaintext" class="line" id="LC5">        },</span>
+<span lang="plaintext" class="line" id="LC6">        {</span>
+<span lang="plaintext" class="line" id="LC7">            "tag":"warp",</span>
+<span lang="plaintext" class="line" id="LC8">            "protocol":"socks",</span>
+<span lang="plaintext" class="line" id="LC9">            "settings":{</span>
+<span lang="plaintext" class="line" id="LC10">                "servers":[</span>
+<span lang="plaintext" class="line" id="LC11">                    {</span>
+<span lang="plaintext" class="line" id="LC12">                        "address":"127.0.0.1",</span>
+<span lang="plaintext" class="line" id="LC13">                        "port":40000 // 填写你的 socks5 端口</span>
+<span lang="plaintext" class="line" id="LC14">                    }</span>
+<span lang="plaintext" class="line" id="LC15">                ]</span>
+<span lang="plaintext" class="line" id="LC16">            }</span>
+<span lang="plaintext" class="line" id="LC17">        },</span>
+<span lang="plaintext" class="line" id="LC18">        {</span>
+<span lang="plaintext" class="line" id="LC19">            "tag":"WARP-socks5-v4",</span>
+<span lang="plaintext" class="line" id="LC20">            "protocol":"freedom",</span>
+<span lang="plaintext" class="line" id="LC21">            "settings":{</span>
+<span lang="plaintext" class="line" id="LC22">                "domainStrategy":"UseIPv4"</span>
+<span lang="plaintext" class="line" id="LC23">            },</span>
+<span lang="plaintext" class="line" id="LC24">            "proxySettings":{</span>
+<span lang="plaintext" class="line" id="LC25">                "tag":"warp"</span>
+<span lang="plaintext" class="line" id="LC26">            }</span>
+<span lang="plaintext" class="line" id="LC27">        },</span>
+<span lang="plaintext" class="line" id="LC28">        {</span>
+<span lang="plaintext" class="line" id="LC29">            "tag":"WARP-socks5-v6",</span>
+<span lang="plaintext" class="line" id="LC30">            "protocol":"freedom",</span>
+<span lang="plaintext" class="line" id="LC31">            "settings":{</span>
+<span lang="plaintext" class="line" id="LC32">                "domainStrategy":"UseIPv6"</span>
+<span lang="plaintext" class="line" id="LC33">            },</span>
+<span lang="plaintext" class="line" id="LC34">            "proxySettings":{</span>
+<span lang="plaintext" class="line" id="LC35">                "tag":"warp"</span>
+<span lang="plaintext" class="line" id="LC36">            }</span>
+<span lang="plaintext" class="line" id="LC37">        }</span>
+<span lang="plaintext" class="line" id="LC38">    ],</span>
+<span lang="plaintext" class="line" id="LC39">    "routing":{</span>
+<span lang="plaintext" class="line" id="LC40">        "rules":[</span>
+<span lang="plaintext" class="line" id="LC41">            {</span>
+<span lang="plaintext" class="line" id="LC42">                "type":"field",</span>
+<span lang="plaintext" class="line" id="LC43">                "domain":[</span>
+<span lang="plaintext" class="line" id="LC44">                    "geosite:openai",</span>
+<span lang="plaintext" class="line" id="LC45">                    "ip.gs"</span>
+<span lang="plaintext" class="line" id="LC46">                ],</span>
+<span lang="plaintext" class="line" id="LC47">                "outboundTag":"WARP-socks5-v4"</span>
+<span lang="plaintext" class="line" id="LC48">            },</span>
+<span lang="plaintext" class="line" id="LC49">            {</span>
+<span lang="plaintext" class="line" id="LC50">                "type":"field",</span>
+<span lang="plaintext" class="line" id="LC51">                "domain":[</span>
+<span lang="plaintext" class="line" id="LC52">                    "geosite:google",</span>
+<span lang="plaintext" class="line" id="LC53">                    "geosite:netflix",</span>
+<span lang="plaintext" class="line" id="LC54">                    "p3terx.com"</span>
+<span lang="plaintext" class="line" id="LC55">                ],</span>
+<span lang="plaintext" class="line" id="LC56">                "outboundTag":"WARP-socks5-v6"</span>
+<span lang="plaintext" class="line" id="LC57">            }</span>
+<span lang="plaintext" class="line" id="LC58">        ]</span>
+<span lang="plaintext" class="line" id="LC59">    }</span>
+<span lang="plaintext" class="line" id="LC60">}</span></code></pre>
+<copy-code><button type="button" class="btn btn-default btn-md gl-button btn-icon has-tooltip" data-title="复制到剪贴板" aria-label="复制到剪贴板" data-clipboard-target="pre#code-61"><svg><use xlink:href="/assets/icons-8791a66659d025e0a4c801978c79a1fbd82db1d27d85f044a35728ea7cf0ae80.svg#copy-to-clipboard"></use></svg></button></copy-code>
+</div>
+</details>
+<details>
+    <summary> 指定网站分流到 "interface" 的 xray 配置模板（适用于 WARP Client Warp 和 warp / warp-go 非全局）（点击即可展开或收起）</summary>
+<br>
+<div class="gl-relative markdown-code-block js-markdown-code">
+<pre class="code highlight js-syntax-highlight language-plaintext white" data-sourcepos="459:1-515:3" id="code-62"><code><span lang="plaintext" class="line" id="LC1">{</span>
+<span lang="plaintext" class="line" id="LC2">    "outbounds":[</span>
+<span lang="plaintext" class="line" id="LC3">        {</span>
+<span lang="plaintext" class="line" id="LC4">            "protocol":"freedom"</span>
+<span lang="plaintext" class="line" id="LC5">        },</span>
+<span lang="plaintext" class="line" id="LC6">        {</span>
+<span lang="plaintext" class="line" id="LC7">            "tag":"WARP-interface-v4",</span>
+<span lang="plaintext" class="line" id="LC8">            "protocol":"freedom",</span>
+<span lang="plaintext" class="line" id="LC9">            "settings":{</span>
+<span lang="plaintext" class="line" id="LC10">                "domainStrategy":"UseIPv4"</span>
+<span lang="plaintext" class="line" id="LC11">            },</span>
+<span lang="plaintext" class="line" id="LC12">            "streamSettings":{</span>
+<span lang="plaintext" class="line" id="LC13">                "sockopt":{</span>
+<span lang="plaintext" class="line" id="LC14">                    "interface":"CloudflareWARP", // warp 非全局模式填 warp; Client 的 Proxy 模式填 CloudflareWARP; warp-go 填 WARP</span>
+<span lang="plaintext" class="line" id="LC15">                    "tcpFastOpen":true</span>
+<span lang="plaintext" class="line" id="LC16">                }</span>
+<span lang="plaintext" class="line" id="LC17">            }</span>
+<span lang="plaintext" class="line" id="LC18">        },</span>
+<span lang="plaintext" class="line" id="LC19">        {</span>
+<span lang="plaintext" class="line" id="LC20">            "tag":"WARP-interface-v6",</span>
+<span lang="plaintext" class="line" id="LC21">            "protocol":"freedom",</span>
+<span lang="plaintext" class="line" id="LC22">            "settings":{</span>
+<span lang="plaintext" class="line" id="LC23">                "domainStrategy":"UseIPv6"</span>
+<span lang="plaintext" class="line" id="LC24">            },</span>
+<span lang="plaintext" class="line" id="LC25">            "streamSettings":{</span>
+<span lang="plaintext" class="line" id="LC26">                "sockopt":{</span>
+<span lang="plaintext" class="line" id="LC27">                    "interface":"CloudflareWARP",</span>
+<span lang="plaintext" class="line" id="LC28">                    "tcpFastOpen":true</span>
+<span lang="plaintext" class="line" id="LC29">                }</span>
+<span lang="plaintext" class="line" id="LC30">            }</span>
+<span lang="plaintext" class="line" id="LC31">        }</span>
+<span lang="plaintext" class="line" id="LC32">    ],</span>
+<span lang="plaintext" class="line" id="LC33">    "routing":{</span>
+<span lang="plaintext" class="line" id="LC34">        "domainStrategy":"AsIs",</span>
+<span lang="plaintext" class="line" id="LC35">        "rules":[</span>
+<span lang="plaintext" class="line" id="LC36">            {</span>
+<span lang="plaintext" class="line" id="LC37">                "type":"field",</span>
+<span lang="plaintext" class="line" id="LC38">                "domain":[</span>
+<span lang="plaintext" class="line" id="LC39">                    "geosite:google",</span>
+<span lang="plaintext" class="line" id="LC40">                    "geosite:openai",</span>
+<span lang="plaintext" class="line" id="LC41">                    "ip.gs"</span>
+<span lang="plaintext" class="line" id="LC42">                ],</span>
+<span lang="plaintext" class="line" id="LC43">                "outboundTag":"WARP-interface-v4"</span>
+<span lang="plaintext" class="line" id="LC44">            },</span>
+<span lang="plaintext" class="line" id="LC45">            {</span>
+<span lang="plaintext" class="line" id="LC46">                "type":"field",</span>
+<span lang="plaintext" class="line" id="LC47">                "domain":[</span>
+<span lang="plaintext" class="line" id="LC48">                    "geosite:netflix",</span>
+<span lang="plaintext" class="line" id="LC49">                    "p3terx.com"</span>
+<span lang="plaintext" class="line" id="LC50">                ],</span>
+<span lang="plaintext" class="line" id="LC51">                "outboundTag":"WARP-interface-v6"</span>
+<span lang="plaintext" class="line" id="LC52">            }</span>
+<span lang="plaintext" class="line" id="LC53">        ]</span>
+<span lang="plaintext" class="line" id="LC54">    }</span>
+<span lang="plaintext" class="line" id="LC55">}</span></code></pre>
+<copy-code><button type="button" class="btn btn-default btn-md gl-button btn-icon has-tooltip" data-title="复制到剪贴板" aria-label="复制到剪贴板" data-clipboard-target="pre#code-62"><svg><use xlink:href="/assets/icons-8791a66659d025e0a4c801978c79a1fbd82db1d27d85f044a35728ea7cf0ae80.svg#copy-to-clipboard"></use></svg></button></copy-code>
+</div>
+</details>
+<details>
+    <summary> 通过 WARP 解锁 chatGPT 的方法（点击即可展开或收起）</summary>
+<br>
+<p data-sourcepos="522:1-522:204">思路是使用已经注册的 warp 做链式代理的设置，此解决方法是最轻便的，用户只要有 xray 即可。具体做法是修改 xray 配置文件的 outbound 和 routing，模板如下</p>
+<div class="gl-relative markdown-code-block js-markdown-code">
+<pre class="code highlight js-syntax-highlight language-plaintext white" data-sourcepos="523:1-596:3" id="code-63"><code><span lang="plaintext" class="line" id="LC1">{</span>
+<span lang="plaintext" class="line" id="LC2">    "outbounds":[</span>
+<span lang="plaintext" class="line" id="LC3">        {</span>
+<span lang="plaintext" class="line" id="LC4">            "protocol":"freedom",</span>
+<span lang="plaintext" class="line" id="LC5">            "tag": "direct"</span>
+<span lang="plaintext" class="line" id="LC6">        },</span>
+<span lang="plaintext" class="line" id="LC7">        {</span>
+<span lang="plaintext" class="line" id="LC8">            "protocol":"wireguard",</span>
+<span lang="plaintext" class="line" id="LC9">            "settings":{</span>
+<span lang="plaintext" class="line" id="LC10">                "secretKey":"YFYOAdbw1bKTHlNNi+aEjBM3BO7unuFC5rOkMRAz9XY=", // 粘贴你的 "private_key" 值</span>
+<span lang="plaintext" class="line" id="LC11">                "address":[</span>
+<span lang="plaintext" class="line" id="LC12">                    "172.16.0.2/32",</span>
+<span lang="plaintext" class="line" id="LC13">                    "2606:4700:110:8a36:df92:102a:9602:fa18/128"</span>
+<span lang="plaintext" class="line" id="LC14">                ],</span>
+<span lang="plaintext" class="line" id="LC15">                "peers":[</span>
+<span lang="plaintext" class="line" id="LC16">                    {</span>
+<span lang="plaintext" class="line" id="LC17">                        "publicKey":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",</span>
+<span lang="plaintext" class="line" id="LC18">                        "allowedIPs":[</span>
+<span lang="plaintext" class="line" id="LC19">                            "0.0.0.0/0",</span>
+<span lang="plaintext" class="line" id="LC20">                            "::/0"</span>
+<span lang="plaintext" class="line" id="LC21">                        ],</span>
+<span lang="plaintext" class="line" id="LC22">                        "endpoint":"engage.cloudflareclient.com:2408" // 或填写 162.159.193.10:2408 或 [2606:4700:d0::a29f:c001]:2408</span>
+<span lang="plaintext" class="line" id="LC23">                    }</span>
+<span lang="plaintext" class="line" id="LC24">                ],</span>
+<span lang="plaintext" class="line" id="LC25">                "reserved":[78, 135, 76], // 粘贴你的 "reserved" 值</span>
+<span lang="plaintext" class="line" id="LC26">                "mtu":1280</span>
+<span lang="plaintext" class="line" id="LC27">            },</span>
+<span lang="plaintext" class="line" id="LC28">            "tag":"wireguard"</span>
+<span lang="plaintext" class="line" id="LC29">        },</span>
+<span lang="plaintext" class="line" id="LC30">        {</span>
+<span lang="plaintext" class="line" id="LC31">            "protocol":"freedom",</span>
+<span lang="plaintext" class="line" id="LC32">            "settings":{</span>
+<span lang="plaintext" class="line" id="LC33">                "domainStrategy":"UseIPv4"</span>
+<span lang="plaintext" class="line" id="LC34">            },</span>
+<span lang="plaintext" class="line" id="LC35">            "proxySettings":{</span>
+<span lang="plaintext" class="line" id="LC36">                "tag":"wireguard"</span>
+<span lang="plaintext" class="line" id="LC37">            },</span>
+<span lang="plaintext" class="line" id="LC38">            "tag":"warp-IPv4"</span>
+<span lang="plaintext" class="line" id="LC39">        },</span>
+<span lang="plaintext" class="line" id="LC40">        {</span>
+<span lang="plaintext" class="line" id="LC41">            "protocol":"freedom",</span>
+<span lang="plaintext" class="line" id="LC42">            "settings":{</span>
+<span lang="plaintext" class="line" id="LC43">                "domainStrategy":"UseIPv6"</span>
+<span lang="plaintext" class="line" id="LC44">            },</span>
+<span lang="plaintext" class="line" id="LC45">            "proxySettings":{</span>
+<span lang="plaintext" class="line" id="LC46">                "tag":"wireguard"</span>
+<span lang="plaintext" class="line" id="LC47">            },</span>
+<span lang="plaintext" class="line" id="LC48">            "tag":"warp-IPv6"</span>
+<span lang="plaintext" class="line" id="LC49">        }</span>
+<span lang="plaintext" class="line" id="LC50">    ],</span>
+<span lang="plaintext" class="line" id="LC51">    "routing":{</span>
+<span lang="plaintext" class="line" id="LC52">        "domainStrategy":"AsIs",</span>
+<span lang="plaintext" class="line" id="LC53">        "rules":[</span>
+<span lang="plaintext" class="line" id="LC54">            {</span>
+<span lang="plaintext" class="line" id="LC55">                "type":"field",</span>
+<span lang="plaintext" class="line" id="LC56">                "domain":[</span>
+<span lang="plaintext" class="line" id="LC57">                    "geosite:openai",</span>
+<span lang="plaintext" class="line" id="LC58">                    "ip.gs"</span>
+<span lang="plaintext" class="line" id="LC59">                ],</span>
+<span lang="plaintext" class="line" id="LC60">                "outboundTag":"warp-IPv4"</span>
+<span lang="plaintext" class="line" id="LC61">            },</span>
+<span lang="plaintext" class="line" id="LC62">            {</span>
+<span lang="plaintext" class="line" id="LC63">                "type":"field",</span>
+<span lang="plaintext" class="line" id="LC64">                "domain":[</span>
+<span lang="plaintext" class="line" id="LC65">                    "geosite:netflix",</span>
+<span lang="plaintext" class="line" id="LC66">                    "p3terx.com"</span>
+<span lang="plaintext" class="line" id="LC67">                ],</span>
+<span lang="plaintext" class="line" id="LC68">                "outboundTag":"warp-IPv6"</span>
+<span lang="plaintext" class="line" id="LC69">            }</span>
+<span lang="plaintext" class="line" id="LC70">        ]</span>
+<span lang="plaintext" class="line" id="LC71">    }</span>
+<span lang="plaintext" class="line" id="LC72">}</span></code></pre>
+<copy-code><button type="button" class="btn btn-default btn-md gl-button btn-icon has-tooltip" data-title="复制到剪贴板" aria-label="复制到剪贴板" data-clipboard-target="pre#code-63"><svg><use xlink:href="/assets/icons-8791a66659d025e0a4c801978c79a1fbd82db1d27d85f044a35728ea7cf0ae80.svg#copy-to-clipboard"></use></svg></button></copy-code>
+</div>
+</details>
+<h2 id="WARP-License-及-ID-获取">WARP+ License 及 ID 获取</h2>
+<p>以下是使用WARP和Team后 Argo 2.0 的官方介绍:<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9ibG9nLmNsb3VkZmxhcmUuY29tL2FyZ28tdjIv">Argo 2.0: Smart Routing Learns New Tricks</a></p>
+<p>引用Luminous大神原话：实际测试WARP+在访问非CF的网站速度上和免费版没有差异，只有在访问CloudFlare的站点时付费版会通过Argo类似的技术通过与目标较近的数据中心前往源站，而免费版是仅限于连接地前往源站，仅此而已。</p>
+<h2 id="WARP原理">WARP原理</h2>
+<p>WARP是CloudFlare提供的一项基于WireGuard的网络流量安全及加速服务，能够让你通过连接到CloudFlare的边缘节点实现隐私保护及链路优化。</p>
+<p>其连接入口为双栈（IPv4/IPv6均可），且连接后能够获取到由CF提供基于NAT的IPv4和IPv6地址，因此我们的单栈服务器可以尝试连接到WARP来获取额外的网络连通性支持。这样我们就可以让仅具有IPv6的服务器访问IPv4，也能让仅具有IPv4的服务器获得IPv6的访问能力。</p>
+<ul>
+<li>为仅IPv6服务器添加IPv4</li>
+</ul>
+<p>原理如图，IPv4的流量均被WARP网卡接管，实现了让IPv4的流量通过WARP访问外部网络。 <a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly91c2VyLWNvbnRlbnQuZ2l0bGFiLXN0YXRpYy5uZXQvZWJjM2ZlNzAzNzkyNzA0MjJkYmJhODQwOGM2OWJhZTVjMWRlMjUzZS82ODc0NzQ3MDczM2EyZjJmNzU3MzY1NzIyZDY5NmQ2MTY3NjU3MzJlNjc2OTc0Njg3NTYyNzU3MzY1NzI2MzZmNmU3NDY1NmU3NDJlNjM2ZjZkMmYzNjMyMzczMDMzMzMzNDMzMmYzMTMzMzUzNzMzMzUzNDMwMzQyZDMxMzMzODM5NjQzMDMyMzIyZDY1MzU2MzM1MmQzNDY1NjIzODJkMzkzNjM1MzUyZDY2Mzk2NjMwMzYzNTY1MzM2MzM5MzI2NTJlNzA2ZTY3"><img src="https://user-content.gitlab-static.net/ebc3fe70379270422dbba8408c69bae5c1de253e/68747470733a2f2f757365722d696d616765732e67697468756275736572636f6e74656e742e636f6d2f36323730333334332f3133353733353430342d31333839643032322d653563352d346562382d393635352d6639663036356533633932652e706e67" alt="img"></a></p>
+<ul>
+<li>为仅IPv4服务器添加IPv6</li>
+</ul>
+<p>原理如图，IPv6的流量均被WARP网卡接管，实现了让IPv6的流量通过WARP访问外部网络。 <a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly91c2VyLWNvbnRlbnQuZ2l0bGFiLXN0YXRpYy5uZXQvODY3OTRiNzRhZGI5MDhhZTE2OTIzNTRjYmY4MzIzNTg5OTU0ZTJlMS82ODc0NzQ3MDczM2EyZjJmNzU3MzY1NzIyZDY5NmQ2MTY3NjU3MzJlNjc2OTc0Njg3NTYyNzU3MzY1NzI2MzZmNmU3NDY1NmU3NDJlNjM2ZjZkMmYzNjMyMzczMDMzMzMzNDMzMmYzMTMzMzUzNzMzMzUzNDMxMzQyZDMwMzEzMzMyMzE2MjMwNjIyZDM4MzgzNzY1MmQzNDMzNjQzNjJkNjE2NDM2MzgyZDYxMzczNDY0NjIzMjMwNjM2NjY1MzgzNDJlNzA2ZTY3"><img src="https://user-content.gitlab-static.net/86794b74adb908ae1692354cbf8323589954e2e1/68747470733a2f2f757365722d696d616765732e67697468756275736572636f6e74656e742e636f6d2f36323730333334332f3133353733353431342d30313332316230622d383837652d343364362d616436382d6137346462323063666538342e706e67" alt="img"></a></p>
+<ul>
+<li>双栈服务器置换网络</li>
+</ul>
+<p>有时我们的服务器本身就是双栈的，但是由于种种原因我们可能并不想使用其中的某一种网络，这时也可以通过WARP接管其中的一部分网络连接隐藏自己的IP地址。至于这样做的目的，最大的意义是减少一些滥用严重机房出现验证码的概率；同时部分内容提供商将WARP的落地IP视为真实用户的原生IP对待，能够解除一些基于IP识别的封锁。 <a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly91c2VyLWNvbnRlbnQuZ2l0bGFiLXN0YXRpYy5uZXQvNjkzOGQ3YTllMzBiMDNhYTUwYjU2MjM4Nzg4MDE1NGRlMzU4MmRmNC82ODc0NzQ3MDczM2EyZjJmNzU3MzY1NzIyZDY5NmQ2MTY3NjU3MzJlNjc2OTc0Njg3NTYyNzU3MzY1NzI2MzZmNmU3NDY1NmU3NDJlNjM2ZjZkMmYzNjMyMzczMDMzMzMzNDMzMmYzMTMzMzUzNzMzMzUzNDMxMzkyZDM1MzAzODMwMzU2NTY0MzYyZDMyMzA2NTYxMmQzNDM0MzQzMDJkMzkzMzYyMzQyZDM1NjI2MzYzMzY2NjMyNjE2MzYxMzk2MjJlNzA2ZTY3"><img src="https://user-content.gitlab-static.net/6938d7a9e30b03aa50b562387880154de3582df4/68747470733a2f2f757365722d696d616765732e67697468756275736572636f6e74656e742e636f6d2f36323730333334332f3133353733353431392d35303830356564362d323065612d343434302d393362342d3562636336663261636139622e706e67" alt="img"></a></p>
+<ul>
+<li>网络性能方面：内核集成＞内核模块＞wireguard-go</li>
+</ul>
+<p>项目：<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRsYWIuY29tL2ZzY2FybWVuL3dhcnA=">fscarmen / warp · GitLab</a></p>
+<h1>IPv6 隧道代理</h1>
+<blockquote>
+<p>让纯IPv4支持IPv6网络</p>
+</blockquote>
+<p>使用服务：<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly90dW5uZWxicm9rZXIubmV0Lw==">Hurricane Electric 免费 IPv6 隧道代理</a></p>
+<p>它会给命令，直接CVSSH</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://koxiuqiu.cn">klcdm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://koxiuqiu.cn/2024/12y14d1/">https://koxiuqiu.cn/2024/12y14d1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://koxiuqiu.cn" target="_blank">朽丘秋雨</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%B0%E5%BD%95/">记录</a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/IPv6/">IPv6</a><a class="post-meta__tags" href="/tags/IPv4/">IPv4</a></div><div class="post_share"><div class="social-share" data-image="https://koimg.cn-sy1.rains3.com/2024/12/14/867680.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css?v=1.1.3" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js?v=1.1.3" defer=""></script></div></div><div class="business-center"><div class="business-card"><div class="business-flip"><div class="business-front"><div class="business-strip-bottom"></div><div class="business-strip-top"></div><img class="business-logo" width="80" height="80" src="https://koimg.cn-sy1.rains3.com/2024/08/18/qq.png" alt="cardcode"><div class="business-Invitation">Invitation</div><div class="business-chip"><div class="business-chip-line"></div><div class="business-chip-line"></div><div class="business-chip-line"></div><div class="business-chip-line"></div><div class="business-chip-main"></div></div><svg class="business-wave" viewBox="0 3.71 26.959 38.787" width="26.959" height="38.787" fill="white"><path d="M19.709 3.719c.266.043.5.187.656.406 4.125 5.207 6.594 11.781 6.594 18.938 0 7.156-2.469 13.73-6.594 18.937-.195.336-.57.531-.957.492a.9946.9946 0 0 1-.851-.66c-.129-.367-.035-.777.246-1.051 3.855-4.867 6.156-11.023 6.156-17.718 0-6.696-2.301-12.852-6.156-17.719-.262-.317-.301-.762-.102-1.121.204-.36.602-.559 1.008-.504z"></path><path d="M13.74 7.563c.231.039.442.164.594.343 3.508 4.059 5.625 9.371 5.625 15.157 0 5.785-2.113 11.097-5.625 15.156-.363.422-1 .472-1.422.109-.422-.363-.472-1-.109-1.422 3.211-3.711 5.156-8.551 5.156-13.843 0-5.293-1.949-10.133-5.156-13.844-.27-.309-.324-.75-.141-1.114.188-.367.578-.582.985-.542h.093z"></path><path d="M7.584 11.438c.227.031.438.144.594.312 2.953 2.863 4.781 6.875 4.781 11.313 0 4.433-1.828 8.449-4.781 11.312-.398.387-1.035.383-1.422-.016-.387-.398-.383-1.035.016-1.421 2.582-2.504 4.187-5.993 4.187-9.875 0-3.883-1.605-7.372-4.187-9.875-.321-.282-.426-.739-.266-1.133.164-.395.559-.641.984-.617h.094zM1.178 15.531c.121.02.238.063.344.125 2.633 1.414 4.437 4.215 4.437 7.407 0 3.195-1.797 5.996-4.437 7.406-.492.258-1.102.07-1.36-.422-.257-.492-.07-1.102.422-1.359 2.012-1.075 3.375-3.176 3.375-5.625 0-2.446-1.371-4.551-3.375-5.625-.441-.204-.676-.692-.551-1.165.122-.468.567-.785 1.051-.742h.094z"></path></svg><div class="business-card-number"><div class="business-section">klcdm</div><div class="business-section">215422478</div></div><div class="business-end"><span class="business-end-text">created:</span><span class="business-end-date">2024/04/09</span></div><div class="business-card-holder">Welcome to my blog</div><div class="business-master"><div class="business-circle business-master-red"></div><div class="business-circle business-master-yellow">   </div></div></div><div class="business-back"><div class="business-strip-black"></div><div class="business-ccv"><label>sitelink</label><div><a target="_blank" rel="noopener external nofollow noreferrer" href="https://qm.qq.com/q/Pm5GT41XSE">加入交流群</a></div></div><div class="business-terms"><p>and，QQ scan to the upper right, join our communication group.</p><p>或QQ扫取右上方,加入我们的交流群.</p></div></div></div></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="支付宝"></a><div class="post-qr-code-desc">支付宝</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="微信"></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/12y1d1/" title="24年11月小结,马上新年嘞刘德华也要解冻啦"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/12/01/917203.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">24年11月小结,马上新年嘞刘德华也要解冻啦</div></div></a></div><div class="next-post pull-right"><a href="/2024/12/22/1/" title="彼方的她:一次真实的跨越千年年的对话也许会改变未来"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/12/22/984118.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">彼方的她:一次真实的跨越千年年的对话也许会改变未来</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/04/29/ipv6stop/" title="如何在Linux中禁用IPv6"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/913921.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-29</div><div class="title">如何在Linux中禁用IPv6</div></div></a></div><div><a href="/2024/01/15/2/" title="论如何快速了解建站"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/725291.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-15</div><div class="title">论如何快速了解建站</div></div></a></div><div><a href="/2024/03/09/6/" title="搭建皮肤站并实现外置登录"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/459238.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-09</div><div class="title">搭建皮肤站并实现外置登录</div></div></a></div></div></div><hr class="custom-hr"><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="artalk-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i1.wp.com/koxiuqiu.cn/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">klcdm</div><div class="author-info__description">享受生活，记录日志</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://chat.dusays.com/signup_user_complete/?id=j5dz4dtc8irgtdniajj64dss1a&amp;md=link&amp;sbr=su"><i class="fa-solid fa-terminal"></i><span>点击联系我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lkcdm" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #003153;"></i></a><a class="social-icon" href="mailto:gemiidozenz@hotmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #003153;"></i></a><a class="social-icon" href="https://blog.koxiuqiu.cc/atom.xml" rel="external nofollow noreferrer" target="_blank" title="'#4a7dbe'"><i class="fas fa-rss"></i></a><a class="social-icon" href="/sitemap.xml" target="_blank" title="'#4a7dbe'"><i class="fa fa-sitemap"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这里是KLCDM的博客,欢迎向我留言!你要问我为什么背景一直是万穗爷,因为这是我的第一款GalGame啊!很有纪念价值~<p>页面异常执行 <kbd>Ctrl+F5</kbd></p><p>昼夜模式切换下翻找到<kbd>右下方齿轮</kbd>或<kbd>右键</kbd>[推广信息请自己酌情选择]</p><p>域名<kbd>koxiuqiu.cn</kbd>不开放交互评论区留言,请转至<kbd>koxiuqiu.cc</kbd>.</p></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">WARP好处</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#warp-%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC"><span class="toc-text">warp 运行脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#warp-go-%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC"><span class="toc-text">warp-go 运行脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cloudflare-api"><span class="toc-text">Cloudflare api</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B7-Netflix-%E8%A7%A3%E9%94%81-WARP-IP-%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">刷 Netflix 解锁 WARP IP 的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WARP-socks5-%E6%88%96-interface-%E5%88%86%E6%B5%81%E6%A8%A1%E6%9D%BF%E5%8F%8A%E8%A7%A3%E9%94%81-chatGPT-%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">WARP socks5 或 interface 分流模板及解锁 chatGPT 的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WARP-License-%E5%8F%8A-ID-%E8%8E%B7%E5%8F%96"><span class="toc-text">WARP+ License 及 ID 获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WARP%E5%8E%9F%E7%90%86"><span class="toc-text">WARP原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">IPv6 隧道代理</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/13p/" title="25年4月小结"><img src="https://cn-sy1.rains3.com/koimg/2025/05/20dcae544c1569f625877194db355c98.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="25年4月小结"></a><div class="content"><a class="title" href="/13p/" title="25年4月小结">25年4月小结</a><time datetime="2025-04-29T16:00:00.000Z" title="发表于 2025-04-30 00:00:00">2025-04-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/12p2504261/" title="四月自我笔记"><img src="https://cn-sy1.rains3.com/koimg/2025/05/0145a76e250a2c93d3fec30b7909d087.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="四月自我笔记"></a><div class="content"><a class="title" href="/12p2504261/" title="四月自我笔记">四月自我笔记</a><time datetime="2025-04-25T16:00:00.000Z" title="发表于 2025-04-26 00:00:00">2025-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/10p2504131/" title="关于QiuDunCDN近期状态"><img src="https://cn-sy1.rains3.com/koimg/2025/04/dbe19f91f1c79ce96dd91ea77f83aed9.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于QiuDunCDN近期状态"></a><div class="content"><a class="title" href="/10p2504131/" title="关于QiuDunCDN近期状态">关于QiuDunCDN近期状态</a><time datetime="2025-04-12T16:00:00.000Z" title="发表于 2025-04-13 00:00:00">2025-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/10p2504121/" title="关于HEXO的构建和配置"><img src="https://cn-sy1.rains3.com/koimg/2025/03/f78912d51d2304f9ab28c8635dc3fe95.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于HEXO的构建和配置"></a><div class="content"><a class="title" href="/10p2504121/" title="关于HEXO的构建和配置">关于HEXO的构建和配置</a><time datetime="2025-04-11T16:00:00.000Z" title="发表于 2025-04-12 00:00:00">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/8p2503221/" title="25年3月小结"><img src="https://cn-sy1.rains3.com/koimg/2025/03/f78912d51d2304f9ab28c8635dc3fe95.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="25年3月小结"></a><div class="content"><a class="title" href="/8p2503221/" title="25年3月小结">25年3月小结</a><time datetime="2025-03-21T16:00:00.000Z" title="发表于 2025-03-22 00:00:00">2025-03-22</time></div></div></div></div></div></div></main><footer id="footer" style="background: #00000000"><div id="footer-wrap"><div class="copyright">©2023 - 2025 By klcdm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><span id="runtime"></span> <br> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io/"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/hexo.svg"></a>|<a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/Copyright.svg"></a>|<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/Github.svg">|</a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.qiudcdn.cn/"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/CDN.svg"></a> <br> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.travellings.cn/go-by-clouds.html"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/travellings.gif"></a>| <a target="_blank" rel="noopener external nofollow noreferrer" href="https://icp.gov.moe/?keyword=20242040"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/iconbei.png"></a>|<a target="_blank" rel="noopener external nofollow noreferrer" href="https://blogscn.fun/random.html"><img class="icp-icon" src="https://photo.xiangming.site/img/footer.gif"></a> <br><a href="https://www.foreverblog.cn/" rel="external nofollow noreferrer" target="_blank"> <img src="https://img.foreverblog.cn/logo_en_default.png" alt="" style="width:auto;height:16px;"> <br></a><a href="https://beian.miit.gov.cn" rel="external nofollow noreferrer" target="_blank">陕ICP备2024049234号-4</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js?v=5.0.33"></script><script src="/pluginsSrc/instant.page/instantpage.js?v=5.2.0" type="module"></script><script src="/pluginsSrc/node-snackbar/dist/snackbar.min.js?v=0.1.16"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('/pluginsSrc/pangu/dist/browser/pangu.min.js?v=4.0.7')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  let artalkItem = null
+  const initArtalk = () => {
+    artalkItem = Artalk.init(Object.assign({
+      el: '#artalk-wrap',
+      server: 'https://cn-artalk.koxiuqiu.cc',
+      site: '朽丘秋雨',
+      pageKey: location.pathname,
+      darkMode: document.documentElement.getAttribute('data-theme') === 'dark',
+    },null))
+
+    if (GLOBAL_CONFIG.lightbox === 'null') return
+    artalkItem.on('list-loaded', () => {
+      artalkItem.ctx.get('list').getCommentNodes().forEach(comment => {
+        const $content = comment.getRender().$content
+        btf.loadLightbox($content.querySelectorAll('img:not([atk-emoticon])'))
+      })
+    })
+
+    const destroyArtalk = () => {
+      artalkItem.destroy()
+    }
+
+    btf.addGlobalFn('pjax', destroyArtalk, 'destroyArtalk')
+  }
+
+  const loadArtalk = async () => {
+    if (typeof Artalk === 'object') initArtalk()
+    else {
+      await getCSS('https://artalk.koxiuqiu.cn/dist/Artalk.css')
+      await getScript('https://artalk.koxiuqiu.cn/dist/Artalk.js')
+      initArtalk()
+    }
+  }
+
+  const artalkChangeMode = theme => {
+    const artalkWrap = document.getElementById('artalk-wrap')
+    if (!(artalkWrap && artalkWrap.children.length)) return
+    const isDark = theme === 'dark'
+    artalkItem.setDarkMode(isDark)
+  }
+
+  btf.addGlobalFn('themeChange', artalkChangeMode, 'artalk')
+
+  if ('Artalk' === 'Artalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('artalk-wrap'), loadArtalk)
+    else loadArtalk()
+  } else {
+    window.loadOtherComment = loadArtalk
+  }
+})()</script></div><script type="text/javascript" src="/js/reward.js"></script><script src="/js/sweetalert2.all.min.js"></script><script async="" src="/js/categoryBar.js"></script><script type="text/javascript" src="/js/jquery.min.js"></script><script type="text/javascript" src="/js/rightmenu.js"></script><script src="/js/jquery.min.js"></script><script src="/js/hometop.js"></script><script src="/js/flipcountdown.js"></script><script data-pjax="" src="/js/runtime.js"></script><script src="/js/127.js"></script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();" rel="external nofollow noreferrer"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();" rel="external nofollow noreferrer"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();" rel="external nofollow noreferrer"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-share"></i><span>百度搜索</span></a><a class="rightMenu-item" href="#post-comment" onclick="rmf.yinyong()"><i class="fa-solid fa-message"></i><span>引用文本评论</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>粘贴</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()" rel="external nofollow noreferrer"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()" rel="external nofollow noreferrer"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()" rel="external nofollow noreferrer"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.click()" rel="external nofollow noreferrer"><i class="fa fa-arrows-alt"></i><span>全屏显示</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:toRandomPost()" rel="external nofollow noreferrer"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();" rel="external nofollow noreferrer"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.translate();" rel="external nofollow noreferrer"><i class="fa fa-pen-to-square"></i><span>繁简转换</span></a></div></div><!-- hexo injector body_end start --><script async="" src="/js/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

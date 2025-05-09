@@ -1,0 +1,8 @@
+@font-face{
+    font-family: 'hexo';
+    font-display: swap;
+    src: url('https://cn-sy1.rains3.com/klcdm/chhexo.ttf') format("truetype");
+}
+body {
+    font-family: 'hexo';
+}

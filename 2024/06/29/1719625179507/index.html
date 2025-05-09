@@ -1,0 +1,672 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>MC服务器开服全解-特保姆 | 朽丘秋雨</title><meta name="author" content="klcdm"><meta name="copyright" content="klcdm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="本系列为持续更新内容，如果发现有需要补充或者错误直接留言，各平台都会进行更新修复内容  本文基于 雨云 - 新一代云服务提供商 (rainyun.com)进行编写 本文可能有亿点长，如果有写错的可以反馈一下我我去实施更新，同时也会后面挑时间去完善，这里会标注更新时间 最后一次更新时间为：2024|6|29|19:30 - 目前字数约：7.5k 服务器选择 会以萌新简单易懂的角度去说明独立IP以及">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MC服务器开服全解-特保姆">
+<meta property="og:url" content="https://koxiuqiu.cn/2024/06/29/1719625179507/index.html">
+<meta property="og:site_name" content="朽丘秋雨">
+<meta property="og:description" content="本系列为持续更新内容，如果发现有需要补充或者错误直接留言，各平台都会进行更新修复内容  本文基于 雨云 - 新一代云服务提供商 (rainyun.com)进行编写 本文可能有亿点长，如果有写错的可以反馈一下我我去实施更新，同时也会后面挑时间去完善，这里会标注更新时间 最后一次更新时间为：2024|6|29|19:30 - 目前字数约：7.5k 服务器选择 会以萌新简单易懂的角度去说明独立IP以及">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://koimg.cn-sy1.rains3.com/2024/08/28/526505.webp">
+<meta property="article:published_time" content="2024-06-29T08:14:00.000Z">
+<meta property="article:modified_time" content="2024-06-29T08:14:00.000Z">
+<meta property="article:author" content="klcdm">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="服务器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://koimg.cn-sy1.rains3.com/2024/08/28/526505.webp"><link rel="shortcut icon" href="https://i1.wp.com/koxiuqiu.cn/img/favicon.png"><link rel="canonical" href="https://koxiuqiu.cn/2024/06/29/1719625179507/index.html"><link rel="preconnect"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css?v=6.5.1"><link rel="stylesheet" href="/pluginsSrc/node-snackbar/dist/snackbar.min.css?v=0.1.16" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css?v=5.0.33" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"距离编写已经","messageNext":"天,文章的内容可能已经过时,或者是图片失效,及时留言反馈补充"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":500,"languages":{"author":"作者: klcdm","link":"链接: ","source":"来源: 朽丘秋雨","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js?v=4.11.1',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MC服务器开服全解-特保姆',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-06-29 16:14:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdmirror.com/gh/willow-god/Sharding-fonts/LXGWWenKai-Regular/result.css"><link rel="stylesheet" href="/css/rightmenu.css"><link rel="stylesheet" href="/css/iconfont.css"><link rel="stylesheet" href="/css/license.css"><link rel="stylesheet" href="/css/fo.css"><link rel="stylesheet" type="text/css" href="/css/heoMainColor.css"><link rel="stylesheet" type="text/css" href="/css/categoryBar.css"><link rel="stylesheet" href="/css/progress_bar.css?1"><link rel="stylesheet" href="/css/flipcountdown.css"><link rel="stylesheet" href="/css/cursors.css"><link rel="stylesheet" href="/css/linav.css"><link rel="stylesheet" href="/css/hometop.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="/css/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/tag_plugins.css" media="defer" onload="this.media='all'"><script src="/js/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="朽丘秋雨" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i1.wp.com/koxiuqiu.cn/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr class="custom-hr"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa-solid fa-folder-open"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/posts/"><i class="fa-fw fas fa-archive"></i><span> 总览</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/categories"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about"><i class="fa-fw fas fa-heart"></i><span> 博主</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fas fa-heart"></i><span> 留言</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fa fa-bullhorn"></i><span> 说说</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-link"></i><span> 友联</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fa fa-comments"></i><span> 鱼塘圈</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/atom.xml"><i class="fa-fw fas fa-rss"></i><span> 订阅</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="朽丘秋雨"><img class="site-icon" src="https://i1.wp.com/koxiuqiu.cn//img/xqlogo.png"><span class="site-name">朽丘秋雨</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa-solid fa-folder-open"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/posts/"><i class="fa-fw fas fa-archive"></i><span> 总览</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/categories"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about"><i class="fa-fw fas fa-heart"></i><span> 博主</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fas fa-heart"></i><span> 留言</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/about/site"><i class="fa-fw fa fa-bullhorn"></i><span> 说说</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-link"></i><span> 友联</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fa fa-comments"></i><span> 鱼塘圈</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.koxiuqiu.cc/atom.xml"><i class="fa-fw fas fa-rss"></i><span> 订阅</span></a></li></ul></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">MC服务器开服全解-特保姆</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-29T08:14:00.000Z" title="发表于 2024-06-29 16:14:00">2024-06-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-29T08:14:00.000Z" title="更新于 2024-06-29 16:14:00">2024-06-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E8%89%BA%E9%A9%B3%E6%9D%82/">技艺驳杂</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>25分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MC服务器开服全解-特保姆"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2024/06/29/1719625179507/#post-comment"><span id="ArtalkCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div><article class="post-content" id="article-container"><blockquote>
+<p>本系列为持续更新内容，如果发现有需要补充或者错误直接留言，各平台都会进行更新修复内容</p>
+</blockquote>
+<p><strong><s>本文基于</s></strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cucmFpbnl1bi5jb20vaG9tZQ=="><strong><s>雨云 - 新一代云服务提供商 (rainyun.com)</s></strong></a><strong><s>进行编写</s></strong></p>
+<p>本文可能有亿点长，如果有写错的可以反馈一下我我去实施更新，同时也会后面挑时间去完善，这里会标注更新时间</p>
+<p><strong>最后一次更新时间为：2024|6|29|19:30 - 目前字数约：7.5k</strong></p>
+<h1>服务器选择</h1>
+<p>会以萌新简单易懂的角度去说明独立IP以及NAT的区别，并且说明各自的好处以及注意事项，和不可用的环境以及问题所在</p>
+<h2 id="独立公网IP">独立公网IP</h2>
+<p>顾名思义，独立IP地址即为服务器开通单独IP，可以直接用IP进行公网访问：例如：222.187.238.202</p>
+<p>独立IP的话，通常外面的人使用 <code>您的服务器IP:服务端口</code> 就可以访问到</p>
+<p>IP地址是由32位(bit)字组成，分成4组，每组为0-255之间的数字，比如说：222.187.238.202 就是一个IP地址。每台机器都需要一个IP来连接到Internet上进行通讯。虽然有上百亿个IP可以使用， 但是毕竟是有限的（大厂）</p>
+<p>那么有什么用呢？</p>
+<p>用于我的世界服务器，他可以让你直接不用去单独分配端口，用什么端口就用什么，例如我的世界服务器默认的端口是25565，所以你就可以直接连接服务器的地址就是IP:25565</p>
+<p>并且独立IP，在国内也可以享有一些高防IP，用于防御DDOS攻击等</p>
+<h2 id="NAT模式">NAT模式</h2>
+<p>在 <a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9mb3J1bS5yYWlueXVuLmNvbS90L3RvcGljLzUyMjI=">生动的解释各种概念</a> 中就生动说明了NAT</p>
+<p>NAT模式就是你的服务器处于同一网络IP环境下，属于共享IP，多人的去用一个IP，这种共享IP有一个坏处就是，有一个人遭受攻击等问题，就会波联到一群人，而且端口不能自定义，内网和外网的端口不是一致的，这个IP的外网端口被他人创建使用的话你就不能再次创建使用，例如我开放内网25565，外网端口是11451，如果11451已经被创建了你就不能使用只能创建11452或者其他的端口</p>
+<p>对于共享IP，我们需要设定一条NAT规则，这样就可以让外部的链接可以访问本地服务器上的服务。</p>
+<blockquote>
+<p>如果不懂，可以跳过，不需要完全理解后续也会图文操作</p>
+</blockquote>
+<h1>系统的选择</h1>
+<p>以我懂的方面来说，我的世界服务器支持Windows以及Linux系统，个人推荐萌新可以去选择Windows系统，相对于Linux更简单，当然，Linux也可以直接使用一键部署面板系统来进行网页操作，甚至是<s>Docker</s>容器（被和谐）</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tuayx1.png" alt="|100%x100%"></p>
+<h1>服务器核心</h1>
+<p>服务器核心分为很多种</p>
+<h2 id="原版服核心">原版服核心</h2>
+<p>1、官方原版服核心：</p>
+<blockquote>
+<p>最原始的服务器核心，不能加任何元素附属，比如插件模组这些</p>
+</blockquote>
+<h2 id="插件服核心">插件服核心</h2>
+<p>1、Spigot核心：</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9nZXRidWtraXQub3JnL2Rvd25sb2FkL3NwaWdvdC8=">https://getbukkit.org/download/spigot/</a></p>
+<p>2、Paper核心【优化】:</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9wYXBlcm1jLmlvL2Rvd25sb2Fkcy9wYXBlci8=">https://papermc.io/downloads/paper/</a></p>
+<p>3、Akarin核心【多线程】：</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRodWIuY29tL0FrYXJpbi1wcm9qZWN0L0FrYXJpbi8=">https://github.com/Akarin-project/Akarin/</a></p>
+<blockquote>
+<p>可以加插件等扩展，如果想做小游戏或者有趣的原版生存服务器可以尝试</p>
+</blockquote>
+<h2 id="模组服核心">模组服核心</h2>
+<p>1、Fabric核心：</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9mYWJyaWNtYy5uZXQv">https://fabricmc.net/</a></p>
+<p>2、Forge核心：</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9maWxlcy5taW5lY3JhZnRmb3JnZS5uZXQvbmV0L21pbmVjcmFmdGZvcmdlL2ZvcmdlLw==">https://files.minecraftforge.net/net/minecraftforge/forge/</a></p>
+<blockquote>
+<p>可以加模组等扩展，不过对于服务器性能有一定要求</p>
+</blockquote>
+<h2 id="插件模组服核心">插件模组服核心</h2>
+<p>1、Mohist核心：</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9tb2hpc3RtYy5jb20v">https://mohistmc.com/</a></p>
+<p>2、CatServer核心：</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRodWIuY29tL0x1b2h1YXl1L0NhdFNlcnZlci90cmVlLzEuMTIuMg==">https://github.com/Luohuayu/CatServer/tree/1.12.2</a></p>
+<blockquote>
+<p>插件模组都可以加，对于服务器性能相对较高，同时混合端BUG也可能比其他的多</p>
+</blockquote>
+<h2 id="基岩服核心">基岩服核心</h2>
+<p>1、Bedrock Server核心【原版】：</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cubWluZWJicy5jb20vYmRzLw==">https://www.minebbs.com/bds/</a></p>
+<p>2、LiteLoaderBDS核心【插件】：</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRodWIuY29tL0xpdGVMRGV2L0xpdGVMb2FkZXJCRFMvcmVsZWFzZXM=">https://github.com/LiteLDev/LiteLoaderBDS/releases</a></p>
+<p>3、NukkitX核心</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9jbG91ZGJ1cnN0bWMub3JnL2FydGljbGVzLw==">https://cloudburstmc.org/articles/</a></p>
+<blockquote>
+<p>基岩端的一些服务器核心，</p>
+</blockquote>
+<h2 id="服务器核心下载">服务器核心下载</h2>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cuZmFzdG1pcnJvci5uZXQvIy9ob21l">https://www.fastmirror.net/#/home</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9tY3Jlcy5jbi8=">灵依资源站 | 一个网站下载所有MC开服资源 (mcres.cn)</a></p>
+<p>大致也可以分为</p>
+<ul>
+<li>原版端</li>
+<li>插件端</li>
+<li>Mod端</li>
+<li>混合端</li>
+<li>代理端</li>
+<li>…</li>
+</ul>
+<h1>开始实操</h1>
+<p>废话也不多说了，直接开始实操，如果有什么需要前面补充的可以留言给我我会进行更新修补</p>
+<h2 id="准备服务器">准备服务器</h2>
+<p>这里还是以雨云的视角来提供操作，下面简单放一些性能测试图（5900X）</p>
+<blockquote>
+<p>如果你有自己的服务器供应商了也可以使用，只需要换位思考一下操作流程就行，操作性质都是相同的</p>
+</blockquote>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tue8kg.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tuqia0.png" alt="|100%x100%"></p>
+<p>注册一个雨云账户<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cucmFpbnl1bi5jb20vaG9tZQ==">雨云 - 新一代云服务提供商 (rainyun.com)</a></p>
+<p>安装要求去填写你编辑的个人账户信息，优惠码可以填写<code>vip5r</code> 然后勾选： <strong>我已阅读并接受 服务条款</strong></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tusalj.png" alt="|100%x100%"></p>
+<p>注册完成，就可以前往选择服务器</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tuuvwm.png" alt="|100%x100%"></p>
+<p>然后这里我们选择VPS服务器类型</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tuwrf9.png" alt="|100%x100%"></p>
+<p>区域选择的话，目前来看，宿迁支持NAT而宁波只能独立公网</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tuyrex.png" alt="|100%x100%"></p>
+<p>开我的世界服务器，服务器CPU自然是单核性能高更好，目前有6款CPU型号去选择，一般5900X是比较普遍性的一个选择，无论是混合服务器还是插件服务器都有相对不错的表现但是需求不高玩个生存或者小插件其实可以选择Gold 6146或者E5 2666v3</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tvapvn.png" alt="|100%x100%"></p>
+<p>对于计费模式的选择，如果说你的服务器全天都CPU占用高于50，可以使用固定计费不用麻烦，如果是说一天下来占用很理想，可以选择动态计费，它可以帮助你省钱；</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9mb3J1bS5yYWlueXVuLmNvbS90L3RvcGljLzY0OA==">https://forum.rainyun.com/t/topic/648</a></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tvdwmu.png" alt="|100%x100%"></p>
+<p>关于配置选择，可以直接使用官方预设的配置，如果说是类似生电服务器多人服务器，则是可以选择内存拉高点，带宽一般15-20M左右即可</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tvgca9.png" alt="|100%x100%"></p>
+<p>期间发现TPS降低则是配置不够，或者是你加了奇怪的东西导致优化差劲</p>
+<blockquote>
+<p>什么是TPS？它是指Minecraft中的每秒刻数，MC服务器表现不错的情况下是20-19TPS，如果18TPS也可以接受，但是低于18的话你可能要考虑升级服务器配置或者是优化服务端</p>
+</blockquote>
+<p>选择好自己的需求后，直接开通或者是点击使用，如果是4C以上则是2元试用，同时支持7天退款，你可能需要了解一下</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9mb3J1bS5yYWlueXVuLmNvbS90L3RvcGljLzE4">https://forum.rainyun.com/t/topic/18</a></p>
+<p>对于独立公网和NAT的选择，下面的写作都会写两个视角去说明，不用担心</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tviwvg.png" alt="|100%x100%"></p>
+<h2 id="连接服务器Windows">连接服务器Windows</h2>
+<p>两种方案</p>
+<h3 id="指令打开">指令打开</h3>
+<p>win键+R打开运行窗口，输入<code>mstsc</code></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tvkifq.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tvusap.png" alt="|100%x100%"></p>
+<h3 id="搜索打开">搜索打开</h3>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tw5z7a.png" alt="|100%x100%"></p>
+<h3 id="NAT模式-2">NAT模式</h3>
+<p>进入服务器管理面板，右边就有一个NAT的控制台，Windows远程控制端口一般是3389，如果没有开放就创建一个就行，内网端口填3389外网端口一般自己会生成</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/twgbn1.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/twiv92.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/twlc2j.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/twpije.png" alt="|565pxx220px"></p>
+<h3 id="独立公网IP模式">独立公网IP模式</h3>
+<p>直接输入IP，不用NAT这么麻烦，雨云默认防火墙全开端口全开放</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/twrylf.png" alt="|100%x100%"></p>
+<h2 id="连接服务器Linux">连接服务器Linux</h2>
+<p>可以下载SSH连接工具连接，这里推荐Xterminal</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cueHRlcm1pbmFsLmNuLw==">https://www.xterminal.cn/</a></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tx5iu0.png" alt="|100%x100%"></p>
+<p>这里注意端口，如果是独立公网直接输入IP忽视就行，默认一般22，如果是NAT则是需要自行开放22端口，如图</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tx8kxt.png" alt="|100%x100%"></p>
+<p>然后连接端口就改成对应的外网端口</p>
+<blockquote>
+<p>下面开始创建MC服务器</p>
+</blockquote>
+<h1>Windows篇-部署MC服</h1>
+<h2 id="JAVA篇">JAVA篇</h2>
+<p>对于JAVA，我的世界服务器主要吃单核性能（高版本以及对多核进行处理并且有核心进行优化），所以说可以选择一些高U配置服务器</p>
+<h3 id="主要">主要</h3>
+<h4 id="下载核心">下载核心</h4>
+<p>先写一下主要的开启部署流程，这里先准备下素材</p>
+<ul>
+<li>服务器jar核心</li>
+<li>Java环境</li>
+<li>启动脚本</li>
+<li>基本配置</li>
+</ul>
+<p>这里下载你要的版本，我自己有1.12.2版本的核心就不用最新版本了看你要玩什么版本（不在详细说明官方核心，官方核心写完脚本启动就直接玩了）</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9tb2hpc3RtYy5jb20v">https://mohistmc.com/</a></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/txapfz.png" alt="|566pxx147px"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/txdx50.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/txoqzi.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/txr8lx.png" alt="|100%x100%"></p>
+<p>等待下载完成，这里下载完了就把核心改名成<code>server.jar</code> 你也可以不改直接用</p>
+<p>然后按照正常复制文本一样，直接复制到服务器（当然你服务器上游览器下载也没问题）</p>
+<h4 id="编写脚本">编写脚本</h4>
+<p>然后创建一个文件夹，把jar核心文件丢进去，然后创建一个文本，把他改成你要的名字.bat，改成bat后缀</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/txw92b.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/txz3vl.png" alt="|100%x100%"></p>
+<p>如果你没后缀这个显示就开一下显示</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/ty9mou.png" alt="|100%x100%"></p>
+<p>然后编写一个简单的启动脚本</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tybjef.png" alt="|566pxx70px"></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@ECHO OFF</span><br><span class="line">"C:\Program Files\Java\dragonwell_8\bin\java.exe" -Xmx4G -Xms4G -jar server.jar</span><br><span class="line"></span><br><span class="line">%0</span><br></pre></td></tr></tbody></table></figure>
+<p>脚本解析：</p>
+<ul>
+<li>“C:\Program Files\Java\dragonwell_8\bin\java.exe”</li>
+</ul>
+<blockquote>
+<p>Java版本的选择根据你MC服务器核心的版本，这里演示后面换成了1.12.2MC服务器版本，所以说用的是Java8</p>
+</blockquote>
+<blockquote>
+<p>从1.12（17w13a）开始，运行Minecraft的最低要求是Java 8。</p>
+<p>从1.17（21w19a）开始，运行Minecraft的最低要求是Java 16。</p>
+<p>从1.18（1.18-pre2）开始，运行Minecraft的最低要求是Java 17。</p>
+<p>从1.20.5（24w14a）开始，运行Minecraft的最低要求是Java 21，且操作系统要求为64位。</p>
+</blockquote>
+<p>Java文件路径，雨云的游戏云服务器默认都有配好，一般路径是<br>
+<img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tydpha.png" alt="|566pxx121px"></p>
+<ul>
+<li>-Xmx4G -Xms4G</li>
+</ul>
+<p>最大内存和最小内存，看你服务器配置有多少，一般一样就行，不过MC服务器10G就差不多够用了生电服另说</p>
+<ul>
+<li>-jar server.jar</li>
+</ul>
+<p>jar核心文件的名字，这里要填写完整</p>
+<ul>
+<li>%0</li>
+</ul>
+<p>循环脚本，你可以理解服务器出错或者关闭后自动开启服务器，可不加</p>
+<p>双击启动等待下载服务器文件完全</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tyg85e.png" alt="|100%x100%"></p>
+<p>出现同意协议直接输入true就行</p>
+<blockquote>
+<p>或者是关闭窗口修改协议文件false修改成true，有的是修改文件，文件叫：<strong>eula.txt</strong></p>
+</blockquote>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tyikbp.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tytks8.png" alt="|100%x100%"></p>
+<p>当出现help提示就说明服务器已经开启完毕了，我这个核心汉化了，有的核心是英文不过道理一样都是看到help就是开启完毕</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tyvxd2.png" alt="|100%x100%"></p>
+<h4 id="连接服务器">连接服务器</h4>
+<p>回到雨云服务器管理控制台，添加一个端口，内网端口MC默认是25565</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tyy0nb.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tyzwwp.png" alt="|100%x100%"></p>
+<p>然后回到客户端，CTRL+V粘贴地址即可</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tz1nue.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tz3i2n.png" alt="|100%x100%"></p>
+<h4 id="服务器配置">服务器配置</h4>
+<p>找到<code>server.properties</code> 文件，右键编辑或者n++打开</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tz5kpi.png" alt="|100%x100%"></p>
+<p>这里就放出简单的翻译</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br></pre></td><td class="code"><pre><span class="line">#设置监听服务器的端口号</span><br><span class="line"></span><br><span class="line">generator-settings=</span><br><span class="line"></span><br><span class="line">#用于自定义超平坦世界的生成</span><br><span class="line"></span><br><span class="line">force-gamemode=false</span><br><span class="line"></span><br><span class="line">#玩家加入服务器时强制变成默认游戏模式</span><br><span class="line"></span><br><span class="line">allow-nether=true</span><br><span class="line"></span><br><span class="line">#是否开启地狱世界(关闭后删除将不会生成地狱世界)</span><br><span class="line"></span><br><span class="line">enforce-whitelist=false</span><br><span class="line"></span><br><span class="line">#在服务器上强制执行白名单。</span><br><span class="line"></span><br><span class="line">gamemode=survival</span><br><span class="line"></span><br><span class="line">#设置玩家的游戏模式</span><br><span class="line"></span><br><span class="line">broadcast-console-to-ops=true</span><br><span class="line"></span><br><span class="line">#*给op发送控制台信息?</span><br><span class="line"></span><br><span class="line">enable-query=false</span><br><span class="line"></span><br><span class="line">#是否开启GameSpy4协议服务器监听器，用于获取服务器信息，建议不要修改</span><br><span class="line"></span><br><span class="line">player-idle-timeout=0</span><br><span class="line"></span><br><span class="line">#当进入AFK模式,在规定时间内T出服务器,设置成0为不T出服务器</span><br><span class="line"></span><br><span class="line">difficulty=easy</span><br><span class="line"></span><br><span class="line">#设置游戏的难度（peaceful(0)=和平，easy(1)=简单，normal(2)=普通，hard(3)=困难）</span><br><span class="line"></span><br><span class="line">broadcast-rcon-to-ops=true</span><br><span class="line"></span><br><span class="line">#*允许远程连接控制台给op发送信息?</span><br><span class="line"></span><br><span class="line">spawn-monsters=true</span><br><span class="line"></span><br><span class="line">#是否生成怪物</span><br><span class="line"></span><br><span class="line">op-permission-level=4</span><br><span class="line"></span><br><span class="line">#设定OP的权限等级</span><br><span class="line"></span><br><span class="line">#1 - OP可以无视重生点保护</span><br><span class="line"></span><br><span class="line">#2 - OP可以使用 /clear、/gamemode、/tp 等等命令，可编辑命令方块</span><br><span class="line"></span><br><span class="line">#3 - OP可以使用 /ban、/deop、/kick 以及 /op 命令</span><br><span class="line"></span><br><span class="line">#4 - OP可以使用 /stop 命令</span><br><span class="line"></span><br><span class="line">pvp=true</span><br><span class="line"></span><br><span class="line">#是否可以PVP</span><br><span class="line"></span><br><span class="line">snooper-enabled=true</span><br><span class="line"></span><br><span class="line">#一旦启用，将允许服务端定期发送统计数据到http://snoop.minecraft.net 7.</span><br><span class="line"></span><br><span class="line">level-type=default</span><br><span class="line"></span><br><span class="line">#确定地图所生成的类型</span><br><span class="line"></span><br><span class="line">#DEFAULT - 标准世界</span><br><span class="line"></span><br><span class="line">#FLAT - 超平坦世界</span><br><span class="line"></span><br><span class="line">#LARGEBIOMES - 预设世界，但所有生态系都更大（仅快照12w19a，或正式版1.3之后可用）</span><br><span class="line"></span><br><span class="line">#AMPLIFIED - 预设世界，但世界生成高度提高（仅快照13w36a，或正式版1.7.2之后可用）</span><br><span class="line"></span><br><span class="line">#CUSTOMIZED - 自快照14w21b以来，服务器也支持自定义地形。使用方法是在generator-settings贴上代码`</span><br><span class="line"></span><br><span class="line">hardcore=false</span><br><span class="line"></span><br><span class="line">#极限模式（启用后，玩家死后会被服务器封禁）。</span><br><span class="line"></span><br><span class="line">enable-command-block=false</span><br><span class="line"></span><br><span class="line">#是否启用命令方块</span><br><span class="line"></span><br><span class="line">network-compression-threshold=256</span><br><span class="line"></span><br><span class="line">#默认会允许n-1字节的数据包正常发送, 如果数据包为 n 字节或更大时会进行压缩。</span><br><span class="line"></span><br><span class="line">所以，更低的数值会使得更多的数据包被压缩，但是如果被压缩的数据包字节太小将会得不偿失。</span><br><span class="line">#-1 - 永久禁用数据包压缩</span><br><span class="line"></span><br><span class="line">#0 - 压缩全部数据包</span><br><span class="line"></span><br><span class="line">#(建议在64-1500)</span><br><span class="line"></span><br><span class="line">max-players=20</span><br><span class="line"></span><br><span class="line">#最大玩家数</span><br><span class="line"></span><br><span class="line">#在ops.ym中设置你要突破人数限制的OP下的bypassesPlayerLimit选项为true即可（默认值为false）</span><br><span class="line"></span><br><span class="line">#这意味着OP不需要在服务器人满时等待玩家离开再加入，</span><br><span class="line"></span><br><span class="line">max-world-size=29999984</span><br><span class="line"></span><br><span class="line">#设置世界边界的最大半径值，单位为方块。通过成功执行的命令能把世界边界设置得更大，</span><br><span class="line"></span><br><span class="line">#但不会超过这里设置的最大方块限制。如果设置的 max-world-size 超过默认值的大小，那将不会起任何效果。</span><br><span class="line"></span><br><span class="line">#例如：</span><br><span class="line"></span><br><span class="line">#设置 max-world-size 为 1000 将会有 2000x2000 的地图边界。</span><br><span class="line"></span><br><span class="line">#设置 max-world-size 为 4000 将会有 8000x8000 的地图边界。</span><br><span class="line"></span><br><span class="line">#自定义世界边界指令/worldborder在1.8加入</span><br><span class="line"></span><br><span class="line">resource-pack-sha1=</span><br><span class="line"></span><br><span class="line">#资源包的SHA-1值，必须为小写十六进制</span><br><span class="line"></span><br><span class="line">function-permission-level=2</span><br><span class="line"></span><br><span class="line">#用于控制函数拥有的权限等级。</span><br><span class="line"></span><br><span class="line">rcon.port=25575</span><br><span class="line"></span><br><span class="line">#设置远程访问的端口号</span><br><span class="line"></span><br><span class="line">server-port=25565</span><br><span class="line"></span><br><span class="line">#设置服务器的IPv4端口号</span><br><span class="line"></span><br><span class="line">server-ip=</span><br><span class="line"></span><br><span class="line">#将服务器与一个特定IP绑定。建议留空</span><br><span class="line"></span><br><span class="line">#留空，或是填入你想让服务器绑定的域名。</span><br><span class="line"></span><br><span class="line">spawn-npcs=true</span><br><span class="line"></span><br><span class="line">#决定是否生成村民</span><br><span class="line"></span><br><span class="line">allow-flight=false</span><br><span class="line"></span><br><span class="line">#允许玩家在安装添加飞行功能的mod前提下在生存模式下飞行。</span><br><span class="line"></span><br><span class="line">level-name=world</span><br><span class="line"></span><br><span class="line">#主世界名称</span><br><span class="line"></span><br><span class="line">view-distance=10</span><br><span class="line"></span><br><span class="line">#设置服务端传送给客户端的区块量 (范围3-15)</span><br><span class="line"></span><br><span class="line">#减小此数值可有效缓解卡顿</span><br><span class="line"></span><br><span class="line">resource-pack=</span><br><span class="line"></span><br><span class="line">#可输入指向一个资源包的URI。玩家可选择是否使用该资源包</span><br><span class="line"></span><br><span class="line">spawn-animals=true</span><br><span class="line"></span><br><span class="line">#动物是否可以生成</span><br><span class="line"></span><br><span class="line">white-list=false</span><br><span class="line"></span><br><span class="line">#服务器的白名单，OP无须加入白名单</span><br><span class="line"></span><br><span class="line">rcon.password=</span><br><span class="line"></span><br><span class="line">#远程访问密码</span><br><span class="line"></span><br><span class="line">generate-structures=true</span><br><span class="line"></span><br><span class="line">#定义是否在生成世界时生成结构（如村庄）</span><br><span class="line"></span><br><span class="line">online-mode=true</span><br><span class="line"></span><br><span class="line">#线上模式是否开启 (即正版模式)</span><br><span class="line"></span><br><span class="line">max-build-height=256</span><br><span class="line"></span><br><span class="line">#玩家在游戏中能够建造的最大高度</span><br><span class="line"></span><br><span class="line">level-seed=</span><br><span class="line"></span><br><span class="line">#世界种子</span><br><span class="line"></span><br><span class="line">prevent-proxy-connections=false</span><br><span class="line"></span><br><span class="line">#如果开启服务器发送的和Mojang的验证服务器的ISP/AS不一样将会被踢出</span><br><span class="line"></span><br><span class="line">#开启后禁止使用VPN(虚拟专用网络或代理)</span><br><span class="line"></span><br><span class="line">use-native-transport=true</span><br><span class="line"></span><br><span class="line">#是否使用针对Linux平台的数据包收发优化，此选项仅会在Linux平台下生成</span><br><span class="line"></span><br><span class="line">motd=A Minecraft Server</span><br><span class="line"></span><br><span class="line">#玩家客户端的多人游戏服务器列表中显示的服务器信息，显示于名称下方。</span><br><span class="line"></span><br><span class="line">#中文需转码</span><br><span class="line"></span><br><span class="line">#(部分服务端不需要转码也可以直接使用)</span><br><span class="line"></span><br><span class="line">#彩色符号不是&amp;而是转码后的§ \u00A7 (同上)</span><br><span class="line"></span><br><span class="line">enable-rcon=false</span><br><span class="line"></span><br><span class="line">#是否允许远程访问服务器控制台。</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="基础指令">基础指令</h4>
+<p><strong>op 玩家ID - 给予玩家管理员</strong></p>
+<p><strong>stop - 关闭服务器</strong></p>
+<h3 id="如何使用域名连接？">如何使用域名连接？</h3>
+<p>首先你得注册一个域名，雨云也有注册域名的服务，当然你其他方法也没问题，首先在雨云添加实名模板正常注册就行，不在重复域名注册（一般来说接触不到）</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tzhzr8.png" alt="|100%x100%"></p>
+<p><code>_minecraft._tcp.mc</code> 最后面的MC就是最前，这里是mc，那么就是mc.你的域名</p>
+<p><code>5 0 25565 154.44.8.83.</code> 中<code>154.44.8.83</code> 是服务器IP，如果你是独立公网直接填写即可，25565则是端口，如果是NAT，拿雨云举例子就是这样输入：<code>5 0 外网端口 x.rainplay.cn</code> 其中，x.rainplay.cn就是雨云开放的NAT端口域名，看你服务器给的是什么，有的是h.rainplay.cn什么什么的</p>
+<p>然后记录类型选择SRV，保存确认解析即可，600TTL则是等待10分种DNS刷新</p>
+<blockquote>
+<p>这里我的域名是notlifemc.top，那么就是连接是<code>mc.notlifemc.top</code></p>
+</blockquote>
+<h3 id="插件篇">插件篇</h3>
+<p>上面已经详细说明了如何开启服务器，那么就简单说明一下关于插件方面的一些知识</p>
+<blockquote>
+<p>需要服务器核心支持添加插件</p>
+</blockquote>
+<h4 id="插件文件夹">插件文件夹</h4>
+<p>首先在根目录找到<code>plugins</code> 文件夹，打开，这里就是放插件的地方，我们尝试丢一个插件jar文件进去，这里找了一个清理掉落物的插件</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tzo96s.png" alt="|100%x100%"></p>
+<p>然后回到启动脚本，这时候发现他加载插件了</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/tzr0v4.png" alt="|100%x100%"></p>
+<p>再输入stop指令关闭，这时候就可以发现他多了一个对应文件名字的文件夹(没有说明插件不能加载或者错误插件)</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u01qfv.png" alt="|100%x100%"></p>
+<p>打开它就可以找到一个<code>config.yml</code> 的文件，依旧右键n++打开</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u03o2w.png" alt="|566pxx198px"></p>
+<p>这时候就可以进行插件配置了</p>
+<blockquote>
+<p>也有的插件免配置所以说不生成文件夹，看你的插件的配置手册如何去进一步配置，大差不差都是<code>config.yml</code> 文件夹，也有插件是需要配置其他文件</p>
+</blockquote>
+<p>例如语言配置文件<code>lang.yml</code>：</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u05rsw.png" alt="|100%x100%"></p>
+<h3 id="模组篇">模组篇</h3>
+<p>模组就是MOD，在服务器根目录找到<code>mods</code>文件夹，安装正常给客户端加mod即可；</p>
+<blockquote>
+<p>需要服务器核心支持添加MOD，或者是自行给核心加Forge（新手不推荐）</p>
+</blockquote>
+<p>但是不是说什么mod都要客户端加了服务器也加，比如一些辅助和视觉类的mod服务器则不能加，轻则不加载，重则崩服，若是中文百科下载的模组则一般都有标注</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u08254.png" alt="|100%x100%"></p>
+<blockquote>
+<p>MOD和插件一起加叫做混合服，混合服务器多少都存在bug比如说启动有一堆红字，但是如果不影响正常服务器运作，没有特殊需求可以直接忽视即可！</p>
+</blockquote>
+<h2 id="基岩篇">基岩篇</h2>
+<p>Java和基岩不同，基岩分为电脑端和手机端，是可以做到手机和电脑玩家一起游玩，只要版本号相同</p>
+<blockquote>
+<p>纠正一个错误，很多人认为Java是电脑版而基岩是手机版，其实上不是</p>
+</blockquote>
+<h3 id="NukkitX核心">NukkitX核心</h3>
+<p>NukkitX核心的架构就十分像Java版本服务器文件架构，都是plugins和world文件夹，所以说开服方法、加插件都基本一致</p>
+<h3 id="Bedrock-Server核心【原版】">Bedrock Server核心【原版】</h3>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cubWluZWJicy5jb20vYmRzLw==">https://www.minebbs.com/bds/</a></p>
+<p>这里前往云盘下载整合好的服务端</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u0c0bl.png" alt="|100%x100%"></p>
+<blockquote>
+<p>也丢后面的云盘链接中了<img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u0mfi9.png" alt="|50%xauto"></p>
+</blockquote>
+<p>解压到服务器，智能解压</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u0qi83.png" alt="|100%x100%"></p>
+<p>点击<code>bedrock_server.exe</code> 文件即可完成开服，基岩服务器默认是19132端口</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u0sfr0.png" alt="|100%x100%"></p>
+<p>NAT就开放一下外网端口，然后输入IP（雨云NAT是域名）+外网端口即可，如果是独立IP则是IP正常输入你的IP，端口客户端默认帮你填写19132直接连接</p>
+<h3 id="LiteLoaderBDS核心【插件】">LiteLoaderBDS核心【插件】</h3>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRodWIuY29tL0xpdGVMRGV2L0xpdGVMb2FkZXJCRFMvcmVsZWFzZXM=">https://github.com/LiteLDev/LiteLoaderBDS/releases</a></p>
+<p>记得安一下VC库，不然乱码</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9pcHY0d3AuYXh6enoudG9wOjk1MDMvcy9BRUpGdw==">VC_redist.x64.exe - Axzzz云盘</a></p>
+<p>BDS性能要求（需要根据服务器情况加以判断，此处仅供参考）：<br>
+1-2人（指的是同时在线人数）：CPU主频2.3Ghz，内存2-4GB<br>
+3-5人：CPU主频2.5Ghz，内存4-6GB<br>
+6-10人：CPU主频3Ghz（例如E5-2667v2），内存4-8GB</p>
+<blockquote>
+<p>当初给我朋友开BDS服务器TPS就一直卡死，可能Windows运行不太好网上的人不用Windows开的可以尝试其他办法</p>
+</blockquote>
+<p>然后前往这个项目，下载该版本的 <code>levilamina-windows-x64.zip</code> 文件</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u0uiod.png" alt="|100%x100%"></p>
+<p>然后分别下载最新版本的 PeEditor.exe 和 PreLoader.dll 文件</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRodWIuY29tL0xpdGVMRGV2L1BlRWRpdG9yL3JlbGVhc2Vz">https://github.com/LiteLDev/PeEditor/releases</a></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u1cmb4.png" alt="|566pxx179px"></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9naXRodWIuY29tL0xpdGVMRGV2L1ByZUxvYWRlci9yZWxlYXNlcw==">https://github.com/LiteLDev/PreLoader/releases</a></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u1jlf7.png" alt="|100%x100%"></p>
+<p>三项云盘高速下载：<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9pcHY0d3AuYXh6enoudG9wOjk1MDMvcy9uQU9JSj9wYXRoPSUyRg==">我的世界BDS扩展插件 - Axzzz云盘</a></p>
+<h4 id="安装步骤"><strong>安装步骤</strong></h4>
+<p><strong>复制粘贴到服务器中，先记得安装VC库安装失败则可能安装过了</strong></p>
+<p><strong><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u1ud2m.png" alt="|100%x100%"></strong></p>
+<h5 id="1-解压-BDS-文件"><strong>1. 解压 BDS 文件</strong></h5>
+<ul>
+<li>将你在第二步中下载的 <code>bedrock-server-&lt;version&gt;.zip</code> 解压到一个新的、空的文件夹中。</li>
+</ul>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u1wjtf.png" alt="|100%x100%"></p>
+<h5 id="2-移动-PEEDITOR-和-PRELOADER"><strong>2. 移动 PEEDITOR 和 PRELOADER</strong></h5>
+<ul>
+<li>把 <code>PeEditor.exe</code> 和 <code>PreLoader.dll</code> 移到解压后的 BDS 文件夹中。</li>
+</ul>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u1yjuo.png" alt="|100%x100%"></p>
+<ul>
+<li>确保这些文件与 <code>bedrock_server.exe</code> 在同一目录下。</li>
+</ul>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u20rch.png" alt="|100%x100%"></p>
+<h5 id="3-添加-LEVILAMINA-文件"><strong>3. 添加 LEVILAMINA 文件</strong></h5>
+<ul>
+<li>解压你在第一步中下载的 <code>levilamina-windows-x64.zip</code>。</li>
+<li>从中提取 <code>bin/LeviLamina.dll</code> 和 <code>bin/LeviLamina.pdb</code> 文件。</li>
+<li>将这些文件也移动到 BDS 文件夹中，与 <code>bedrock_server.exe</code> 放在同一目录下。</li>
+</ul>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u22la4.png" alt="|566pxx170px"></p>
+<h5 id="4-运行-PEEDITOR"><strong>4. 运行 PEEDITOR</strong></h5>
+<ul>
+<li>双击 <code>PeEditor.exe</code> 并等待其执行完毕。</li>
+</ul>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u2enbn.png" alt="|100%x100%"></p>
+<ul>
+<li>执行完毕后，应该在文件夹中看到一个新的 <code>bedrock_server_mod.exe</code> 文件。</li>
+</ul>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u2kf3s.png" alt="|100%x100%"></p>
+<ul>
+<li>原来的 <code>bedrock_server.exe</code> 将被重命名为 <code>bedrock_server.exe.bak</code>。</li>
+</ul>
+<p>完成以上步骤后，LeviLamina 就安装好了。你可以通过双击 <code>bedrock_server_mod.exe</code> 来启动服务端。</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u2mpq9.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u2pj83.png" alt="|100%x100%"></p>
+<blockquote>
+<p>behavior_packs&amp;resource_packs 服务器行为包/资源包文件夹，一般不使用</p>
+<p>definitions 服务器核心文件夹，若非必要勿动</p>
+<p>development_xxx_packs 用于加载一些development下加载的资源包</p>
+<p>logs log文件，包括崩服数据文件</p>
+<p>worlds 世界文件夹</p>
+</blockquote>
+<p>然后你要什么插件就下载什么插件，插件都有使用教程</p>
+<p>或者是懒人包：</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cuMTIzcGFuLmNvbS9zL2VoVkZqdi0yb0dLQS5odG1s">https://www.123pan.com/s/ehVFjv-2oGKA.html</a></p>
+<h2 id="面板开服">面板开服</h2>
+<p>前往mcsmanager的官网，找到压缩包下载zip压缩包，复制到服务器上</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly9kb2NzLm1jc21hbmFnZXIuY29tL3poX2NuLyN3aW5kb3dzLSVFNSVBRSU4OSVFOCVBMyU4NQ==">https://docs.mcsmanager.com/zh_cn/#windows-安装</a></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u395ir.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u3lb3c.png" alt="|100%x100%"></p>
+<p>双击启动，然后点更多信息继续仍旧运行</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u3nd5l.png" alt="|100%x100%"></p>
+<p>然后就会自动弹出两个窗口，自动部署后会自己打开一个网页，这就是面板</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u4fasc.png" alt="|100%x100%"></p>
+<p>点击首次使用，它会一步步的教你如何去部署</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u4i1r0.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u4t9ae.png" alt="|100%x100%"></p>
+<h1>Linux篇-部署MC服</h1>
+<p>这里依旧使用mcsmanager的提供的面板管理</p>
+<h2 id="一键部署面板">一键部署面板</h2>
+<p>SSH链接，软件上面推荐<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cueHRlcm1pbmFsLmNuLw==">https://www.xterminal.cn/</a></p>
+<p>然后开放22端口（独立公网无需，直接填写IP然后输入密码连接）</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u4w6mz.png" alt="|100%x100%"></p>
+<p>然后创建后点击连接即可完成连接服务器</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u4yxr8.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u50i95.png" alt="|100%x100%"></p>
+<p>输入指令进行一键自动安装，耐心等待安装完成</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su -c "wget -qO- https://script.mcsmanager.com/setup_cn.sh | bash"</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u52dst.png" alt="|100%x100%"></p>
+<p>重新出现#号就说明安装成功，同时终端也反馈出端口面板信息</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u5dsvf.png" alt="|100%x100%"></p>
+<p>回到控制台，开放23333端口（独立IP则不需要，直接访问网站：IP:23333）</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u5gdax.png" alt="|100%x100%"></p>
+<p>完成基础的配置，创建管理员，完成！</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u5ki0g.png" alt="|100%x100%"></p>
+<p>这是相关指令：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 先启动面板守护进程。</span><br><span class="line"># 这是用于进程控制，终端管理的服务进程。</span><br><span class="line">systemctl start mcsm-daemon.service</span><br><span class="line"># 再启动面板 Web 服务。</span><br><span class="line"># 这是用来实现支持网页访问和用户管理的服务。</span><br><span class="line">systemctl start mcsm-web.service</span><br><span class="line"></span><br><span class="line"># 重启面板命令</span><br><span class="line">systemctl restart mcsm-daemon.service</span><br><span class="line">systemctl restart mcsm-web.service</span><br><span class="line"></span><br><span class="line"># 停止面板命令</span><br><span class="line">systemctl stop mcsm-web.service</span><br><span class="line">systemctl stop mcsm-daemon.service</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Java实例服务器例子-一键部署">Java实例服务器例子-一键部署</h2>
+<p>这里点击首次使用</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u5mbur.png" alt="|100%x100%"></p>
+<p>点击你要开的服务器类型，这里选择Java</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u5o7ak.png" alt="|100%x100%"></p>
+<p>然后点击快速部署</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u5q19g.png" alt="|100%x100%"></p>
+<p>选择你要开的，这里选择原版的服务器<br>
+<img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u60wkz.png" alt="|100%x100%"></p>
+<p>出现初始化失败节点不存在就刷新然后点一下看看节点有没有然后重新下载</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u64jhp.png" alt="|561pxx161px"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u6axl3.png" alt="|100%x100%"></p>
+<p>如果出现无法连接节点就是说端口没开放，去开放节点然后修改节点配置即可</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u6lebx.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u6n8bz.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u6omd1.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u6sywq.png" alt="|100%x100%"></p>
+<p>如果启动提示错误，这是因为你没安装Java环境，这里简单部署下Java环境就行</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u6upqa.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u7bkf8.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u7dqxa.png" alt="|100%x100%"></p>
+<p>和前面的Windows方案一样，改成你的Java路径就行了</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@ECHO OFF</span><br><span class="line">"C:\Program Files\Java\dragonwell_8\bin\java.exe" -Xmx4G -Xms4G -jar server.jar</span><br><span class="line"></span><br><span class="line">%0</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>这只是例子，可以通过xterminalSSH上传</p>
+</blockquote>
+<p>找到你要的JAVA版本</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u7g2ta.png" alt="|566pxx117px"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u7u1no.png" alt="|100%x100%"></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=aHR0cHM6Ly93d3cuYXp1bC5jb20vZG93bmxvYWRzLw==">https://www.azul.com/downloads/</a></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u7wvno.png" alt="|100%x100%"></p>
+<p>然后输入指令<code>yum install -y unzip</code>安装uzip再进行解压（Centos系统）</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u7zo74.png" alt="|100%x100%"></p>
+<p>然后找到这个目录，安装我这里目录就是：<code>/root/unzip_202406291904_zulu22/zulu22.30.13-ca-jdk22.0.1-linux_x64/bin/java</code></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u81sse.png" alt="|100%x100%"></p>
+<p>修改后，完成启动</p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u8cs3o.png" alt="|100%x100%"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u8emml.png" alt="|562pxx167px"></p>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u8g54y.png" alt="|100%x100%"></p>
+<p>然后安装之前流程一样，控制面板开放25565端口（如果你没调配置文件的话）</p>
+<p>再放一次MC配置说明</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br></pre></td><td class="code"><pre><span class="line">#设置监听服务器的端口号</span><br><span class="line"></span><br><span class="line">generator-settings=</span><br><span class="line"></span><br><span class="line">#用于自定义超平坦世界的生成</span><br><span class="line"></span><br><span class="line">force-gamemode=false</span><br><span class="line"></span><br><span class="line">#玩家加入服务器时强制变成默认游戏模式</span><br><span class="line"></span><br><span class="line">allow-nether=true</span><br><span class="line"></span><br><span class="line">#是否开启地狱世界(关闭后删除将不会生成地狱世界)</span><br><span class="line"></span><br><span class="line">enforce-whitelist=false</span><br><span class="line"></span><br><span class="line">#在服务器上强制执行白名单。</span><br><span class="line"></span><br><span class="line">gamemode=survival</span><br><span class="line"></span><br><span class="line">#设置玩家的游戏模式</span><br><span class="line"></span><br><span class="line">broadcast-console-to-ops=true</span><br><span class="line"></span><br><span class="line">#*给op发送控制台信息?</span><br><span class="line"></span><br><span class="line">enable-query=false</span><br><span class="line"></span><br><span class="line">#是否开启GameSpy4协议服务器监听器，用于获取服务器信息，建议不要修改</span><br><span class="line"></span><br><span class="line">player-idle-timeout=0</span><br><span class="line"></span><br><span class="line">#当进入AFK模式,在规定时间内T出服务器,设置成0为不T出服务器</span><br><span class="line"></span><br><span class="line">difficulty=easy</span><br><span class="line"></span><br><span class="line">#设置游戏的难度（peaceful(0)=和平，easy(1)=简单，normal(2)=普通，hard(3)=困难）</span><br><span class="line"></span><br><span class="line">broadcast-rcon-to-ops=true</span><br><span class="line"></span><br><span class="line">#*允许远程连接控制台给op发送信息?</span><br><span class="line"></span><br><span class="line">spawn-monsters=true</span><br><span class="line"></span><br><span class="line">#是否生成怪物</span><br><span class="line"></span><br><span class="line">op-permission-level=4</span><br><span class="line"></span><br><span class="line">#设定OP的权限等级</span><br><span class="line"></span><br><span class="line">#1 - OP可以无视重生点保护</span><br><span class="line"></span><br><span class="line">#2 - OP可以使用 /clear、/gamemode、/tp 等等命令，可编辑命令方块</span><br><span class="line"></span><br><span class="line">#3 - OP可以使用 /ban、/deop、/kick 以及 /op 命令</span><br><span class="line"></span><br><span class="line">#4 - OP可以使用 /stop 命令</span><br><span class="line"></span><br><span class="line">pvp=true</span><br><span class="line"></span><br><span class="line">#是否可以PVP</span><br><span class="line"></span><br><span class="line">snooper-enabled=true</span><br><span class="line"></span><br><span class="line">#一旦启用，将允许服务端定期发送统计数据到http://snoop.minecraft.net 7.</span><br><span class="line"></span><br><span class="line">level-type=default</span><br><span class="line"></span><br><span class="line">#确定地图所生成的类型</span><br><span class="line"></span><br><span class="line">#DEFAULT - 标准世界</span><br><span class="line"></span><br><span class="line">#FLAT - 超平坦世界</span><br><span class="line"></span><br><span class="line">#LARGEBIOMES - 预设世界，但所有生态系都更大（仅快照12w19a，或正式版1.3之后可用）</span><br><span class="line"></span><br><span class="line">#AMPLIFIED - 预设世界，但世界生成高度提高（仅快照13w36a，或正式版1.7.2之后可用）</span><br><span class="line"></span><br><span class="line">#CUSTOMIZED - 自快照14w21b以来，服务器也支持自定义地形。使用方法是在generator-settings贴上代码`</span><br><span class="line"></span><br><span class="line">hardcore=false</span><br><span class="line"></span><br><span class="line">#极限模式（启用后，玩家死后会被服务器封禁）。</span><br><span class="line"></span><br><span class="line">enable-command-block=false</span><br><span class="line"></span><br><span class="line">#是否启用命令方块</span><br><span class="line"></span><br><span class="line">network-compression-threshold=256</span><br><span class="line"></span><br><span class="line">#默认会允许n-1字节的数据包正常发送, 如果数据包为 n 字节或更大时会进行压缩。</span><br><span class="line"></span><br><span class="line">所以，更低的数值会使得更多的数据包被压缩，但是如果被压缩的数据包字节太小将会得不偿失。</span><br><span class="line">#-1 - 永久禁用数据包压缩</span><br><span class="line"></span><br><span class="line">#0 - 压缩全部数据包</span><br><span class="line"></span><br><span class="line">#(建议在64-1500)</span><br><span class="line"></span><br><span class="line">max-players=20</span><br><span class="line"></span><br><span class="line">#最大玩家数</span><br><span class="line"></span><br><span class="line">#在ops.ym中设置你要突破人数限制的OP下的bypassesPlayerLimit选项为true即可（默认值为false）</span><br><span class="line"></span><br><span class="line">#这意味着OP不需要在服务器人满时等待玩家离开再加入，</span><br><span class="line"></span><br><span class="line">max-world-size=29999984</span><br><span class="line"></span><br><span class="line">#设置世界边界的最大半径值，单位为方块。通过成功执行的命令能把世界边界设置得更大，</span><br><span class="line"></span><br><span class="line">#但不会超过这里设置的最大方块限制。如果设置的 max-world-size 超过默认值的大小，那将不会起任何效果。</span><br><span class="line"></span><br><span class="line">#例如：</span><br><span class="line"></span><br><span class="line">#设置 max-world-size 为 1000 将会有 2000x2000 的地图边界。</span><br><span class="line"></span><br><span class="line">#设置 max-world-size 为 4000 将会有 8000x8000 的地图边界。</span><br><span class="line"></span><br><span class="line">#自定义世界边界指令/worldborder在1.8加入</span><br><span class="line"></span><br><span class="line">resource-pack-sha1=</span><br><span class="line"></span><br><span class="line">#资源包的SHA-1值，必须为小写十六进制</span><br><span class="line"></span><br><span class="line">function-permission-level=2</span><br><span class="line"></span><br><span class="line">#用于控制函数拥有的权限等级。</span><br><span class="line"></span><br><span class="line">rcon.port=25575</span><br><span class="line"></span><br><span class="line">#设置远程访问的端口号</span><br><span class="line"></span><br><span class="line">server-port=25565</span><br><span class="line"></span><br><span class="line">#设置服务器的IPv4端口号</span><br><span class="line"></span><br><span class="line">server-ip=</span><br><span class="line"></span><br><span class="line">#将服务器与一个特定IP绑定。建议留空</span><br><span class="line"></span><br><span class="line">#留空，或是填入你想让服务器绑定的域名。</span><br><span class="line"></span><br><span class="line">spawn-npcs=true</span><br><span class="line"></span><br><span class="line">#决定是否生成村民</span><br><span class="line"></span><br><span class="line">allow-flight=false</span><br><span class="line"></span><br><span class="line">#允许玩家在安装添加飞行功能的mod前提下在生存模式下飞行。</span><br><span class="line"></span><br><span class="line">level-name=world</span><br><span class="line"></span><br><span class="line">#主世界名称</span><br><span class="line"></span><br><span class="line">view-distance=10</span><br><span class="line"></span><br><span class="line">#设置服务端传送给客户端的区块量 (范围3-15)</span><br><span class="line"></span><br><span class="line">#减小此数值可有效缓解卡顿</span><br><span class="line"></span><br><span class="line">resource-pack=</span><br><span class="line"></span><br><span class="line">#可输入指向一个资源包的URI。玩家可选择是否使用该资源包</span><br><span class="line"></span><br><span class="line">spawn-animals=true</span><br><span class="line"></span><br><span class="line">#动物是否可以生成</span><br><span class="line"></span><br><span class="line">white-list=false</span><br><span class="line"></span><br><span class="line">#服务器的白名单，OP无须加入白名单</span><br><span class="line"></span><br><span class="line">rcon.password=</span><br><span class="line"></span><br><span class="line">#远程访问密码</span><br><span class="line"></span><br><span class="line">generate-structures=true</span><br><span class="line"></span><br><span class="line">#定义是否在生成世界时生成结构（如村庄）</span><br><span class="line"></span><br><span class="line">online-mode=true</span><br><span class="line"></span><br><span class="line">#线上模式是否开启 (即正版模式)</span><br><span class="line"></span><br><span class="line">max-build-height=256</span><br><span class="line"></span><br><span class="line">#玩家在游戏中能够建造的最大高度</span><br><span class="line"></span><br><span class="line">level-seed=</span><br><span class="line"></span><br><span class="line">#世界种子</span><br><span class="line"></span><br><span class="line">prevent-proxy-connections=false</span><br><span class="line"></span><br><span class="line">#如果开启服务器发送的和Mojang的验证服务器的ISP/AS不一样将会被踢出</span><br><span class="line"></span><br><span class="line">#开启后禁止使用VPN(虚拟专用网络或代理)</span><br><span class="line"></span><br><span class="line">use-native-transport=true</span><br><span class="line"></span><br><span class="line">#是否使用针对Linux平台的数据包收发优化，此选项仅会在Linux平台下生成</span><br><span class="line"></span><br><span class="line">motd=A Minecraft Server</span><br><span class="line"></span><br><span class="line">#玩家客户端的多人游戏服务器列表中显示的服务器信息，显示于名称下方。</span><br><span class="line"></span><br><span class="line">#中文需转码</span><br><span class="line"></span><br><span class="line">#(部分服务端不需要转码也可以直接使用)</span><br><span class="line"></span><br><span class="line">#彩色符号不是&amp;而是转码后的§ \u00A7 (同上)</span><br><span class="line"></span><br><span class="line">enable-rcon=false</span><br><span class="line"></span><br><span class="line">#是否允许远程访问服务器控制台。</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>本人对于这个面板以及对Linux部署服务器并不熟悉，有什么缺点还请指点</p>
+</blockquote>
+<h1>末尾</h1>
+<p>就先简单写到这里，如果需要补充或者请求可以留言给我，我会发布的平台全部进行更新文章，持续更新，同时有纰漏也欢迎留言反馈</p>
+<blockquote>
+<p>后面也会抽时间来完善一下文章，本文还是有很多遗漏的细节没完善清楚，废话文学只是为了萌新懂</p>
+</blockquote>
+<p><img src="https://imgse.koxiuqiu.cn/i/2024/07/07/u8lkkp.png" alt="看完一定要收藏，邀顾客好评的话术_评价_xxxx_表情|100%x100%"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://koxiuqiu.cn">klcdm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://koxiuqiu.cn/2024/06/29/1719625179507/">https://koxiuqiu.cn/2024/06/29/1719625179507/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://koxiuqiu.cn" target="_blank">朽丘秋雨</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a></div><div class="post_share"><div class="social-share" data-image="https://koimg.cn-sy1.rains3.com/2024/08/28/526505.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css?v=1.1.3" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js?v=1.1.3" defer=""></script></div></div><div class="business-center"><div class="business-card"><div class="business-flip"><div class="business-front"><div class="business-strip-bottom"></div><div class="business-strip-top"></div><img class="business-logo" width="80" height="80" src="https://koimg.cn-sy1.rains3.com/2024/08/18/qq.png" alt="cardcode"><div class="business-Invitation">Invitation</div><div class="business-chip"><div class="business-chip-line"></div><div class="business-chip-line"></div><div class="business-chip-line"></div><div class="business-chip-line"></div><div class="business-chip-main"></div></div><svg class="business-wave" viewBox="0 3.71 26.959 38.787" width="26.959" height="38.787" fill="white"><path d="M19.709 3.719c.266.043.5.187.656.406 4.125 5.207 6.594 11.781 6.594 18.938 0 7.156-2.469 13.73-6.594 18.937-.195.336-.57.531-.957.492a.9946.9946 0 0 1-.851-.66c-.129-.367-.035-.777.246-1.051 3.855-4.867 6.156-11.023 6.156-17.718 0-6.696-2.301-12.852-6.156-17.719-.262-.317-.301-.762-.102-1.121.204-.36.602-.559 1.008-.504z"></path><path d="M13.74 7.563c.231.039.442.164.594.343 3.508 4.059 5.625 9.371 5.625 15.157 0 5.785-2.113 11.097-5.625 15.156-.363.422-1 .472-1.422.109-.422-.363-.472-1-.109-1.422 3.211-3.711 5.156-8.551 5.156-13.843 0-5.293-1.949-10.133-5.156-13.844-.27-.309-.324-.75-.141-1.114.188-.367.578-.582.985-.542h.093z"></path><path d="M7.584 11.438c.227.031.438.144.594.312 2.953 2.863 4.781 6.875 4.781 11.313 0 4.433-1.828 8.449-4.781 11.312-.398.387-1.035.383-1.422-.016-.387-.398-.383-1.035.016-1.421 2.582-2.504 4.187-5.993 4.187-9.875 0-3.883-1.605-7.372-4.187-9.875-.321-.282-.426-.739-.266-1.133.164-.395.559-.641.984-.617h.094zM1.178 15.531c.121.02.238.063.344.125 2.633 1.414 4.437 4.215 4.437 7.407 0 3.195-1.797 5.996-4.437 7.406-.492.258-1.102.07-1.36-.422-.257-.492-.07-1.102.422-1.359 2.012-1.075 3.375-3.176 3.375-5.625 0-2.446-1.371-4.551-3.375-5.625-.441-.204-.676-.692-.551-1.165.122-.468.567-.785 1.051-.742h.094z"></path></svg><div class="business-card-number"><div class="business-section">klcdm</div><div class="business-section">215422478</div></div><div class="business-end"><span class="business-end-text">created:</span><span class="business-end-date">2024/04/09</span></div><div class="business-card-holder">Welcome to my blog</div><div class="business-master"><div class="business-circle business-master-red"></div><div class="business-circle business-master-yellow">   </div></div></div><div class="business-back"><div class="business-strip-black"></div><div class="business-ccv"><label>sitelink</label><div><a target="_blank" rel="noopener external nofollow noreferrer" href="https://qm.qq.com/q/Pm5GT41XSE">加入交流群</a></div></div><div class="business-terms"><p>and，QQ scan to the upper right, join our communication group.</p><p>或QQ扫取右上方,加入我们的交流群.</p></div></div></div></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="支付宝"></a><div class="post-qr-code-desc">支付宝</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="微信"></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/06/27/1719475599760/" title="Minecraft-搭建Hypixel加速IP"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/037744.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Minecraft-搭建Hypixel加速IP</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/8/1/" title="必看?我被恐吓和博客一些事"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/29/974975.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">必看?我被恐吓和博客一些事</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/01/15/2/" title="论如何快速了解建站"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/725291.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-15</div><div class="title">论如何快速了解建站</div></div></a></div><div><a href="/2024/03/09/6/" title="搭建皮肤站并实现外置登录"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/459238.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-09</div><div class="title">搭建皮肤站并实现外置登录</div></div></a></div><div><a href="/2024/03/26/10/" title="最简单搭建MC服务器"><img class="cover" src="https://koimg.cn-sy1.rains3.com/2024/08/28/526505.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-26</div><div class="title">最简单搭建MC服务器</div></div></a></div></div></div><hr class="custom-hr"><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="artalk-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i1.wp.com/koxiuqiu.cn/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">klcdm</div><div class="author-info__description">享受生活，记录日志</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://chat.dusays.com/signup_user_complete/?id=j5dz4dtc8irgtdniajj64dss1a&amp;md=link&amp;sbr=su"><i class="fa-solid fa-terminal"></i><span>点击联系我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lkcdm" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #003153;"></i></a><a class="social-icon" href="mailto:gemiidozenz@hotmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #003153;"></i></a><a class="social-icon" href="https://blog.koxiuqiu.cc/atom.xml" rel="external nofollow noreferrer" target="_blank" title="'#4a7dbe'"><i class="fas fa-rss"></i></a><a class="social-icon" href="/sitemap.xml" target="_blank" title="'#4a7dbe'"><i class="fa fa-sitemap"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这里是KLCDM的博客,欢迎向我留言!你要问我为什么背景一直是万穗爷,因为这是我的第一款GalGame啊!很有纪念价值~<p>页面异常执行 <kbd>Ctrl+F5</kbd></p><p>昼夜模式切换下翻找到<kbd>右下方齿轮</kbd>或<kbd>右键</kbd>[推广信息请自己酌情选择]</p><p>域名<kbd>koxiuqiu.cn</kbd>不开放交互评论区留言,请转至<kbd>koxiuqiu.cc</kbd>.</p></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">服务器选择</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E5%85%AC%E7%BD%91IP"><span class="toc-text">独立公网IP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NAT%E6%A8%A1%E5%BC%8F"><span class="toc-text">NAT模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">系统的选择</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">服务器核心</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%89%88%E6%9C%8D%E6%A0%B8%E5%BF%83"><span class="toc-text">原版服核心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E6%9C%8D%E6%A0%B8%E5%BF%83"><span class="toc-text">插件服核心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E7%BB%84%E6%9C%8D%E6%A0%B8%E5%BF%83"><span class="toc-text">模组服核心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E6%A8%A1%E7%BB%84%E6%9C%8D%E6%A0%B8%E5%BF%83"><span class="toc-text">插件模组服核心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E5%B2%A9%E6%9C%8D%E6%A0%B8%E5%BF%83"><span class="toc-text">基岩服核心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A0%B8%E5%BF%83%E4%B8%8B%E8%BD%BD"><span class="toc-text">服务器核心下载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">开始实操</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">准备服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8Windows"><span class="toc-text">连接服务器Windows</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%89%93%E5%BC%80"><span class="toc-text">指令打开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E6%89%93%E5%BC%80"><span class="toc-text">搜索打开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NAT%E6%A8%A1%E5%BC%8F-2"><span class="toc-text">NAT模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E5%85%AC%E7%BD%91IP%E6%A8%A1%E5%BC%8F"><span class="toc-text">独立公网IP模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8Linux"><span class="toc-text">连接服务器Linux</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">Windows篇-部署MC服</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JAVA%E7%AF%87"><span class="toc-text">JAVA篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81"><span class="toc-text">主要</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E6%A0%B8%E5%BF%83"><span class="toc-text">下载核心</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E8%84%9A%E6%9C%AC"><span class="toc-text">编写脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">连接服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE"><span class="toc-text">服务器配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4"><span class="toc-text">基础指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%9F%9F%E5%90%8D%E8%BF%9E%E6%8E%A5%EF%BC%9F"><span class="toc-text">如何使用域名连接？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E7%AF%87"><span class="toc-text">插件篇</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">插件文件夹</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E7%BB%84%E7%AF%87"><span class="toc-text">模组篇</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E5%B2%A9%E7%AF%87"><span class="toc-text">基岩篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NukkitX%E6%A0%B8%E5%BF%83"><span class="toc-text">NukkitX核心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bedrock-Server%E6%A0%B8%E5%BF%83%E3%80%90%E5%8E%9F%E7%89%88%E3%80%91"><span class="toc-text">Bedrock Server核心【原版】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LiteLoaderBDS%E6%A0%B8%E5%BF%83%E3%80%90%E6%8F%92%E4%BB%B6%E3%80%91"><span class="toc-text">LiteLoaderBDS核心【插件】</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E8%A7%A3%E5%8E%8B-BDS-%E6%96%87%E4%BB%B6"><span class="toc-text">1. 解压 BDS 文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E7%A7%BB%E5%8A%A8-PEEDITOR-%E5%92%8C-PRELOADER"><span class="toc-text">2. 移动 PEEDITOR 和 PRELOADER</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0-LEVILAMINA-%E6%96%87%E4%BB%B6"><span class="toc-text">3. 添加 LEVILAMINA 文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E8%BF%90%E8%A1%8C-PEEDITOR"><span class="toc-text">4. 运行 PEEDITOR</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E6%9D%BF%E5%BC%80%E6%9C%8D"><span class="toc-text">面板开服</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">Linux篇-部署MC服</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E9%9D%A2%E6%9D%BF"><span class="toc-text">一键部署面板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E5%AE%9E%E4%BE%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BE%8B%E5%AD%90-%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2"><span class="toc-text">Java实例服务器例子-一键部署</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">末尾</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/13p/" title="25年4月小结"><img src="https://cn-sy1.rains3.com/koimg/2025/05/20dcae544c1569f625877194db355c98.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="25年4月小结"></a><div class="content"><a class="title" href="/13p/" title="25年4月小结">25年4月小结</a><time datetime="2025-04-29T16:00:00.000Z" title="发表于 2025-04-30 00:00:00">2025-04-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/12p2504261/" title="四月自我笔记"><img src="https://cn-sy1.rains3.com/koimg/2025/05/0145a76e250a2c93d3fec30b7909d087.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="四月自我笔记"></a><div class="content"><a class="title" href="/12p2504261/" title="四月自我笔记">四月自我笔记</a><time datetime="2025-04-25T16:00:00.000Z" title="发表于 2025-04-26 00:00:00">2025-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/10p2504131/" title="关于QiuDunCDN近期状态"><img src="https://cn-sy1.rains3.com/koimg/2025/04/dbe19f91f1c79ce96dd91ea77f83aed9.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于QiuDunCDN近期状态"></a><div class="content"><a class="title" href="/10p2504131/" title="关于QiuDunCDN近期状态">关于QiuDunCDN近期状态</a><time datetime="2025-04-12T16:00:00.000Z" title="发表于 2025-04-13 00:00:00">2025-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/10p2504121/" title="关于HEXO的构建和配置"><img src="https://cn-sy1.rains3.com/koimg/2025/03/f78912d51d2304f9ab28c8635dc3fe95.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于HEXO的构建和配置"></a><div class="content"><a class="title" href="/10p2504121/" title="关于HEXO的构建和配置">关于HEXO的构建和配置</a><time datetime="2025-04-11T16:00:00.000Z" title="发表于 2025-04-12 00:00:00">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/8p2503221/" title="25年3月小结"><img src="https://cn-sy1.rains3.com/koimg/2025/03/f78912d51d2304f9ab28c8635dc3fe95.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="25年3月小结"></a><div class="content"><a class="title" href="/8p2503221/" title="25年3月小结">25年3月小结</a><time datetime="2025-03-21T16:00:00.000Z" title="发表于 2025-03-22 00:00:00">2025-03-22</time></div></div></div></div></div></div></main><footer id="footer" style="background: #00000000"><div id="footer-wrap"><div class="copyright">©2023 - 2025 By klcdm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><span id="runtime"></span> <br> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io/"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/hexo.svg"></a>|<a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/Copyright.svg"></a>|<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/Github.svg">|</a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.qiudcdn.cn/"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/CDN.svg"></a> <br> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.travellings.cn/go-by-clouds.html"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/travellings.gif"></a>| <a target="_blank" rel="noopener external nofollow noreferrer" href="https://icp.gov.moe/?keyword=20242040"><img class="icp-icon" src="https://cdn.koxiuqiu.cn/koxiuqiu/svg/iconbei.png"></a>|<a target="_blank" rel="noopener external nofollow noreferrer" href="https://blogscn.fun/random.html"><img class="icp-icon" src="https://photo.xiangming.site/img/footer.gif"></a> <br><a href="https://www.foreverblog.cn/" rel="external nofollow noreferrer" target="_blank"> <img src="https://img.foreverblog.cn/logo_en_default.png" alt="" style="width:auto;height:16px;"> <br></a><a href="https://beian.miit.gov.cn" rel="external nofollow noreferrer" target="_blank">陕ICP备2024049234号-4</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js?v=5.0.33"></script><script src="/pluginsSrc/instant.page/instantpage.js?v=5.2.0" type="module"></script><script src="/pluginsSrc/node-snackbar/dist/snackbar.min.js?v=0.1.16"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('/pluginsSrc/pangu/dist/browser/pangu.min.js?v=4.0.7')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  let artalkItem = null
+  const initArtalk = () => {
+    artalkItem = Artalk.init(Object.assign({
+      el: '#artalk-wrap',
+      server: 'https://cn-artalk.koxiuqiu.cc',
+      site: '朽丘秋雨',
+      pageKey: location.pathname,
+      darkMode: document.documentElement.getAttribute('data-theme') === 'dark',
+    },null))
+
+    if (GLOBAL_CONFIG.lightbox === 'null') return
+    artalkItem.on('list-loaded', () => {
+      artalkItem.ctx.get('list').getCommentNodes().forEach(comment => {
+        const $content = comment.getRender().$content
+        btf.loadLightbox($content.querySelectorAll('img:not([atk-emoticon])'))
+      })
+    })
+
+    const destroyArtalk = () => {
+      artalkItem.destroy()
+    }
+
+    btf.addGlobalFn('pjax', destroyArtalk, 'destroyArtalk')
+  }
+
+  const loadArtalk = async () => {
+    if (typeof Artalk === 'object') initArtalk()
+    else {
+      await getCSS('https://artalk.koxiuqiu.cn/dist/Artalk.css')
+      await getScript('https://artalk.koxiuqiu.cn/dist/Artalk.js')
+      initArtalk()
+    }
+  }
+
+  const artalkChangeMode = theme => {
+    const artalkWrap = document.getElementById('artalk-wrap')
+    if (!(artalkWrap && artalkWrap.children.length)) return
+    const isDark = theme === 'dark'
+    artalkItem.setDarkMode(isDark)
+  }
+
+  btf.addGlobalFn('themeChange', artalkChangeMode, 'artalk')
+
+  if ('Artalk' === 'Artalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('artalk-wrap'), loadArtalk)
+    else loadArtalk()
+  } else {
+    window.loadOtherComment = loadArtalk
+  }
+})()</script></div><script type="text/javascript" src="/js/reward.js"></script><script src="/js/sweetalert2.all.min.js"></script><script async="" src="/js/categoryBar.js"></script><script type="text/javascript" src="/js/jquery.min.js"></script><script type="text/javascript" src="/js/rightmenu.js"></script><script src="/js/jquery.min.js"></script><script src="/js/hometop.js"></script><script src="/js/flipcountdown.js"></script><script data-pjax="" src="/js/runtime.js"></script><script src="/js/127.js"></script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();" rel="external nofollow noreferrer"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();" rel="external nofollow noreferrer"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();" rel="external nofollow noreferrer"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-share"></i><span>百度搜索</span></a><a class="rightMenu-item" href="#post-comment" onclick="rmf.yinyong()"><i class="fa-solid fa-message"></i><span>引用文本评论</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>粘贴</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()" rel="external nofollow noreferrer"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()" rel="external nofollow noreferrer"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()" rel="external nofollow noreferrer"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.click()" rel="external nofollow noreferrer"><i class="fa fa-arrows-alt"></i><span>全屏显示</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:toRandomPost()" rel="external nofollow noreferrer"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();" rel="external nofollow noreferrer"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.translate();" rel="external nofollow noreferrer"><i class="fa fa-pen-to-square"></i><span>繁简转换</span></a></div></div><!-- hexo injector body_end start --><script async="" src="/js/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
