@@ -1,6 +1,6 @@
 (function () {
-    var validDomain = 'koxiuqiu.cn'; // 你的域名
-    var redirectUrl = 'https://koxiuqiu.cn'; // 重定向链接
+    var validDomain = 'blog.koxiuqiu.cc'; // 你的域名
+    var redirectUrl = 'https://blog.koxiuqiu.cc'; // 重定向链接
     var hostname = document.location.hostname;
 
     function createWatermark(text) {
@@ -37,7 +37,7 @@
 
     if (hostname !== validDomain) {
         createWatermark(validDomain); // 给页面加上前边设置的域名为水印
-        var userResponse = confirm("警告：您当前浏览的页面不是正版，建议您跳转至官方(koxiuqiu.cn)进行浏览！并留言板反馈这个天杀的域名");
+        var userResponse = confirm("提示：您当前浏览的页面不是正版(或者站点已经迁移域名)，建议您跳转至官方(blog.koxiuqiu.cc)进行浏览！如果不是博主的域名及时留言反馈，博主域名为：koxiuqiu.cc|koxiuqiu.cn");
         if (userResponse) {
             window.location.replace(redirectUrl);
         }

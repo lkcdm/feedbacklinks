@@ -1,0 +1,123 @@
+{
+  "Emoji": {
+    "type": "emoji",
+    "container": [
+      { "icon": "😂", "text": "" },
+      { "icon": "😀", "text": "" },
+      { "icon": "😅", "text": "" },
+      { "icon": "😊", "text": "" },
+      { "icon": "🙂", "text": "" },
+      { "icon": "🙃", "text": "" },
+      { "icon": "😌", "text": "" },
+      { "icon": "😍", "text": "" },
+      { "icon": "😘 ", "text": "" },
+      { "icon": "😜", "text": "" },
+      { "icon": "😝", "text": "" },
+      { "icon": "😏", "text": "" },
+      { "icon": "😒", "text": "" },
+      { "icon": "🙄", "text": "" },
+      { "icon": "😳 ", "text": "" },
+      { "icon": "😡", "text": "" },
+      { "icon": "😔", "text": "" },
+      { "icon": "😫", "text": "" },
+      { "icon": "😱", "text": "" },
+      { "icon": "😭", "text": "" },
+      { "icon": "💩", "text": "" },
+      { "icon": "👻", "text": "" },
+      { "icon": "🙌", "text": "" },
+      { "icon": "🖕", "text": "" },
+      { "icon": "👍", "text": "" },
+      { "icon": "👫", "text": "" },
+      { "icon": "👬", "text": "" },
+      { "icon": "👭", "text": "" },
+      { "icon": "🌚", "text": "" },
+      { "icon": "🌝", "text": "" },
+      { "icon": "🙈", "text": "" },
+      { "icon": "💊", "text": "" },
+      { "icon": "😶", "text": "" },
+      { "icon": "🙏", "text": "" },
+      { "icon": "🍦", "text": "" },
+      { "icon": "🍉", "text": "" },
+      { "icon": "😣", "text": "" }
+    ]
+  },
+  "饿殍满穗": {
+    "type": "image",
+    "container": [
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/suier/1.png\">", "text": "穗穗吃瓜" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/suier/2.png\">", "text": "穗穗羞羞" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/suier/3.png\">", "text": "穗穗哭哭" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/suier/4.png\">", "text": "穗穗告状" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/suier/5.png\">", "text": "穗穗阴险" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/suier/6.png\">", "text": "穗穗猫酱" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/suier/7.png\">", "text": "穗穗不要" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/suier/8.png\">", "text": "穗穗鼓励" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/suier/9.png\">", "text": "穗穗赞许" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/suier/10.png\">", "text": "穗穗死刑" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/suier/11.png\">", "text": "穗穗太皇" }
+    ]
+  },
+  "伊雷娜GIF": {
+    "type": "image",
+    "container": [
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/irena/1.gif\">", "text": "伊雷娜惊讶" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/irena/2.gif\">", "text": "伊雷娜落寞" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/irena/3.gif\">", "text": "伊雷娜无语" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/irena/4.gif\">", "text": "伊雷娜拳击" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/irena/5.gif\">", "text": "魔女清醒之术" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/irena/6.gif\">", "text": "伊雷娜害羞" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/irena/7.gif\">", "text": "伊雷娜悠闲" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/irena/8.gif\">", "text": "伊雷娜无语惊讶" }
+    ]
+  },
+  "疑问猫咪": {
+    "type": "image",
+    "container": [
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/cat/1.jpg\">", "text": "停止思考" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/cat/2.jpg\">", "text": "智商无了" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/cat/3.jpg\">", "text": "欲望消失" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/cat/4.jpg\">", "text": "体征消失" }
+    ]
+  },
+  "小丑竟是": {
+    "type": "image",
+    "container": [
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/1.png\">", "text": "你我皆是小丑" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/2.png\">", "text": "小丑竟在我身边" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/3.png\">", "text": "小丑竟是我自己" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/4.png\">", "text": "一觉醒来竟与世界为敌" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/5.png\">", "text": "小丑竟是你自己" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/6.png\">", "text": "原来我们都是别人眼中的小丑" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/7.png\">", "text": "男同竟是我自己" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/8.png\">", "text": "男同竟在我身边" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/9.png\">", "text": "你滴男同滴干活?" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/10.png\">", "text": "高人竟在我身边" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/11.png\">", "text": "这里竟然就是大鸟转转转酒吧" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/12.png\">", "text": "什么?你在大鸟转转酒吧工作?" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/13.png\">", "text": "大鸟转转竟在我身边" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/14.png\">", "text": "药娘竟然是我自己!" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/15.png\">", "text": "药娘竟然在我身边!!" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/16.png\">", "text": "乐,细说" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/17.png\">", "text": "原来我们都是小丑" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/18.png\">", "text": "小丑竟是我们" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/19.png\">", "text": "原来小丑只有你一个" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/mys/20.png\">", "text": "小丑竟是我自己" }
+    ]
+  }
+,
+  "猫羽雫": {
+    "type": "image",
+    "container": [
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/nachoneko/1.png\">", "text": "猫猫哭哭" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/nachoneko/2.png\">", "text": "猫猫好奇" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/nachoneko/3.png\">", "text": "猫猫开心" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/nachoneko/4.png\">", "text": "猫猫睡大觉" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/nachoneko/6.png\">", "text": "猫猫生气" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/nachoneko/7.png\">", "text": "猫猫抱抱" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/nachoneko/8.png\">", "text": "猫猫打招呼" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/nachoneko/9.png\">", "text": "猫猫魅魅?" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/nachoneko/10.png\">", "text": "猫猫混乱" },
+      { "icon": "<img src=\"https://blog.koxiuqiu.cc/cdn/owo/nachoneko/11.png\">", "text": "猫猫惊讶" }
+    ]
+  }
+}
