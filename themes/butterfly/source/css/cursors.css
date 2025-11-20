@@ -1,0 +1,10 @@
+/* 鼠标样式 */
+body {
+    cursor: url(https://cdn.koxiuqiu.cn/koxiuqiu/img/default.cur),
+    default;
+}
+a,
+img {
+    cursor: url(https://cdn.koxiuqiu.cn/koxiuqiu/img/pointer.cur),
+    default;
+}

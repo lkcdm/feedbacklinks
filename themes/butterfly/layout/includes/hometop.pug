@@ -1,0 +1,70 @@
+if is_home()
+    #home_top
+        .recent-top-post-group#recent-top-post-group
+            .recent-post-top#recent-post-top
+                #bannerGroup
+                    #banners
+                        .banners-title
+                            .banners-title-big 安然自在
+                            .banners-title-big 与安然如初
+                            .banners-title-small KOXIUQIU.CN | KOXIUQIU.CC
+                        .tags-group-all
+                            .tags-group-wrapper
+                                each i in site.data.creativity
+                                    - const evenNum = i.creativity_list.filter((x, index) => index % 2 === 0);
+                                    - const oddNum = i.creativity_list.filter((x, index) => index % 2 === 1);
+                                    each item, index in i.creativity_list
+                                        if ((index + 1 <= evenNum.length) && (index + 1 <= oddNum.length))
+                                            .tags-group-icon-pair
+                                                .tags-group-icon(style=`background: ${evenNum[index].color}`)
+                                                    img(src=evenNum[index].icon, onerror='this.onerror=null,this.src="/img/friend_404.gif"', title=evenNum[index].name, alt=evenNum[index].name)
+                                                .tags-group-icon(style=`background: ${oddNum[index].color}`)
+                                                    img(src=oddNum[index].icon, onerror='this.onerror=null,this.src="/img/friend_404.gif"', title=oddNum[index].name, alt=oddNum[index].name)
+                                each i in site.data.creativity
+                                    - const evenNum = i.creativity_list.filter((x, index) => index % 2 === 0);
+                                    - const oddNum = i.creativity_list.filter((x, index) => index % 2 === 1);
+                                    each item, index in i.creativity_list
+                                        if ((index + 1 <= evenNum.length) && (index + 1 <= oddNum.length))
+                                            .tags-group-icon-pair
+                                                .tags-group-icon(style=`background: ${evenNum[index].color}`)
+                                                    img(src=evenNum[index].icon, onerror='this.onerror=null,this.src="/img/friend_404.gif"', title=evenNum[index].name, alt=evenNum[index].name)
+                                                .tags-group-icon(style=`background: ${oddNum[index].color}`)
+                                                    img(src=oddNum[index].icon, onerror='this.onerror=null,this.src="/img/friend_404.gif"', title=oddNum[index].name, alt=oddNum[index].name)
+                        a#banner-hover(onclick='toRandomPost()')
+                            span.bannerText 随便逛逛
+                            i.fas.fa-arrow-right.banner-righticon
+                    .categoryGroup
+                        .categoryItem(style='box-shadow:var(--bywind-shadow-blue)')
+                            a.categoryButton.CB1.bikan(href='/categories/生活记录/')
+                                span.categoryButtonText 生活记录
+                                i.fas.fa-dove
+                        .categoryItem(style='box-shadow:var(--bywind-shadow-red)')
+                            a.categoryButton.remen(href='/categories/学习笔记/')
+                                span.categoryButtonText 学习笔记
+                                i.fas.fa-book
+                        .categoryItem(style='box-shadow:var(--bywind-shadow-green)')
+                            a.categoryButton.shiyong(href='/categories/建站教程/')
+                                span.categoryButtonText 建站教程
+                                i.fas.fa-book-open
+                .topGroup
+                    if site.data.slider
+                        each i in site.data.slider
+                            .recent-post-item
+                                .post_cover.left_radius
+                                    a(href=url_for(i.link), title=i.title)
+                                        span.recent-post-top-text(onclick=`pjax.loadUrl("`+i.link+`")`) 荐
+                                        img.post_bg.entered.loaded(src=url_for(i.cover) onerror="this.onerror=null,this.src='/img/404.png'")
+                                .recent-post-info(onclick=`pjax.loadUrl("`+i.link+`")`)
+                                    a.article-title(href=url_for(i.link), title=i.title)= i.title
+                    .todayCard#todayCard(onclick='pjax.loadUrl(/about/)', style='z-index: 1;')
+                        .todayCard-info
+                            .todayCard-tips 朽丘秋雨
+                            .todayCard-title
+                                | 一定会和喜欢的人
+                                br
+                                | 在夏日夜晚牵手慢步
+                        .todayCard-cover(style='background:url(https://i1.wp.com/koxiuqiu.cn/img/about/todayCardCover.png) no-repeat center/cover', onerror='this.onerror=null,this.src="/img/404.png"')
+                        .banner-button-group
+                            a.banner-button(onclick='window.event.cancelBubble=!0,bywind.hideTodayCard()')
+                                i.hnfont.icon-add-circle-fill
+                                span.banner-button-text 更多推荐

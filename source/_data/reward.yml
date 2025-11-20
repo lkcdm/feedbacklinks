@@ -1,0 +1,5 @@
+- class_name: 赞赏
+  reward_list:
+    - name: Think
+      amount: 1500
+      datatime: 2024-08-08
