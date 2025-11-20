@@ -24,14 +24,6 @@
     "color": "#00FFFF"
   },
   {
-    "url": "https://chlor.me",
-    "avatar": "https://koxiuqiu-1321010956.cos.ap-guangzhou.myqcloud.com/img/20250629103505257.webp",
-    "name": "园子里的日光",
-    "blog": "园子里的日光",
-    "desc": "Como el viento.",
-    "color": "#00FFFF"
-  },
-  {
     "url": "https://blog.yaria.top",
     "avatar": "https://weavatar.com/avatar/795ce413eb6c7485954b78283ffa3e00",
     "name": "Ariasakaの小窝",
@@ -112,14 +104,6 @@
     "color": "#00FFFF"
   },
   {
-    "url": "https://blog.xing-ye.top",
-    "avatar": "https://q1.qlogo.cn/g?b=qq&nk=990320751&s=5https://blog.xing-ye.top/avatar.webp",
-    "name": "XINGYE's Blog",
-    "blog": "XINGYE's Blog",
-    "desc": "不要放弃，坚持学习，坚守理想，等待时机！",
-    "color": "#00FFFF"
-  },
-  {
     "url": "https://blog.liuzhen932.top",
     "avatar": "https://koxiuqiu-1321010956.cos.ap-guangzhou.myqcloud.com/img/20250629103634192.webp",
     "name": "liuzhen932 的小窝",
@@ -136,7 +120,7 @@
     "color": "#00FFFF"
   },
   {
-    "url": "https://blog.leonus.cn",
+    "url": "https://blog.bornforthis.cn",
     "avatar": "https://bornforthis.cn/aiyc.svg",
     "name": "AI 悦创",
     "blog": "AI 悦创",
@@ -149,14 +133,6 @@
     "name": "南枝已谢",
     "blog": "南枝已谢",
     "desc": "人生如逆旅，我亦是行人。",
-    "color": "#00FFFF"
-  },
-  {
-    "url": "https://www.xgr.cab",
-    "avatar": "https://koxiuqiu-1321010956.cos.ap-guangzhou.myqcloud.com/img/20250629103920132.webp",
-    "name": "荣小站",
-    "blog": "荣小站",
-    "desc": "草不谢荣于春风，木不怨落于秋天。",
     "color": "#00FFFF"
   },
   {
@@ -192,7 +168,7 @@
     "color": "#00FFFF"
   },
   {
-    "url": "https://www.iczrx.cn",
+    "url": "https://xyzbz.cn",
     "avatar": "https://bu.dusays.com/2023/07/25/64bf920527086.png",
     "name": "网友小宋",
     "blog": "网友小宋",
@@ -224,14 +200,6 @@
     "color": "#00FFFF"
   },
   {
-    "url": "https://mo66.cn",
-    "avatar": "https://i1.wp.com/images.mo66.cn/images/LinksImage/mo66.cn-Head-portrait.png",
-    "name": "FengMo博客",
-    "blog": "FengMo博客",
-    "desc": "记录生活点滴",
-    "color": "#00FFFF"
-  },
-  {
     "url": "https://my.toho.red",
     "avatar": "https://i1.wp.com/s3.ax1x.com/2021/01/31/yEfCCR.png",
     "name": "西行妖",
@@ -245,22 +213,6 @@
     "name": "静线数据库",
     "blog": "静线数据库",
     "desc": "为了无法保存的记忆",
-    "color": "#00FFFF"
-  },
-  {
-    "url": "https://yang000.cn",
-    "avatar": "https://iiiimage.oss-cn-beijing.aliyuncs.com/202311051049249.ico",
-    "name": "飞漫冬山",
-    "blog": "飞漫冬山",
-    "desc": "未知景物朦胧",
-    "color": "#00FFFF"
-  },
-  {
-    "url": "http://bci9.cn",
-    "avatar": "https://koxiuqiu-1321010956.cos.ap-guangzhou.myqcloud.com/img/20250629104025571.webp",
-    "name": "bci9博客",
-    "blog": "bci9博客",
-    "desc": "这博主貌似很高冷呢!什么都没有",
     "color": "#00FFFF"
   },
   {
@@ -320,14 +272,6 @@
     "color": "#00FFFF"
   },
   {
-    "url": "https://zxwlove.xyz",
-    "avatar": "https://i1.wp.com/imgse.koxiuqiu.cn/i/2024/07/10/sgctom.png",
-    "name": "浅小兮の梦",
-    "blog": "浅小兮の梦",
-    "desc": "从相遇的刹那开始就注定了别离！",
-    "color": "#00FFFF"
-  },
-  {
     "url": "https://blog.shiguang666.eu.org",
     "avatar": "https://i1.wp.com/blog.shiguang666.eu.org/img/avatar.png",
     "name": "時光",
@@ -336,15 +280,7 @@
     "color": "#00FFFF"
   },
   {
-    "url": "https://blog.rayvv.com",
-    "avatar": "https://i1.wp.com/blog.rayvv.com/img/logo.png",
-    "name": "白丁往事",
-    "blog": "白丁往事",
-    "desc": "起风而行，风静安宁",
-    "color": "#00FFFF"
-  },
-  {
-    "url": "https://www.i45s.com/?_ref=koxiuqiu",
+    "url": "https://www.imxb.de",
     "avatar": "https://koxiuqiu-1321010956.cos.ap-guangzhou.myqcloud.com/img/20250629104109384.webp",
     "name": "Xiobb's Blog",
     "blog": "Xiobb's Blog",
@@ -352,8 +288,8 @@
     "color": "#00FFFF"
   },
   {
-    "url": "https://blog.storical.space",
-    "avatar": "https://i1.wp.com/blog.storical.space/images/icon.png",
+    "url": "https://blog.storical.fun",
+    "avatar": "https://i1.wp.com/blog.storical.fun/images/icon.png",
     "name": "汐塔魔法屋",
     "blog": "汐塔魔法屋",
     "desc": "种下一颗有故事的种子，让它带着魔法和奇迹生根发芽",
@@ -373,14 +309,6 @@
     "name": "时歌的博客",
     "blog": "时歌的博客",
     "desc": "理解以真实为本，但真实本身并不会自动呈现",
-    "color": "#00FFFF"
-  },
-  {
-    "url": "https://blog.dreamerstar.top",
-    "avatar": "https://koxiuqiu-1321010956.cos.ap-guangzhou.myqcloud.com/img/20250629104130297.webp",
-    "name": "梦想之都",
-    "blog": "梦想之都",
-    "desc": "朝着梦想前进",
     "color": "#00FFFF"
   },
   {
@@ -408,14 +336,6 @@
     "color": "#00FFFF"
   },
   {
-    "url": "https://physnya.top",
-    "avatar": "https://koxiuqiu-1321010956.cos.ap-guangzhou.myqcloud.com/img/20250629104158562.webp",
-    "name": "菲兹克斯喵blog",
-    "blog": "菲兹克斯喵blog",
-    "desc": "Eclipse first，the rest nowhere.",
-    "color": "#00FFFF"
-  },
-  {
     "url": "https://blog.sdnie.fun",
     "avatar": "https://koxiuqiu-1321010956.cos.ap-guangzhou.myqcloud.com/img/20250629104207143.webp",
     "name": "没有楼的楼长",
@@ -429,14 +349,6 @@
     "name": "宇外御风博客",
     "blog": "宇外御风博客",
     "desc": "分享免费有趣的知识",
-    "color": "#00FFFF"
-  },
-  {
-    "url": "https://stvue.com",
-    "avatar": "http://store-tu.sdn.stvue.com/2022/04/02/6247410a43f6a.jpg",
-    "name": "芸熙の小屋",
-    "blog": "芸熙の小屋",
-    "desc": "即使生命如尘，仍愿岁月如歌",
     "color": "#00FFFF"
   },
   {
@@ -533,22 +445,6 @@
     "name": "Sky-cat",
     "blog": "Sky-cat",
     "desc": "星河满目，璀璨无限✨ ",
-    "color": "#00FFFF"
-  },
-  {
-    "url": "https://jiuliu.top",
-    "avatar": "https://koxiuqiu-1321010956.cos.ap-guangzhou.myqcloud.com/img/20250629104300442.webp",
-    "name": "久流的个人小站",
-    "blog": "久流的个人小站",
-    "desc": "借由他人,寻找自我",
-    "color": "#00FFFF"
-  },
-  {
-    "url": "https://blog.lzchi.top",
-    "avatar": "https://koxiuqiu-1321010956.cos.ap-guangzhou.myqcloud.com/img/20250629104307297.webp",
-    "name": "幽默的小刘吖",
-    "blog": "幽默的小刘吖",
-    "desc": "每天分享不一样的知识内容",
     "color": "#00FFFF"
   },
   {
@@ -680,6 +576,14 @@
     "color": "#00FFFF"
   },
   {
+    "url": "https://chlo.is",
+    "avatar": "https://i1.wp.com/img.chlo.is/avatar/03.webp",
+    "name": "Chlorine",
+    "blog": "Garden of Outlier",
+    "desc": "An Element-chan who writes.",
+    "color": "#00FFFF"
+  },
+  {
     "url": "https://www.dreamcenter.top",
     "avatar": "https://www.dreamcenter.top/imgs/avatar.jpg",
     "name": "时光潜流",
@@ -745,10 +649,10 @@
   },
   {
     "url": "https://www.mioc.cn",
-    "avatar": "https://www.mioc.cn/upload/logo.svg",
-    "name": "秘柯云仓",
-    "blog": "秘柯云仓",
-    "desc": "一个杂乱的网站",
+    "avatar": "https://www.mioc.cn/upload/LOGO.svg",
+    "name": "秘柯絮语",
+    "blog": "秘柯絮语",
+    "desc": "My Inner Opinion Collection",
     "color": "#00FFFF"
   },
   {
@@ -757,6 +661,46 @@
     "name": "兔兔博客",
     "blog": "兔兔博客",
     "desc": "万事都要全力以赴，包括开心",
+    "color": "#00FFFF"
+  },
+  {
+    "url": "https://blog.ybrc.top",
+    "avatar": "https://i1.wp.com/blog.ybrc.top/upload/logo.jpg",
+    "name": "拥抱日出的小屋",
+    "blog": "拥抱日出的小屋",
+    "desc": "拥抱日出，也拥抱生活",
+    "color": "#00FFFF"
+  },
+  {
+    "url": "https://bi1vmm.cn",
+    "avatar": "https://q1.qlogo.cn/g?b=qq&nk=2332528030&s=640",
+    "name": "cunzher",
+    "blog": "喂猫猫",
+    "desc": "喂，猫猫，快来吃罐头了",
+    "color": "#00FFFF"
+  },
+  {
+    "url": "https://blog.yll114.cn",
+    "avatar": "https://i1.wp.com/blog.yll14.cn/wp-content/uploads/2025/09/圆角-favicon.png",
+    "name": "桉南",
+    "blog": "桉南小屋",
+    "desc": "桉南的小屋",
+    "color": "#00FFFF"
+  },
+  {
+    "url": "https://www.codyz.cn",
+    "avatar": "https://i1.wp.com/www.codyz.cn/logo.png",
+    "name": "琢码斋",
+    "blog": "琢码斋",
+    "desc": "专注Unity开发..记录数字江湖的修行",
+    "color": "#00FFFF"
+  },
+  {
+    "url": "https://www.lansganbs.cn",
+    "avatar": "https://i1.wp.com/www.lansganbs.cn/images/friends/lansganbs.png",
+    "name": "LANSGANBS",
+    "blog": "LANSGANBS’s Blog",
+    "desc": "红叶最多情，一舞寄相思。",
     "color": "#00FFFF"
   }
 ]
