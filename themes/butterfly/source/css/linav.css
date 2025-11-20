@@ -1,7 +1,0 @@
-#nav-right {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  margin-left: auto;
-  flex: 1;
-}
