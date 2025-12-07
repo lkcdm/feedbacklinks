@@ -1,6 +1,6 @@
 (function () {
-    var validDomain = 'blog.koxiuqiu.cn'; // 你的域名
-    var redirectUrl = 'https://blog.koxiuqiu.cn'; // 重定向链接
+    var validDomain = 'valaxy.koxiuqiu.cn'; // 你的域名
+    var redirectUrl = 'https://valaxy.koxiuqiu.cn'; // 重定向链接
     var hostname = document.location.hostname;
 
     function createWatermark(text) {
@@ -37,7 +37,7 @@
 
     if (hostname !== validDomain) {
         createWatermark(validDomain); // 给页面加上前边设置的域名为水印
-        var userResponse = confirm("提示：您访问的域名可能不是朽丘秋雨博客的最新且正版域名，确定后自动跳转正常域名，如有虚假镜像网站随时留言域名联系博主！(目前:blog.koxiuqiu.cn)");
+        var userResponse = confirm("提示：您访问的域名可能不是朽丘秋雨博客的最新且正版域名，确定后自动跳转正常域名，如有虚假镜像网站随时留言域名联系博主！(目前:koxiuqiu.cn)");
         if (userResponse) {
             window.location.replace(redirectUrl);
         }
