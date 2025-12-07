@@ -4,7 +4,7 @@
         <title>朽丘秋雨-来自klcdm美好虚拟世界</title>
         <link>https://blog.koxiuqiu.cc/</link>
         <description>一定会和喜欢的人在夏日夜晚牵手慢步</description>
-        <lastBuildDate>Sun, 07 Dec 2025 04:56:17 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 07 Dec 2025 09:04:58 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -14,6 +14,18 @@
         </image>
         <copyright>CC BY-NC-SA 4.0 2025 © 柯朽丘-klcdm</copyright>
         <atom:link href="https://blog.koxiuqiu.cc/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[小站最新装修]]></title>
+            <link>https://blog.koxiuqiu.cc/posts/23p251271</link>
+            <guid isPermaLink="false">https://blog.koxiuqiu.cc/posts/23p251271</guid>
+            <pubDate>Sun, 07 Dec 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>安然无恙，各位；</p>
+<p>最近也是终于舍得抽点时间出来折腾了，那就是折腾一下博客什么的。</p>
+<p>{% mark 把之前的水文删除了产出了本篇的海文-_- color:green %}</p>
+<h1>关于</h1>
+<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/23p251271" target="_blank">https://blog.koxiuqiu.cc/posts/23p251271</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (柯朽丘-klcdm)</author>
+        </item>
         <item>
             <title><![CDATA[25年11月闲说]]></title>
             <link>https://blog.koxiuqiu.cc/posts/22p2511201</link>
@@ -111,18 +123,6 @@
             <pubDate>Sun, 08 Jun 2025 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>屏幕的光映着凌晨三点十七分的寂静，对话框里的光标像颗悬而未落的泪，在 &quot;睡了吗&quot; 三个字后面忽明忽暗。指尖悬在发送键上，能感受到掌心跳动的微颤 —— 那是种混合着期待与恐惧的震颤，像赌徒掀开最后一</p>
 <br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/15p2506081" target="_blank">https://blog.koxiuqiu.cc/posts/15p2506081</a> 阅读全文。</p>]]></content:encoded>
-            <author>i@valaxy.site (柯朽丘-klcdm)</author>
-        </item>
-        <item>
-            <title><![CDATA[暂时停更通知]]></title>
-            <link>https://blog.koxiuqiu.cc/posts/14p2505241</link>
-            <guid isPermaLink="false">https://blog.koxiuqiu.cc/posts/14p2505241</guid>
-            <pubDate>Sat, 24 May 2025 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>亲爱的读者朋友们：</p>
-<p>您好！</p>
-<p>非常抱歉的通知大家，由于博主近期在现实生活中事务愈发繁忙，加上家中经济状况也较为紧张，经过深思熟虑后，决定暂停更新博客，预计停更时间为一到两个月。</p>
-<p>这</p>
-<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/14p2505241" target="_blank">https://blog.koxiuqiu.cc/posts/14p2505241</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (柯朽丘-klcdm)</author>
         </item>
         <item>
@@ -332,28 +332,6 @@
 <li>对于某些</li>
 </ul>
 <br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/a27migration" target="_blank">https://blog.koxiuqiu.cc/posts/a27migration</a> 阅读全文。</p>]]></content:encoded>
-            <author>i@valaxy.site (柯朽丘-klcdm)</author>
-        </item>
-        <item>
-            <title><![CDATA[GoEdge快速上手使用]]></title>
-            <link>https://blog.koxiuqiu.cc/posts/a24migration</link>
-            <guid isPermaLink="false">https://blog.koxiuqiu.cc/posts/a24migration</guid>
-            <pubDate>Sat, 28 Sep 2024 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>安然无恙，各位；</p>
-<h2>接回上节</h2>
-<p>根据最近的收到的一些邮件，所以决定写一篇正常投入使用的<strong>全记录</strong>文，一些小知识点不在阐述，还请自行根据需求摸索，要全部写出来还是要费时间的</p>
-<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/a24migration" target="_blank">https://blog.koxiuqiu.cc/posts/a24migration</a> 阅读全文。</p>]]></content:encoded>
-            <author>i@valaxy.site (柯朽丘-klcdm)</author>
-        </item>
-        <item>
-            <title><![CDATA[GoEdgeCDN懒人一键安装]]></title>
-            <link>https://blog.koxiuqiu.cc/posts/a23migration</link>
-            <guid isPermaLink="false">https://blog.koxiuqiu.cc/posts/a23migration</guid>
-            <pubDate>Sun, 22 Sep 2024 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>安然无恙，各位；23号报道了，发发存稿吧</p>
-<p>在这之前，我就有写过关于自建CDN的一些教程，只不过当时使用的程序是cdnfly，不过已经停运</p>
-<p>![image-202409221743147</p>
-<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/a23migration" target="_blank">https://blog.koxiuqiu.cc/posts/a23migration</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (柯朽丘-klcdm)</author>
         </item>
         <item>
@@ -588,17 +566,6 @@
             <content:encoded><![CDATA[<p>很多人都想要一个属于自己的一个小网站，但是，好不容易有了一台服务器，但是却不懂操作，然后一些懂的人和你讲但是你又听不懂，人家也懒得叫你，这时候就很难蚌了</p>
 <p>那么，我在这里就简单的教一下萌新如何</p>
 <br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/a2migration" target="_blank">https://blog.koxiuqiu.cc/posts/a2migration</a> 阅读全文。</p>]]></content:encoded>
-            <author>i@valaxy.site (柯朽丘-klcdm)</author>
-        </item>
-        <item>
-            <title><![CDATA[关于小柯的CC大陆站]]></title>
-            <link>https://blog.koxiuqiu.cc/posts/1p2401091</link>
-            <guid isPermaLink="false">https://blog.koxiuqiu.cc/posts/1p2401091</guid>
-            <pubDate>Tue, 09 Jan 2024 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h2>前言</h2>
-<p>是的，这是我第二次“焕然一新”。<AFace face="suier:6"/></p>
-<p>为什么发布于2024-01-09，因为这是CN国际站初建丢文章之后，终于稳定，并且发布的第一篇手笔的时</p>
-<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/1p2401091" target="_blank">https://blog.koxiuqiu.cc/posts/1p2401091</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (柯朽丘-klcdm)</author>
         </item>
         <item>
