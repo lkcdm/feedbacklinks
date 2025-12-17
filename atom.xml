@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.koxiuqiu.cc/</id>
     <title>朽丘秋雨-来自klcdm美好虚拟世界</title>
-    <updated>2025-12-07T11:48:57.298Z</updated>
+    <updated>2025-12-17T12:35:29.985Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>柯朽丘-klcdm</name>
@@ -212,28 +212,6 @@
         <published>2025-04-26T00:00:00.000Z</published>
     </entry>
     <entry>
-        <title type="html"><![CDATA[关于QiuDunCDN近期状态]]></title>
-        <id>https://blog.koxiuqiu.cc/posts/11p2504131</id>
-        <link href="https://blog.koxiuqiu.cc/posts/11p2504131"/>
-        <updated>2025-04-13T00:00:00.000Z</updated>
-        <content type="html"><![CDATA[<p>安然无恙，各位；</p>
-<blockquote>
-<p>这是一篇无关紧要的水文，莫要在意~</p>
-</blockquote>
-<h2>前言</h2>
-<p>在大概2月之初，我重新开启了尘封已久的一个项目：</p>
-<blockquote>
-<p>官网：[「丘盾CDN」QiuDun CDN -</p>
-</blockquote>
-<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/11p2504131" target="_blank">https://blog.koxiuqiu.cc/posts/11p2504131</a> 阅读全文。</p>]]></content>
-        <author>
-            <name>柯朽丘-klcdm</name>
-            <email>i@valaxy.site</email>
-            <uri>https://valaxy.site</uri>
-        </author>
-        <published>2025-04-13T00:00:00.000Z</published>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[25年3月小结]]></title>
         <id>https://blog.koxiuqiu.cc/posts/9p2503221</id>
         <link href="https://blog.koxiuqiu.cc/posts/9p2503221"/>
@@ -269,26 +247,6 @@
             <uri>https://valaxy.site</uri>
         </author>
         <published>2025-03-08T00:00:00.000Z</published>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于小柯公开的一些公益,商业项目]]></title>
-        <id>https://blog.koxiuqiu.cc/posts/5p2502131</id>
-        <link href="https://blog.koxiuqiu.cc/posts/5p2502131"/>
-        <updated>2025-02-13T00:00:00.000Z</updated>
-        <content type="html"><![CDATA[<p>想来没几个朋友知道我的全部项目，这里就列出来吧！</p>
-<blockquote>
-<p>顺便水一下文。</p>
-</blockquote>
-<h2>公益项目</h2>
-<h3>丘盾系统(公益CDN)</h3>
-<p>![](<a href="https://koxiuqiu-132101">https://koxiuqiu-132101</a></p>
-<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/5p2502131" target="_blank">https://blog.koxiuqiu.cc/posts/5p2502131</a> 阅读全文。</p>]]></content>
-        <author>
-            <name>柯朽丘-klcdm</name>
-            <email>i@valaxy.site</email>
-            <uri>https://valaxy.site</uri>
-        </author>
-        <published>2025-02-13T00:00:00.000Z</published>
     </entry>
     <entry>
         <title type="html"><![CDATA[好耶，热乎着，新形象！]]></title>
@@ -499,22 +457,6 @@
         <published>2024-09-10T00:00:00.000Z</published>
     </entry>
     <entry>
-        <title type="html"><![CDATA[醍醐灌顶]]></title>
-        <id>https://blog.koxiuqiu.cc/posts/a20migration</id>
-        <link href="https://blog.koxiuqiu.cc/posts/a20migration"/>
-        <updated>2024-09-08T00:00:00.000Z</updated>
-        <content type="html"><![CDATA[<p>安然无恙，各位；一日不见，如隔三秋</p>
-<p>今个的主题很简单；</p>
-<p>![](<a href="https://koxiuqiu-1321010956.cos.ap-guangzhou.myqcloud.com/im">https://koxiuqiu-1321010956.cos.ap-guangzhou.myqcloud.com/im</a></p>
-<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/a20migration" target="_blank">https://blog.koxiuqiu.cc/posts/a20migration</a> 阅读全文。</p>]]></content>
-        <author>
-            <name>柯朽丘-klcdm</name>
-            <email>i@valaxy.site</email>
-            <uri>https://valaxy.site</uri>
-        </author>
-        <published>2024-09-08T00:00:00.000Z</published>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[来日方长，coke]]></title>
         <id>https://blog.koxiuqiu.cc/posts/a19migration</id>
         <link href="https://blog.koxiuqiu.cc/posts/a19migration"/>
@@ -530,24 +472,6 @@
             <uri>https://valaxy.site</uri>
         </author>
         <published>2024-09-07T00:00:00.000Z</published>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[MiniCover封面设计]]></title>
-        <id>https://blog.koxiuqiu.cc/posts/a18migration</id>
-        <link href="https://blog.koxiuqiu.cc/posts/a18migration"/>
-        <updated>2024-09-01T00:00:00.000Z</updated>
-        <content type="html"><![CDATA[<p>安然无恙，各位；</p>
-<blockquote>
-<p>在调整完我个人的心情，然后就立马过来把存稿发了，我的猫咪昨天中午去喵星了</p>
-</blockquote>
-<p>简单介绍一下老哥的项目“Mini-Cover：简洁的在线生成封面”，同时也是博主再用的</p>
-<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/a18migration" target="_blank">https://blog.koxiuqiu.cc/posts/a18migration</a> 阅读全文。</p>]]></content>
-        <author>
-            <name>柯朽丘-klcdm</name>
-            <email>i@valaxy.site</email>
-            <uri>https://valaxy.site</uri>
-        </author>
-        <published>2024-09-01T00:00:00.000Z</published>
     </entry>
     <entry>
         <title type="html"><![CDATA[24年8月小结]]></title>
