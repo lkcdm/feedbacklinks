@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://blog.koxiuqiu.cc/sitemap.xml

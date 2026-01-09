@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.koxiuqiu.cc/</id>
     <title>朽丘秋雨-来自klcdm美好虚拟世界</title>
-    <updated>2026-01-01T07:45:09.672Z</updated>
+    <updated>2026-01-09T16:26:49.099Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>柯朽丘-klcdm</name>
@@ -25,6 +25,23 @@
 <h1>前言</h1>
 <p>转眼间12月已过半旬，马上就迎接202</p>
 <br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/24p2512231" target="_blank">https://blog.koxiuqiu.cc/posts/24p2512231</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>柯朽丘-klcdm</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2025-12-24T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[给Hexo和留言添加跳转中间页]]></title>
+        <id>https://blog.koxiuqiu.cc/posts/25p26191</id>
+        <link href="https://blog.koxiuqiu.cc/posts/25p26191"/>
+        <updated>2025-12-23T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p>安然无恙，各位；</p>
+<h1>前言</h1>
+<p>新年快乐！2026年的第一笔~</p>
+<p>这段时间难得的一个五天假期，就打算折腾下自己的小站，改动最多的就是安全方面的事情了，由于个人的想法比较多，过度敏感，对</p>
+<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/25p26191" target="_blank">https://blog.koxiuqiu.cc/posts/25p26191</a> 阅读全文。</p>]]></content>
         <author>
             <name>柯朽丘-klcdm</name>
             <email>i@valaxy.site</email>
