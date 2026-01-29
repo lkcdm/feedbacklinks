@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.koxiuqiu.cc/</id>
     <title>朽丘秋雨-来自klcdm美好虚拟世界</title>
-    <updated>2026-01-09T16:26:49.099Z</updated>
+    <updated>2026-01-29T19:08:38.005Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>柯朽丘-klcdm</name>
@@ -16,6 +16,39 @@
     <icon>https://blog.koxiuqiu.cc/favicon.svg</icon>
     <rights>CC BY-NC-SA 4.0 2026 © 柯朽丘-klcdm</rights>
     <entry>
+        <title type="html"><![CDATA[舟终末地初玩体验]]></title>
+        <id>https://blog.koxiuqiu.cc/posts/26p261291</id>
+        <link href="https://blog.koxiuqiu.cc/posts/26p261291"/>
+        <updated>2026-01-28T16:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p>安然无恙，各位；</p>
+<h1>前言</h1>
+<p>这几天半个月以来差不多一直躺在床上，杜老师的新服务器也没玩，自己的工程也不敢了，纯躺。主要是最近发现几本写的还不错的小说，特别是第二本小说是我这么久以来看网</p>
+<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/26p261291" target="_blank">https://blog.koxiuqiu.cc/posts/26p261291</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>柯朽丘-klcdm</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-01-28T16:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[给Hexo和留言添加跳转中间页]]></title>
+        <id>https://blog.koxiuqiu.cc/posts/25p26191</id>
+        <link href="https://blog.koxiuqiu.cc/posts/25p26191"/>
+        <updated>2026-01-08T16:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p>安然无恙，各位；</p>
+<h1>前言</h1>
+<p>新年快乐！2026年的第一笔~</p>
+<p>这段时间难得的一个五天假期，就打算折腾下自己的小站，改动最多的就是安全方面的事情了，由于个人的想法比较多，过度敏感，对</p>
+<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/25p26191" target="_blank">https://blog.koxiuqiu.cc/posts/25p26191</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>柯朽丘-klcdm</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-01-08T16:00:00.000Z</published>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[小站最新装修]]></title>
         <id>https://blog.koxiuqiu.cc/posts/24p2512231</id>
         <link href="https://blog.koxiuqiu.cc/posts/24p2512231"/>
@@ -25,23 +58,6 @@
 <h1>前言</h1>
 <p>转眼间12月已过半旬，马上就迎接202</p>
 <br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/24p2512231" target="_blank">https://blog.koxiuqiu.cc/posts/24p2512231</a> 阅读全文。</p>]]></content>
-        <author>
-            <name>柯朽丘-klcdm</name>
-            <email>i@valaxy.site</email>
-            <uri>https://valaxy.site</uri>
-        </author>
-        <published>2025-12-24T00:00:00.000Z</published>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[给Hexo和留言添加跳转中间页]]></title>
-        <id>https://blog.koxiuqiu.cc/posts/25p26191</id>
-        <link href="https://blog.koxiuqiu.cc/posts/25p26191"/>
-        <updated>2025-12-23T00:00:00.000Z</updated>
-        <content type="html"><![CDATA[<p>安然无恙，各位；</p>
-<h1>前言</h1>
-<p>新年快乐！2026年的第一笔~</p>
-<p>这段时间难得的一个五天假期，就打算折腾下自己的小站，改动最多的就是安全方面的事情了，由于个人的想法比较多，过度敏感，对</p>
-<br/><p>访问 <a href="https://blog.koxiuqiu.cc/posts/25p26191" target="_blank">https://blog.koxiuqiu.cc/posts/25p26191</a> 阅读全文。</p>]]></content>
         <author>
             <name>柯朽丘-klcdm</name>
             <email>i@valaxy.site</email>
